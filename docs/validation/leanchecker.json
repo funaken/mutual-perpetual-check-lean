@@ -1,0 +1,24 @@
+{
+  "source_sha256": "ffa41d396af95d2602f44da0e76e876302af37649822f52d466a0c75da558457",
+  "started_utc": "2026-11-26T02:28:05.908308+00:00",
+  "platform": "macOS-27.2.1-arm64-arm-64bit-Mach-O",
+  "architecture": "arm64",
+  "logical_cpu_count": 12,
+  "lean": "Lean (version 4.36.0, arm64-apple-darwin24.6.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)",
+  "python": "3.14.10",
+  "command": "python3 scripts/leanchecker_audit.py --jobs 6 --record",
+  "checker": "leanchecker (Lean toolchain), one process per module",
+  "modules_checked": 179,
+  "modules_failed": [],
+  "modules_skipped": {
+    "MPC": "imports only",
+    "MPC.Chess": "imports only",
+    "MPC.Legacy": "imports only"
+  },
+  "elapsed_seconds": 418.4,
+  "jobs": 6,
+  "exit_code": 0,
+  "cpu": "Apple M2 Max",
+  "memory_bytes": 34359738368,
+  "finished_utc": "2026-11-26T02:35:05.110928+00:00"
+}

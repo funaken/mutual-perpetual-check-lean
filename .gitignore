@@ -1,0 +1,8 @@
+/.lake/
+/.cache/
+/build/
+__pycache__/
+/output/pdf/*.log
+/output/pdf/*.aux
+/output/pdf/*.out
+/output/pdf/*.synctex.gz

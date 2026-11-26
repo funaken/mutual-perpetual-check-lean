@@ -1,0 +1,4972 @@
+{
+  "baseline": "Lean v4.36.0 migration",
+  "previous_baseline": "67f7d62 (Lean v4.16.0); see docs/validation/toolchain-migration-4.36.md",
+  "scope": "exported MPC declarations, including generated declarations; excluding private/internal names",
+  "normalization": "binder names and formatting only; see scripts/check_api.py",
+  "declarations": {
+    "MPC.AngleKeyTests.K": {
+      "type_sha256": "04f65a07f3b99535f38d873c40af6489dd7c20b67d5e357ab8c2872baf52d4ef",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.AngleKeyTests.L": {
+      "type_sha256": "04f65a07f3b99535f38d873c40af6489dd7c20b67d5e357ab8c2872baf52d4ef",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.AnglePotentialTests.kps": {
+      "type_sha256": "3917b6ced76db2fe6a679c27fd6e0cf438c6dee35d6d8528cb184091e273fbdd",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.BishopCheckerConstraint": {
+      "type_sha256": "526bff283ebf0dafaed5fdc9b5e08fe228694681cc5129cc395b0f4b1a470652",
+      "axioms": []
+    },
+    "MPC.BishopCheckerConstraint.at": {
+      "type_sha256": "43dcca43cefe71efe7e45eebe6ce7d3aa15cf420a77221aa3ef425ee5aac185d",
+      "axioms": []
+    },
+    "MPC.BishopCheckerConstraintAt": {
+      "type_sha256": "bc81fad596adf4ffe2854f176ae95dd7ec8c5ab046987b56dca8a38b5296a9b4",
+      "axioms": []
+    },
+    "MPC.BishopEdge": {
+      "type_sha256": "526bff283ebf0dafaed5fdc9b5e08fe228694681cc5129cc395b0f4b1a470652",
+      "axioms": []
+    },
+    "MPC.BishopRow": {
+      "type_sha256": "939168125ff1acc89a989aa28e53ef4fbd0a823680fe564283e87c5efdb2dabc",
+      "axioms": []
+    },
+    "MPC.Board": {
+      "type_sha256": "a08ab456aa45b7c385243d04f204fddd79fa47980eb590fe67989d5a800a4b69",
+      "axioms": []
+    },
+    "MPC.Board.addToHand": {
+      "type_sha256": "f9a795327a309b3d2e3a3db1610b2b8f14be474ba25b544a13d451ea8cc04756",
+      "axioms": [
+        "Quot.sound"
+      ]
+    },
+    "MPC.Board.addToHand.eq_1": {
+      "type_sha256": "ac785e1a86c6d9635d4bd13d8f79c539d85c9a901a7ef95a3852b5eb76852897",
+      "axioms": [
+        "Quot.sound"
+      ]
+    },
+    "MPC.Board.casesOn": {
+      "type_sha256": "8f2d475a70f336dc7208fbe9d4079d310e53662af79d6f96a580fb5e3abbbfa5",
+      "axioms": []
+    },
+    "MPC.Board.ctorIdx": {
+      "type_sha256": "e0edba81d0c9b801e37c204cb8c8ac5f60b9123999cff2704d79ba4ea8d17e30",
+      "axioms": []
+    },
+    "MPC.Board.familyCount": {
+      "type_sha256": "87c164acf83877f25c772844400e3fa145292866d4a10b840f38f19853b4d709",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.Board.familyCount_le_familyTotal": {
+      "type_sha256": "7f5f294f6264222b9a829797445840f704a97a3c20278db86915cd9486ff57e8",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.Board.familyTotal": {
+      "type_sha256": "87c164acf83877f25c772844400e3fa145292866d4a10b840f38f19853b4d709",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.Board.grid": {
+      "type_sha256": "2a3cd3bc18db8ddc20e2d8c054facbc6025473689d5c1e935f3e2cfcaf9d00b1",
+      "axioms": []
+    },
+    "MPC.Board.hand": {
+      "type_sha256": "02885aa8b800540c9bc67973b2ff3730426fdbec5a7699dc32c8dccdc7d58b6f",
+      "axioms": []
+    },
+    "MPC.Board.handFamilyCount": {
+      "type_sha256": "87c164acf83877f25c772844400e3fa145292866d4a10b840f38f19853b4d709",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.Board.handFamilyCount.congr_simp": {
+      "type_sha256": "6c5f864d13e9bcc2154bac1ebfb143755785a353459e8d85eb5874cb141eef3e",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.Board.handFamilyCount_eq": {
+      "type_sha256": "136396d7c978d72158ca35d26141f18d20b85cde5d4d6ad8f8e09a3445622ee7",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.Board.mk": {
+      "type_sha256": "c1da591b7e43c8e1fd49fd627540134559881836e95c165670a96b19e93c5cfd",
+      "axioms": []
+    },
+    "MPC.Board.mk.inj": {
+      "type_sha256": "3360801a660b3519cb5e525da8cf4c3a20929c5569c259c7a7f706945652e912",
+      "axioms": []
+    },
+    "MPC.Board.mk.injEq": {
+      "type_sha256": "497df11addc2080b5bcdac743ecdc10e6b92a5351b82f60055c952f04bfa5522",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.Board.mk.noConfusion": {
+      "type_sha256": "dffa48910b1df331625f668cf8bbce38dbc1531f71c93270064d4fe034ae2f6f",
+      "axioms": []
+    },
+    "MPC.Board.mk.sizeOf_spec": {
+      "type_sha256": "1f6cae43b844840cf7d4bcb9103bca1ede3a2f80546ffdc8ab728ee42668d472",
+      "axioms": []
+    },
+    "MPC.Board.noConfusion": {
+      "type_sha256": "7f06b044639c5f3ef326eb950f270eec09efeb4a145140b1f8ef8adb6cf39a20",
+      "axioms": []
+    },
+    "MPC.Board.noConfusionType": {
+      "type_sha256": "05a514b954b8c0697604f7df16154da46c8b6a4e1ad49f961f72d55d3ff1fbea",
+      "axioms": []
+    },
+    "MPC.Board.rec": {
+      "type_sha256": "c683fe859bab2fe45a2724a5bbce19634f2c801979c9d12c700450851fb161d9",
+      "axioms": []
+    },
+    "MPC.Board.recOn": {
+      "type_sha256": "8f2d475a70f336dc7208fbe9d4079d310e53662af79d6f96a580fb5e3abbbfa5",
+      "axioms": []
+    },
+    "MPC.Board.removeFromHand": {
+      "type_sha256": "f9a795327a309b3d2e3a3db1610b2b8f14be474ba25b544a13d451ea8cc04756",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.Board.removeFromHand.eq_1": {
+      "type_sha256": "dd64e4bbe1c06c3b3bd89b6471f5d63133ca3bcaea9cd7f8c237865f424a326c",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.Board.setGrid": {
+      "type_sha256": "c697e25bd347c6b0865bfe6b32e55027c6ab635077164cca1b4744ffc43a7819",
+      "axioms": []
+    },
+    "MPC.Board.setGrid.eq_1": {
+      "type_sha256": "402fc9018bf3ef93d20fbadeae24339d55565b633e378f9060d99d1a44f64118",
+      "axioms": []
+    },
+    "MPC.BoardState": {
+      "type_sha256": "a08ab456aa45b7c385243d04f204fddd79fa47980eb590fe67989d5a800a4b69",
+      "axioms": []
+    },
+    "MPC.BoardState.board": {
+      "type_sha256": "1eb198792e577c46378d69356c4f4834f6bf9b438b3aa0aea0a772a517bc4fd5",
+      "axioms": []
+    },
+    "MPC.BoardState.casesOn": {
+      "type_sha256": "ed39931ecd21f5c9f39d36c85bb970758f2409ce7191da7b71cefed41e0202ca",
+      "axioms": []
+    },
+    "MPC.BoardState.ctorIdx": {
+      "type_sha256": "e9415c390d72403040b6b92503ed36bd9152aa22b6bf4e15b40f767fde450232",
+      "axioms": []
+    },
+    "MPC.BoardState.mk": {
+      "type_sha256": "15a0866790a623592cfd1ea80446fd1636c358c28f19a44bb4114f94c4416bcd",
+      "axioms": []
+    },
+    "MPC.BoardState.mk.inj": {
+      "type_sha256": "152e44f165928a2f5ceae7d29e3d81cb32c3f138a89e263505ab96284258f3d0",
+      "axioms": []
+    },
+    "MPC.BoardState.mk.injEq": {
+      "type_sha256": "b85ff33454c9a25803fd961d836f888976ad2c39f5f49f562bf4cccd5bf7b158",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.BoardState.mk.noConfusion": {
+      "type_sha256": "ca1cf7bde1d02b56d6a244a5600a1a7f6d6724f76d11eb6310b1cdce57be5556",
+      "axioms": []
+    },
+    "MPC.BoardState.mk.sizeOf_spec": {
+      "type_sha256": "f544db2e9f7adbf2e4a3916e36a04c8cb48b01dbcc7ed3ecec96bfcbc5c7908b",
+      "axioms": []
+    },
+    "MPC.BoardState.noConfusion": {
+      "type_sha256": "018268da61bf2c9d082d651aab39e750c7fc3c2dee1e51ce824209d9bdad1ac4",
+      "axioms": []
+    },
+    "MPC.BoardState.noConfusionType": {
+      "type_sha256": "37e268a9dc2f756b3b95744a360b0ee84ac83b18f11b90c06cacfb360562c6c1",
+      "axioms": []
+    },
+    "MPC.BoardState.rec": {
+      "type_sha256": "ec482f455051a1730aae8743fc59935d7afb8eabcc19727fdffdea81748035c5",
+      "axioms": []
+    },
+    "MPC.BoardState.recOn": {
+      "type_sha256": "ed39931ecd21f5c9f39d36c85bb970758f2409ce7191da7b71cefed41e0202ca",
+      "axioms": []
+    },
+    "MPC.BoardState.turn": {
+      "type_sha256": "e65f0607e8f0992a4a5dc80b90e790ec586cf734749703af0eefae85efab484c",
+      "axioms": []
+    },
+    "MPC.CheckerAngleTests.K": {
+      "type_sha256": "04f65a07f3b99535f38d873c40af6489dd7c20b67d5e357ab8c2872baf52d4ef",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.CheckerAngleTests.L": {
+      "type_sha256": "04f65a07f3b99535f38d873c40af6489dd7c20b67d5e357ab8c2872baf52d4ef",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.CheckerConstraint": {
+      "type_sha256": "90db0bf41a26485784ba5ca63fce3c7ebf65d2d1065cadeae117c60111aa4f84",
+      "axioms": []
+    },
+    "MPC.Dir": {
+      "type_sha256": "a08ab456aa45b7c385243d04f204fddd79fa47980eb590fe67989d5a800a4b69",
+      "axioms": []
+    },
+    "MPC.Dir.flip": {
+      "type_sha256": "f2c91edb8dd605577fa1428e42c653f277065f1ae1e377f702eb60d20d3fa6de",
+      "axioms": []
+    },
+    "MPC.Dir.flip.eq_1": {
+      "type_sha256": "24cc31134968178b43a9c40fc83252a208a58cd2b75d22738d1f1c7c239ab176",
+      "axioms": []
+    },
+    "MPC.Dir.forPlayer": {
+      "type_sha256": "6b8c8070c2d48715bbfddd922be9c794e42313e082db52ebab23f6e055517fdf",
+      "axioms": []
+    },
+    "MPC.Dir.forPlayer.eq_1": {
+      "type_sha256": "7457204a7b4ef5e66591692e3b46038fe1d404f4ce18f8b673f59ad136e0f712",
+      "axioms": []
+    },
+    "MPC.Dir.forPlayer.eq_2": {
+      "type_sha256": "5232be7edbc21018e08c28d1d3d7eee129c073f3a585ff32c15537a3f58aaf2f",
+      "axioms": []
+    },
+    "MPC.Dir.normalize": {
+      "type_sha256": "f2c91edb8dd605577fa1428e42c653f277065f1ae1e377f702eb60d20d3fa6de",
+      "axioms": []
+    },
+    "MPC.Dir.normalize.eq_1": {
+      "type_sha256": "9a9d4310ba96baa6e35a1cdd5e76f6eb6df33e1c337f924ed4fcf35c737cd402",
+      "axioms": []
+    },
+    "MPC.Facing": {
+      "type_sha256": "1b1ad5abafa3434eeb6ded227b29f56119463cc17d1dd9367ad331d4d94d6dcc",
+      "axioms": []
+    },
+    "MPC.Geometry.Point": {
+      "type_sha256": "a08ab456aa45b7c385243d04f204fddd79fa47980eb590fe67989d5a800a4b69",
+      "axioms": []
+    },
+    "MPC.Geometry.angleSign": {
+      "type_sha256": "962bdf2c2975b5c58fd5c413d3a058dfb89cb402093543a4dcc7190a2415381c",
+      "axioms": []
+    },
+    "MPC.Geometry.collinear": {
+      "type_sha256": "88b24a07bb192550cc34a32ecec9d9b9855491bd967ed55ae1ef36a7880b06ba",
+      "axioms": []
+    },
+    "MPC.Geometry.collinear_swap": {
+      "type_sha256": "c815712fd227b69ccc9a549ea06bd2c65bc07f649a6afae2683cfb298abc73ab",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.Geometry.cross": {
+      "type_sha256": "75870abb33b06d5631d79a8eeb6151c3dda08002224e7d43d1b3bd69cd8207d3",
+      "axioms": []
+    },
+    "MPC.Geometry.dirVec": {
+      "type_sha256": "23a8ec3c1ce8ebd50e362944d2f7b52ed9d15b5b81d258cd759355b18887e01e",
+      "axioms": []
+    },
+    "MPC.Geometry.onLine": {
+      "type_sha256": "88b24a07bb192550cc34a32ecec9d9b9855491bd967ed55ae1ef36a7880b06ba",
+      "axioms": []
+    },
+    "MPC.Geometry.onSegment": {
+      "type_sha256": "88b24a07bb192550cc34a32ecec9d9b9855491bd967ed55ae1ef36a7880b06ba",
+      "axioms": []
+    },
+    "MPC.Geometry.onSegmentInterior": {
+      "type_sha256": "88b24a07bb192550cc34a32ecec9d9b9855491bd967ed55ae1ef36a7880b06ba",
+      "axioms": []
+    },
+    "MPC.Geometry.sameSide": {
+      "type_sha256": "af4bb92e6c17e4a75e8bd77f9ae21392983bf2f0b9d4bb6dcf36790681486180",
+      "axioms": []
+    },
+    "MPC.Hand": {
+      "type_sha256": "a08ab456aa45b7c385243d04f204fddd79fa47980eb590fe67989d5a800a4b69",
+      "axioms": []
+    },
+    "MPC.KingCandidate": {
+      "type_sha256": "939168125ff1acc89a989aa28e53ef4fbd0a823680fe564283e87c5efdb2dabc",
+      "axioms": []
+    },
+    "MPC.KingsAligned": {
+      "type_sha256": "94a12251cda5e37d55a84826db953a0fa329f3010914106007dfc45cb362a907",
+      "axioms": []
+    },
+    "MPC.KingsWellPlaced": {
+      "type_sha256": "ec30995dbee1db8500b06b9095778488e9bf88ef6c17a37b8a32960a9119edae",
+      "axioms": []
+    },
+    "MPC.KingsWellPlaced.applyMove_boardMove": {
+      "type_sha256": "d5204a0ea1c351f894f0ac35c218d6bbfde3555425ae8eef9bfd7f5da71d5f03",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.KingsWellPlaced.applyMove_dropMove": {
+      "type_sha256": "0d50561cf7048c97141de0bc946a265fa218706df78e5b74249be9001cb72d66",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.KingsWellPlaced.inCheckOriented_iff_exists_king": {
+      "type_sha256": "d2d0a4a4416304219cc11b881de9649a2cad4bf5ecbcc960124f6feb9e687bbc",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.KingsWellPlaced.king_present": {
+      "type_sha256": "c9ab4947f1507b1539824e4082de95cb615eb7266056e51a76938b2afb5079ef",
+      "axioms": []
+    },
+    "MPC.KingsWellPlaced.positions_injective": {
+      "type_sha256": "258a1d1d67ac7c8f0969d89231c683cff994ba3bc05ae9913890db7ba211bb80",
+      "axioms": []
+    },
+    "MPC.KingsWellPlaced.positions_unique": {
+      "type_sha256": "2b5eb3ae47fb2d5ff4414193070b614d3687eb32b7cfc84d3eb6e05eb20cb131",
+      "axioms": [
+        "Quot.sound"
+      ]
+    },
+    "MPC.Move": {
+      "type_sha256": "a08ab456aa45b7c385243d04f204fddd79fa47980eb590fe67989d5a800a4b69",
+      "axioms": []
+    },
+    "MPC.Move.SourcePresent": {
+      "type_sha256": "f320259cb26542fa7fca0f108e973bc290e9fc478de9e940e08a00490c23664e",
+      "axioms": []
+    },
+    "MPC.Move.SourcePresent.match_1": {
+      "type_sha256": "1ef8b392a3da425b8e7ce5386b1bbafe82c9895c3d9fee580a885851f323499f",
+      "axioms": []
+    },
+    "MPC.Move.Touches": {
+      "type_sha256": "dc9d455a859e8826eefa526ca229fa141eefcd9dc8f7f62f691ae61d4567caf6",
+      "axioms": []
+    },
+    "MPC.Move.Touches.eq_1": {
+      "type_sha256": "45743a1e945074c07c337205190a9dafb746428c81ae7722766a11d08b0feebe",
+      "axioms": []
+    },
+    "MPC.Move.Touches.eq_2": {
+      "type_sha256": "f6279850bfc98ac79efedb574e0952817b5d751e5c8996837af4d02f2df8cdae",
+      "axioms": []
+    },
+    "MPC.Move.Touches.match_1": {
+      "type_sha256": "2e618175825ee7568b8e5190f35e082c3f4784b2e59a1c164826ce3bff520375",
+      "axioms": []
+    },
+    "MPC.Move.boardMove": {
+      "type_sha256": "45d8a3c39a5ab5db67e58ae554c7400404151fcd27c9cabded00ffcd80072a75",
+      "axioms": []
+    },
+    "MPC.Move.boardMove.elim": {
+      "type_sha256": "3db50109f0f8d65bb1baee14504b47b5823be57a433a4e087d8ff01312646839",
+      "axioms": []
+    },
+    "MPC.Move.boardMove.inj": {
+      "type_sha256": "3fd9f8b0822b84827f21ed51d85d5c6b1f60bd8210bf0798fbc3383662b7567d",
+      "axioms": []
+    },
+    "MPC.Move.boardMove.injEq": {
+      "type_sha256": "d0c9ccf0b0a0e4f7386ce17dc59b346c687b9226d477316a87e9786ddd54fea1",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.Move.boardMove.noConfusion": {
+      "type_sha256": "7ec1907175c6577482aff49d48536bebcb9ab8d70e5d63ef3f852d970b6f7c16",
+      "axioms": []
+    },
+    "MPC.Move.boardMove.sizeOf_spec": {
+      "type_sha256": "363c33d3718e0f3427645f96cef9ca80169b93b2fd5c3cb2c7d801ce286906ed",
+      "axioms": []
+    },
+    "MPC.Move.casesOn": {
+      "type_sha256": "3edfb1e4ae4f79ff64482e24187dbfc6315110f12d1349b9be4acf3590aa7712",
+      "axioms": []
+    },
+    "MPC.Move.ctorElim": {
+      "type_sha256": "d363b597465823b7770d2850133305ed06408b01124bed72596654d2045390b0",
+      "axioms": []
+    },
+    "MPC.Move.ctorElimType": {
+      "type_sha256": "2c77ed8e583be47460e6755e0b9c10ebe2d8fcfc823b9bf79de3bd732c30d4c8",
+      "axioms": []
+    },
+    "MPC.Move.ctorIdx": {
+      "type_sha256": "b350195654e1aa195430d640f25d425af7a652ba28ef8700dbb419bb81c1b22e",
+      "axioms": []
+    },
+    "MPC.Move.destination": {
+      "type_sha256": "af56bc6c0597c268d7088e6d6c87eb17172fce306b689d06477d5873e6416a6d",
+      "axioms": []
+    },
+    "MPC.Move.destination.eq_1": {
+      "type_sha256": "4305da1c6167ad7bbfa05eebc31c37fb1db4b2b0302309ecebd17153d2087d2f",
+      "axioms": []
+    },
+    "MPC.Move.destination.eq_2": {
+      "type_sha256": "dbbfa58867314650764bcd6c205d27c1e81a7b4cbb81d14daee4448f96fd1ec5",
+      "axioms": []
+    },
+    "MPC.Move.destination.match_1": {
+      "type_sha256": "1ef8b392a3da425b8e7ce5386b1bbafe82c9895c3d9fee580a885851f323499f",
+      "axioms": []
+    },
+    "MPC.Move.dropMove": {
+      "type_sha256": "0276e588b704711cbe7493e3dcb0f0c1c77f6851f86c0ffe025538a49fd25aa9",
+      "axioms": []
+    },
+    "MPC.Move.dropMove.elim": {
+      "type_sha256": "933080c1ee0fbd25f134854442021a9943f8d89dd6ca41220f8f3d31feaf1ebe",
+      "axioms": []
+    },
+    "MPC.Move.dropMove.inj": {
+      "type_sha256": "4359492974a5c70c7f663c7c6eb6d55b81245dc084676d1396ee8a8e8537fd34",
+      "axioms": []
+    },
+    "MPC.Move.dropMove.injEq": {
+      "type_sha256": "3d85d0b601d3a2687390d3df2a184598bbc1143a184304faa8f4415005754694",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.Move.dropMove.noConfusion": {
+      "type_sha256": "9d520d47faaabdcf35a28a1eba69001742a9fb39b164564781b387c53d102699",
+      "axioms": []
+    },
+    "MPC.Move.dropMove.sizeOf_spec": {
+      "type_sha256": "434c809a86f5794c9f4cc1ac999ad96ffe541c980e108782850e12650372f8cd",
+      "axioms": []
+    },
+    "MPC.Move.noConfusion": {
+      "type_sha256": "545906df0ca1a8a7f9ec1b78c926ad01c1c1bcd80416f05f24fcf216f2429811",
+      "axioms": []
+    },
+    "MPC.Move.noConfusionType": {
+      "type_sha256": "d7dea9fb15f3a8fac4130302e28ded7abb41cd8d6d2ffe420a4c4d179b6d44c7",
+      "axioms": []
+    },
+    "MPC.Move.rec": {
+      "type_sha256": "fbb7cc382c25a5a824939b752202045759bd71e431492a3b306157e5eab5860a",
+      "axioms": []
+    },
+    "MPC.Move.recOn": {
+      "type_sha256": "3edfb1e4ae4f79ff64482e24187dbfc6315110f12d1349b9be4acf3590aa7712",
+      "axioms": []
+    },
+    "MPC.Move.touches_destination": {
+      "type_sha256": "cd4d709c8f0f8f021591d45fdc7a89dab53d7193f0a6399ee7912ccad1c1dc49",
+      "axioms": []
+    },
+    "MPC.MoveTrace": {
+      "type_sha256": "a08ab456aa45b7c385243d04f204fddd79fa47980eb590fe67989d5a800a4b69",
+      "axioms": []
+    },
+    "MPC.MoveTrace.BoardMoveEndpointsDistinct": {
+      "type_sha256": "380d3e862147b2c330ae768708aff74eff61d45839e20e4eca658fdeb57fde1d",
+      "axioms": []
+    },
+    "MPC.MoveTrace.BoardMoveSourcesOwned": {
+      "type_sha256": "380d3e862147b2c330ae768708aff74eff61d45839e20e4eca658fdeb57fde1d",
+      "axioms": []
+    },
+    "MPC.MoveTrace.BoardMovesFollowCanMoveTo": {
+      "type_sha256": "380d3e862147b2c330ae768708aff74eff61d45839e20e4eca658fdeb57fde1d",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.BoardMovesFollowCanMoveToOriented": {
+      "type_sha256": "380d3e862147b2c330ae768708aff74eff61d45839e20e4eca658fdeb57fde1d",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.CheckerOnKingLine": {
+      "type_sha256": "412fdadc9ae7863eea5f7c8163af64352e1aea255e4ceb7bc443d0c3d8e51459",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.DiscoveredCheckByEachSide": {
+      "type_sha256": "3906ded8b03a06d93a2489bed9d3c88a6840f119b1bf7e34d3386a9ca8edacb5",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.DropDestinationsEmpty": {
+      "type_sha256": "380d3e862147b2c330ae768708aff74eff61d45839e20e4eca658fdeb57fde1d",
+      "axioms": []
+    },
+    "MPC.MoveTrace.DropMovesAreNonKings": {
+      "type_sha256": "380d3e862147b2c330ae768708aff74eff61d45839e20e4eca658fdeb57fde1d",
+      "axioms": []
+    },
+    "MPC.MoveTrace.DropsFromHand": {
+      "type_sha256": "380d3e862147b2c330ae768708aff74eff61d45839e20e4eca658fdeb57fde1d",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.EveryMoveChecksOpponent": {
+      "type_sha256": "3906ded8b03a06d93a2489bed9d3c88a6840f119b1bf7e34d3386a9ca8edacb5",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.EveryMoveChecksOpponent.eq_1": {
+      "type_sha256": "1844c480560056dfdfaf4aec6b851a483e92ba2386f2492ddab923ebfc6ec43d",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.EveryMoveLeavesOwnKingSafe": {
+      "type_sha256": "3906ded8b03a06d93a2489bed9d3c88a6840f119b1bf7e34d3386a9ca8edacb5",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.EveryMoveLeavesOwnKingSafe.eq_1": {
+      "type_sha256": "d2213f2cfb60c45cf2b5e453451573b62aa3a375899e164e741bb0e696e03cc7",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.FollowsTransitions": {
+      "type_sha256": "380d3e862147b2c330ae768708aff74eff61d45839e20e4eca658fdeb57fde1d",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.GlaresAtEnemyKing": {
+      "type_sha256": "412fdadc9ae7863eea5f7c8163af64352e1aea255e4ceb7bc443d0c3d8e51459",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.GlaringDestinationsCheck": {
+      "type_sha256": "3906ded8b03a06d93a2489bed9d3c88a6840f119b1bf7e34d3386a9ca8edacb5",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.ImmovableAt": {
+      "type_sha256": "993905aafe10de7c93aa6bf6cd36d4723838d060f97e5cf06910dff59eab8dbe",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.InitialOpponentKingSafe": {
+      "type_sha256": "3906ded8b03a06d93a2489bed9d3c88a6840f119b1bf7e34d3386a9ca8edacb5",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.InitialPieceCountsAtMostTwo": {
+      "type_sha256": "380d3e862147b2c330ae768708aff74eff61d45839e20e4eca658fdeb57fde1d",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.IsCheckerAt": {
+      "type_sha256": "412fdadc9ae7863eea5f7c8163af64352e1aea255e4ceb7bc443d0c3d8e51459",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.IsOpenableAt": {
+      "type_sha256": "412fdadc9ae7863eea5f7c8163af64352e1aea255e4ceb7bc443d0c3d8e51459",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.IsPeriodic": {
+      "type_sha256": "380d3e862147b2c330ae768708aff74eff61d45839e20e4eca658fdeb57fde1d",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.IsPeriodic.kingPos_last": {
+      "type_sha256": "ea94a2f3be2b2bae417768e7916777e65738af37fd0a48b38f94d504995bc605",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.KingMoveAt": {
+      "type_sha256": "f974f21739a3a1e8da56715605c32b3afe45f83ac0d320b33dfd882721a15ded",
+      "axioms": []
+    },
+    "MPC.MoveTrace.KingsWellPlaced": {
+      "type_sha256": "3906ded8b03a06d93a2489bed9d3c88a6840f119b1bf7e34d3386a9ca8edacb5",
+      "axioms": []
+    },
+    "MPC.MoveTrace.KingsWellPlaced.positions_unique": {
+      "type_sha256": "0599c615aee211ebf1734ede97da5bd0b993e4bc0ce958c19a5f27b8785426f0",
+      "axioms": [
+        "Quot.sound"
+      ]
+    },
+    "MPC.MoveTrace.MoveDestinationsAvoidKings": {
+      "type_sha256": "380d3e862147b2c330ae768708aff74eff61d45839e20e4eca658fdeb57fde1d",
+      "axioms": []
+    },
+    "MPC.MoveTrace.MoveDestinationsAvoidKings.match_1": {
+      "type_sha256": "1ef8b392a3da425b8e7ce5386b1bbafe82c9895c3d9fee580a885851f323499f",
+      "axioms": []
+    },
+    "MPC.MoveTrace.MoverPiecesLegacyCompatible": {
+      "type_sha256": "380d3e862147b2c330ae768708aff74eff61d45839e20e4eca658fdeb57fde1d",
+      "axioms": []
+    },
+    "MPC.MoveTrace.MutualPerpetualCheck": {
+      "type_sha256": "3906ded8b03a06d93a2489bed9d3c88a6840f119b1bf7e34d3386a9ca8edacb5",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.MutualPerpetualCheck.casesOn": {
+      "type_sha256": "91046b08b093ddc70a18e5673c12552b1a063d375579de297ed7489d5a0a602e",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.MutualPerpetualCheck.checks": {
+      "type_sha256": "f182aa053d803e161f30dbcb1e44217af77c6df4e8a74dba7ef5b781d81fd216",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.MutualPerpetualCheck.dropsEmpty": {
+      "type_sha256": "b92139f1951ca5de0a503e48e999a7708fbfcd399eed1c5e8d7a604f8f652f9a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.MutualPerpetualCheck.initialOpponentSafe": {
+      "type_sha256": "639c864ccdc77b779be23073d2e8393312d08b91b493974de4e73360f495d41a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.MutualPerpetualCheck.kingsWellPlaced": {
+      "type_sha256": "85611505c8e57c8d7f85543ad21ab6b2af276e9504f484c061efa58aaf5ba0e5",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.MutualPerpetualCheck.mk": {
+      "type_sha256": "da4dda086657988dbd3ad92a34b4154ba204b741b31544d1bc5b5073c15d3f25",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.MutualPerpetualCheck.movementRules": {
+      "type_sha256": "031a04da08a7b93bd9455f0d7e216bfe507d86604a0e3d2125f5b5e32d4c4dd9",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.MutualPerpetualCheck.nonempty": {
+      "type_sha256": "6d698f1219eb1c09fc82949f070b0a3ff658ae543abeeed517ed16fcab989e00",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.MutualPerpetualCheck.ownKingSafe": {
+      "type_sha256": "8fa8b0fa113cde2a34f4dc651c0219906ca257431eb7386e91b524904356d822",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.MutualPerpetualCheck.periodic": {
+      "type_sha256": "b163e7f530512517740b182db88877209cf4dbb9825d950b840c3b9106022a2a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.MutualPerpetualCheck.rec": {
+      "type_sha256": "77d8fce75ba3bc6e07c1ab6371c18145749dc1098b321c9107d12644c16306fd",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.MutualPerpetualCheck.recOn": {
+      "type_sha256": "91046b08b093ddc70a18e5673c12552b1a063d375579de297ed7489d5a0a602e",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.MutualPerpetualCheck.sourcesOwned": {
+      "type_sha256": "437341208b796d71d9acea622152909ccf4bb53741ea6d7076d83ab8e87d8134",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.MutualPerpetualCheck.toPeriodicMutualCheck": {
+      "type_sha256": "a61c5d466121c834b12bfe2ffa3127cbc2722e3b13c7c8fc92fc9c62b968585b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.MutualPerpetualCheck.transitions": {
+      "type_sha256": "c16b7fe94b2492b981d5e907b0ded19bf9673b1a1e4dc1926c6a128b9d511b29",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.NonGlaringMoveOf": {
+      "type_sha256": "a69f04b30a0248548b0f9511c46563922f2fe9dd2fa79c3c10476560acc9af85",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.NonGlaringMoveReflects": {
+      "type_sha256": "4e78a8ba3c8e7222ea197d8448a59dafc3865a2a0f8bf6e8838450c572c24aa4",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.OpenableMoveBy": {
+      "type_sha256": "37ea8a597096bcf948041b4a6cfeaf50c9cc784506ad4a3794a46e02690a4edb",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.PeriodicMutualCheck": {
+      "type_sha256": "3906ded8b03a06d93a2489bed9d3c88a6840f119b1bf7e34d3386a9ca8edacb5",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.PeriodicMutualCheck.casesOn": {
+      "type_sha256": "289395c2feb7b481871d8a00a2f376fd95840e68e612c4209979b481442c2ed8",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.PeriodicMutualCheck.checks": {
+      "type_sha256": "6bc6aa775380c9099f88e7fb84f744cfbeeda0491fc19308d0fe0ab9d6cf2e9e",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.PeriodicMutualCheck.initialOpponentSafe": {
+      "type_sha256": "b3bf176efe49eb840a1850b0c94625d8abaf97296417da8243fea8fef61bd43a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.PeriodicMutualCheck.kingsWellPlaced": {
+      "type_sha256": "6ad3671013c1c4f02e96f53019f37561d697cde8b99f1d64d08039623eca05a7",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.PeriodicMutualCheck.mk": {
+      "type_sha256": "30bcf2f1ff3520b3c2fe5d7b5ab69cfc6294fc2befaac6ee56748c13fc80bbcb",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.PeriodicMutualCheck.movementRules": {
+      "type_sha256": "8f6149b1b8f23a01b7409937a82c866e6d561c86a39922af3b904cca9edbf2d1",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.PeriodicMutualCheck.nonempty": {
+      "type_sha256": "c1d2f34c570a7eb08c70fde3f9271441231d372027dad5d857dc19b0d4f7d54a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.PeriodicMutualCheck.ownKingSafe": {
+      "type_sha256": "22c42b414928734e960bfdd2731fd3343bd0c0274afc620d0388d93a17594322",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.PeriodicMutualCheck.periodic": {
+      "type_sha256": "07087ab7b6b545961f99a7216df4722a68e8e1f3c85d9f0abbf966124bcac701",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.PeriodicMutualCheck.rec": {
+      "type_sha256": "c2078e43c0c56b638270a374143636f8190fe045cc951fec9e9922a2b16091fa",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.PeriodicMutualCheck.recOn": {
+      "type_sha256": "289395c2feb7b481871d8a00a2f376fd95840e68e612c4209979b481442c2ed8",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.PeriodicMutualCheck.sourcesOwned": {
+      "type_sha256": "db3b78547e8f5c155878e14a7000989307149e2ccd4c65364f0f2a174ef67d42",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.PeriodicMutualCheck.toMutualPerpetualCheck": {
+      "type_sha256": "44cf61e3f0d56586252defa921b7cc1f658c004ca34cebb858a7d7f07e159da5",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.PeriodicMutualCheck.transitions": {
+      "type_sha256": "32bdc04751e6b7bc1f99be17d5d76c2bba23c740c16ecf054bfde41a8c0acf5a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.PieceCountsAtMostTwo": {
+      "type_sha256": "380d3e862147b2c330ae768708aff74eff61d45839e20e4eca658fdeb57fde1d",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.after": {
+      "type_sha256": "4ef8d23a5d248418f30a4f9beaa452f7aedca22d36861d7a8578af74aee3d4f3",
+      "axioms": []
+    },
+    "MPC.MoveTrace.after.eq_1": {
+      "type_sha256": "a3bfd8f2d7ccf30ce96597faaac067612bc06b5417304c6da6c8e456ded2eced",
+      "axioms": []
+    },
+    "MPC.MoveTrace.afterMove_eq_of_not_glares_of_periodic": {
+      "type_sha256": "b2b07ab80f60bd5537cefcb6ad3363bacae81046e12b0f3a710d349a2736a22d",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.angleKey_destination_eq_checker": {
+      "type_sha256": "33f0bd124b073e0fc57cb8837bab4230b272ba4f95b248b8ae1be5e21bfff402",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.anglePotential": {
+      "type_sha256": "d3c2401ec24c466d4e5a5cc0e7888800dbe448e25c5c30056f7712bb95105401",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.anglePotential_last_eq": {
+      "type_sha256": "9a48d8bf5b1228d827bc1f0dedf1f70986bdc2dc81edd0ca312a2ccd807e1b81",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.anglePotential_succ_le_of_turn_opponent": {
+      "type_sha256": "1e2052a2b4e48ac646f718b6c09d2e5af3ebe285499a5911de530c9013fb798c",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.anglePotential_succ_of_direct": {
+      "type_sha256": "f6188241a8f5c931680a252180384de4a2ba2a859c9ad40a05944c170e70574e",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.anglePotential_succ_of_turn_opponent": {
+      "type_sha256": "ccbc961457f973a7e554b34f1844f2c7d33a6e6a0ef452cecbd4b3e79101614f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.arrival_of_nonGlaring_move_of_periodic": {
+      "type_sha256": "bf88ebb6a66933e288d0c19a4eab9d33cf1471755ff568cc23a6a36f96c8e004",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.before": {
+      "type_sha256": "4ef8d23a5d248418f30a4f9beaa452f7aedca22d36861d7a8578af74aee3d4f3",
+      "axioms": []
+    },
+    "MPC.MoveTrace.before.eq_1": {
+      "type_sha256": "d542001ff548a4a2445b8a83fdafcc294e24e98e0b9ba7993c163b4eeea49fa2",
+      "axioms": []
+    },
+    "MPC.MoveTrace.before_opponent_not_inCheck": {
+      "type_sha256": "6c772a1365980c177aeb8752efe8870eb2459902a7a60d96cb61f8a2c28e98d3",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.bishopEdge_of_nonGlaring_move_of_periodic": {
+      "type_sha256": "a9f9e91e53540cfd84876680d905a7405e75fd590b3c5d8248c2d342e8228199",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.bishopHorseSquares": {
+      "type_sha256": "819d8e9eb472522bb46cb3d50a1968fb71ef21ad6f4d7f013f2a09ca6a84f3a4",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.bishopHorseSquares.eq_1": {
+      "type_sha256": "65dc75760a7e258429664e2b8bb978f2691782c77ec040d237e40a8139eb298e",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.bishopHorseSquares_card_eq": {
+      "type_sha256": "e956a8922a6bf7278143fe5217be707961c1e7f5e07efc20119929df4b58ba47",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.bishopHorse_behind_openable_rookDragon_of_periodic": {
+      "type_sha256": "9643c78e919066ed8d830083a8d3556467392b3059e118602ce072414fa7f8f7",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.bishopHorse_of_nonGlaring_move": {
+      "type_sha256": "1ee536d377c579707e1061c18b5e36799e6d8009c45fc3323a74410c2a38dc3b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.bishopHorse_of_openableMove": {
+      "type_sha256": "f9e1062fe2bb98e7710d3f26d2818e12d98d5f55631452de3f53b1b296598ba1",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.bishopHorse_of_openable_of_periodic": {
+      "type_sha256": "3d5ad11871ab4fea8a58c028922875a12c0ffb389fd1950d81aa72252e27c172",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.bishopHorse_square_unique_of_periodic": {
+      "type_sha256": "4b20df48cc01f36404aaaa5155b6c311840ea79cf8643fc8ac6b40f95a79553f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.bishop_configuration_back_of_periodic": {
+      "type_sha256": "6def63b8fdcca90fdc5c23903eb3d2af2f8b979ada04986f698a894b20df6300",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.bishop_configuration_of_periodic": {
+      "type_sha256": "7a7f5dbf1aabcab75ad73e21ee1073950e94432a79896994117467558fabb88b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.bishop_move_data_of_periodic": {
+      "type_sha256": "809892f029ad383d4dc9af8d7835bb074f53e5f95b8221e50a46cd08546abdcb",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.bishop_moves_facing_of_periodic": {
+      "type_sha256": "84d61853a109a10870b7046bf6ccdecec5bed5cb64e414354da6ec93918ce57c",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.bishop_reverse_of_periodic": {
+      "type_sha256": "c2fe2b0808fd91eeef2a2344d5f8e3dd871c5c4863d45c84cb38939574ee29c7",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.bishop_rows_of_periodic": {
+      "type_sha256": "552286b60d982080cd93355e5ed3b59f59ba63e601242a891f692219353e2b4f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.boardMoveEndpointsDistinct_of_oriented": {
+      "type_sha256": "13cdcfb510ffae30e8d9d7484171b74ca45a1eb45aed646a39bcdb2e1e122a55",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.boardMove_dst_ne_kingPos": {
+      "type_sha256": "d9c45d89274ed1efb5701be6400970c34017dba2ed286fccf4d2e0c0f211eed2",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.boardMove_familyTotal": {
+      "type_sha256": "1607f080baf472fa3b359ff05e43f66f54e89cbb00cfb313d656e3a5a9bc5c1f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.boardMove_grid_dst": {
+      "type_sha256": "eb12ded20f45f0c85438ac5351a666744fa51684120ca38cd06fe57fc76a3e57",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.boardMove_grid_dst.match_1": {
+      "type_sha256": "b193b0b913945143bfc1fe078aea6821bcb4c696953e8874a9e6b56b12d8faef",
+      "axioms": []
+    },
+    "MPC.MoveTrace.boardMove_grid_dst_eq_of_not_glares_of_periodic": {
+      "type_sha256": "516c50364344ee819ab8c0eda563b052514344feea43fc69f4940b0b06938aeb",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.boardMove_grid_dst_of_some": {
+      "type_sha256": "a36ac2383cd368ccf07a5a8ef307cc2d16ebc2f0680f9a1735f9d718c0487409",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.boardMove_grid_other": {
+      "type_sha256": "16ecbeb333878bec267491bcfba5d2a9b57ed342a3150614d2c879f41ecd8030",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.boardMove_grid_src": {
+      "type_sha256": "ca3ec32eebb1c0c238ce397d0730f2ee1391fe9027dcd82a56b384bbfd1231c1",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.boardMove_otherChecker_source_unblocking": {
+      "type_sha256": "03236f7ffae726416a38f70f17eecf38964bd9ad0bd5c64173c54feb1570bf67",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.card_move_eq": {
+      "type_sha256": "9672fd70e25ad362457970d5c16e0e8f23b177a3190622612351013965965cbd",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.casesOn": {
+      "type_sha256": "7ae54ccf952c28c2d3acb67234ea964f80774d218184e44b4b0350d0376ec556",
+      "axioms": []
+    },
+    "MPC.MoveTrace.checkerOnKingLine_succ_of_periodic": {
+      "type_sha256": "74e212deadc724d48ce494daad31a44ee9cecaf0cc5659096e0f56f3edf8397a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.checkerSquare": {
+      "type_sha256": "43040ff523b6b5f68bf5a954dd65f7886e749b15af96d8efb61aae948d201bcf",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.checkerSquare_before": {
+      "type_sha256": "ff520e02fabad2a62a746390d0252b2c61690c7c97c02ad1f8651ab1fd73c97f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.checkerSquare_eq_of_isCheckerAt": {
+      "type_sha256": "9eebc76412ef1632cc9e8280ebcced1c23075ec57b5d66efe847fba57731ec7f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.checkerSquare_succ_cases": {
+      "type_sha256": "229e9f9a794adab23c1f054bea80e5a1f1815c76ef7d00d67bb5b90748533d89",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.checkerSquares": {
+      "type_sha256": "0f23ea7dce0206f93c979370ada4682b7480f0fd6bf96d4fe6efdf54492dc032",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.checkerSquares.eq_1": {
+      "type_sha256": "b00b4451c298b1fe8aa79e7800562b061b732831db180746239081b6724c6c2a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.checkerSquares_card_eq": {
+      "type_sha256": "41421db29d31465c47427a673884d2a1ee729f405f61f8a6f7eeae92a767a839",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.checker_before_of_periodic": {
+      "type_sha256": "c7946a3562fb7858f9d7741a56cd7ae04ef5458673390998bc66dcd8ebf4fc77",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.checker_off_kingLine_of_periodic": {
+      "type_sha256": "bd04c5357ac0b8db41521a797e8fa51ddaa6591ff92df5f08d5e24e3e5d22172",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.checker_unique_of_periodic": {
+      "type_sha256": "23f170b88a571df5763ef87593b27fe1ee2bf23d692628f19aacfa1a11e6f7c7",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.count_eq_initial_of_step_ge": {
+      "type_sha256": "a739ed17c493cf7b39477e7076c725bbb73a0f6cc0d1a15f623a04910fcbe6bd",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.count_eq_initial_of_step_le": {
+      "type_sha256": "649b8402234571af9f84eb21993d68911bc2fe230fbb72f80f922994fc3abd84",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.ctorIdx": {
+      "type_sha256": "ab72963d17ebe8dda705d0308c9062b6553e99f9042a64be038629ebe9cf3bf4",
+      "axioms": []
+    },
+    "MPC.MoveTrace.departure_of_nonGlaring_move_of_periodic": {
+      "type_sha256": "019f27ae91d2542d1dde3c1343128cb261e350deb24a1f6d166d5dbb856e9885",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.departure_of_not_glares_of_periodic": {
+      "type_sha256": "28fd4ac4738ad262dcdda01c699c4a0b89aeb82f96a209e69139a8bd379c6a88",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.destinationChecker_of_source_glares": {
+      "type_sha256": "961a08b4e187b444c9816b28aec368a975d45982c9827dfa0bba01a0b479d539",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.destination_eq_or_angleKey_lt_checker": {
+      "type_sha256": "76d01f7de4b09d36d47ba14485d645b506f557c649027fba35be59fcde475202",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.destination_eq_or_onRay_checker": {
+      "type_sha256": "48cba9a88156fb7637eefca2f2266633cbce4357b7010fa467b990c6f5f36568",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.destination_glares_of_source_glares": {
+      "type_sha256": "89b56d4619de0aa345fc91f87c24a39be216565def8335a1ad5b18a79f98ca2b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.destination_not_bishopHorse_of_periodic": {
+      "type_sha256": "b31fddeec437d1e014610f829aefbde96d34cfe2259cf6fc98e0218d2afc0eed",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.destination_not_mem_nonGlaringSquares": {
+      "type_sha256": "5fc1b9fde97759ab7ff12c9be2acff47e95fa5bcf12e730352e6b3578343afdd",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.destination_not_mem_ownNonGlaringSquares": {
+      "type_sha256": "1b1153236969294c7fb0b0e731af84b4010f88d089b08efacae7fa2068843d1b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.destination_on_checker_line": {
+      "type_sha256": "eca5470f7fef0a912709b36ef7618260bc836757c1960dcc540057e0ac4fe558",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.destination_piece_owner": {
+      "type_sha256": "36d7aa281695d5fd951e6fbc7a8ed48f3634fe53539ef9a1f52967daeaf035b5",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.destination_side_of_checker": {
+      "type_sha256": "e84bb3e1d0be8f6b9791b0e66270a0fe2720979dd11480e5ee0f11ed9080266b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.destination_slider_far": {
+      "type_sha256": "08883322fc55bcff640f49b880b0b1e60eb1b926e43c3bd8225fa95022cc9cff",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.destination_slider_of_nonGlaring_move": {
+      "type_sha256": "f72a46eeb975d2ad4d7e343f4afcc1dc682eddf6413af940099e40562778795b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.discHCount": {
+      "type_sha256": "fac2d06124a90157eb42d692cea7532a40f3d9013bf5f5301404ffb2164fd9d5",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.discHCount_before_move": {
+      "type_sha256": "11d4a86d621ecbc95593f93330658de92e50607a6f802a1753eb398b7a9af014",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.discHCount_eq_of_periodic": {
+      "type_sha256": "0d0df5c2652b8aff7a63b32b27f10e10c1ac0c9049e2468a0c263caf991b591e",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.discHCount_succ_eq": {
+      "type_sha256": "92da107429dc9e1f5795925ac892d94a8f939998fb75c000c0000370c5ac9d6d",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.discHTotal": {
+      "type_sha256": "d6637e9ab6e82ac88b6cbf90ea319317485d1e6edd2143a472bc6ff4c93cd4ab",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.discHTotal_eq_of_periodic": {
+      "type_sha256": "94bc0fd222c05ae0dfb152acd79b35126f7113929a4c80d3eceb85b7f56f3963",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.discoveredCheckByEachSide_of_mutualPerpetualCheck": {
+      "type_sha256": "251bb28c4852b69089689ae8cabeafabca19f26a1161a940176b086657a11a5c",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.dropDestinationsEmpty_of_dropsFromHand": {
+      "type_sha256": "323d0cfd962f2315f0b93b4ebb4e866ea229b003e4497bfb693533110184e9ea",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.dropMove_dst_ne_kingPos": {
+      "type_sha256": "4a468ba0f995a8e4974ecd935fdbbfe6c74cafa78332052a353af4896bcb972d",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.dropMove_familyTotal_add": {
+      "type_sha256": "fe721db56aa8ef29e62f6691896e21ac92b6fc34b6be38cbb941782ba37d4a81",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.dropMove_familyTotal_le": {
+      "type_sha256": "f525f3ecbb17184a2c2862e2edbad5bdc156fe216a699b31d9354cad9df1bb01",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.dropMove_glares_of_everyMoveChecksOpponent": {
+      "type_sha256": "a4fa54b9ae971b52844e60220f093436148e44f028af9ac59d1479a612b6241a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.dropMove_grid_dst": {
+      "type_sha256": "4df5535f671551b9937460746dc6e27d0f070805099f2ca317e0e3f4b03666f4",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.dropMove_grid_other": {
+      "type_sha256": "c3a57f7a6ef53c88fcf08b021bc668b59941f54080b25477527af878b546c808",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.dropMove_inCheck_iff_destinationChecker": {
+      "type_sha256": "a105dbe743a01c57ca8efab7baf4529ebd678a0afc47c468a60170697ae30bf8",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.everyMoveChecksOpponent_glares_or_unblocked": {
+      "type_sha256": "5f5b9f3446e00664ab4a5f62470a8760f9fa540e028a12f2ec389460ff5db588",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.everyMoveChecksOpponent_iff_after_turn": {
+      "type_sha256": "2c094dc87b3c2b990543d2df7b37c874a56e491cc6c2d690612a7402069c372f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.everyMoveChecksOpponent_iff_destination_or_other": {
+      "type_sha256": "2a6f8d8e0bf6011c2cf309d6b2ac23f0c4db6a608798a0a0b23eb007c6b1cafc",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.everyMoveChecksOpponent_iff_destination_or_unblocked": {
+      "type_sha256": "4355e506567a42e0974a85b8f0b7c4d63eceeb9d4f4fc35b45b3eff903f6ebe0",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.everyMoveChecksOpponent_iff_destination_or_unblocked_of_safe": {
+      "type_sha256": "a0ad28f5565299a05d7dfc8aed7f26d7bce39c346bee5c91ca4c2e09c2425193",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.everyMoveChecksOpponent_iff_exists_king": {
+      "type_sha256": "0d654f56f546be341aaca34db62c2f506b9add8b159b5eb06732433c0cc3f875",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.everyMoveChecksOpponent_iff_legacy_direct_or_discovered": {
+      "type_sha256": "4be510aa1acd7322699031144cd52b94527ecd20504e479a37c2787de8b9f4ef",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.everyMoveChecksOpponent_kingPositionsFrom_iff_destination_or_unblocked": {
+      "type_sha256": "f61353a1d01da98cfcd72276b0935bb59cb454500b810453f156522a832c7d5f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.everyMoveChecksOpponent_kingPositionsFrom_iff_exists_king": {
+      "type_sha256": "a0fb2d501058b97199eb14a85fdf4ec7d9dc3570a62a0e7ebabeca06bae2b025",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.everyMoveLeavesOwnKingSafe_iff_after_opponent": {
+      "type_sha256": "3c67e2bfe7b99411ab155e21d29a9747661ad72510966457680ea89e7bce97fc",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.everyMoveLeavesOwnKingSafe_iff_no_checked_king": {
+      "type_sha256": "16cce9015b16a82b330c26eac2bcc928e62795a134d29d4f0635c490bd40c892",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.everyMoveLeavesOwnKingSafe_kingPositionsFrom_iff_no_checked_king": {
+      "type_sha256": "a540b67029adf02ad9dba46f2343fed2468a4c4598fd7dc2312fa97dbec0564a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.everyStateOpponentSafe_iff": {
+      "type_sha256": "521ac5de46b22cea8b82cb06941c256fa629a6f30537426da6b869f9d1a73425",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.exists_checker_of_mutualPerpetualCheck": {
+      "type_sha256": "a6aa79577c528b3177186406507951988bdf3290ac5cd0d64f71e704c2a95ed4",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.exists_move_of_turn": {
+      "type_sha256": "4257838fffcef0b20db0dfd2a2ef6b8a64afba8cf859a971622682dddc94f04f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.exists_openableMove": {
+      "type_sha256": "0951fdec193c9b75cd46ccae8354f8ebca153e2356fb340a4c9e06038c0bbebc",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.exists_openable_bishopHorse_of_periodic": {
+      "type_sha256": "633437cd6adde5459b4494fbdbfa1a1b83d3a0563b47eba823e2af9c9f703b8b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.false_of_bishop_case_i": {
+      "type_sha256": "4658a426d8b58b9b68ed293394aad90c4a154532b0390803492809a19feb8f6a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.false_of_bishop_case_ii": {
+      "type_sha256": "b353ff712fe64e7912eaadbace31931ec933a69fa8cb6c1f177063c9ef8f3ac3",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.false_of_bishop_rows_of_periodic": {
+      "type_sha256": "d3d6cc38b8b064e36c17574a2ee4422b414203d59fe504fb1fda24c9e78811be",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.false_of_blocked_destination": {
+      "type_sha256": "d117db36cc8495cf2ff491c45617181b38ba9d5a1d39c501d457fc1b30b66fb0",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.false_of_blocked_source": {
+      "type_sha256": "5f662a2666ebb18f862d5bced1d06aff8189ea62e0994380b021de7f0a3f8767",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.false_of_no_openableMove": {
+      "type_sha256": "ebeffd53b379c8122e46db062bcc28321a74fb686262f1d73cd03f71ce21856f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.false_of_three_bishopHorse": {
+      "type_sha256": "ac4d72d7bd28608bfa89aaf8a3619d9c8de830c3fc8e3a9693edcfc41a584c23",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.false_of_three_rookDragon": {
+      "type_sha256": "e98b24a98c5adaa785ae5b79b611de2b0693a3da63996617d004f89a9aff6a7f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.familyTotal_le_initial": {
+      "type_sha256": "d6930226ad3a6d2d79c353b861895ee82f33cf0e54ee0fbee66d12057e21226f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.familyTotal_succ_le": {
+      "type_sha256": "14f8f1340805b97e5936a6331095e1b37865594bb5a5abbb0965d844ed73eedf",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.forwardRank_lt_of_nonGlaring_goldType_move_of_periodic": {
+      "type_sha256": "80ed6c34d5559f9180fb3b2480d2f03e4fb9c2f2d165c8334a311bae71415915",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.glaresAtEnemyKing_congr": {
+      "type_sha256": "a3cab5484a96c441da9c92e82420eba83bef56fad4e3947a86b84f82954de138",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.glaresAtEnemyKing_of_attacks": {
+      "type_sha256": "842956de39493fe7836bcf2c1ccd5d90cf459c46af8e8fc5cf74ce710f7ece62",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.glaresAtEnemyKing_of_destinationChecker": {
+      "type_sha256": "ed8e8abaf5710ff84a3b3f847f7c7ce8543fdbd7ba5720e76476b980bf176d26",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.glares_destination_iff_source_of_periodic": {
+      "type_sha256": "bd2a73d06c20ebfba4a0e9dd4e9953da2f9011bd711bd82d13b8bcadd96e9c72",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.glares_destination_of_occupied_of_periodic": {
+      "type_sha256": "f4ce90c0c8a9a255438472b39906eb432582d68ece45ce331e421a558ac6bb52",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.glares_source_of_glares_destination_of_periodic": {
+      "type_sha256": "17cc4fb83222ea9ebc86ceb03ae81e5f174c20848f441bac305f5464eb52efc5",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.glaringDestinationsCheck_of_periodic": {
+      "type_sha256": "2822a688fc4f1db428fc026f5e551ba4a18097aee6d2e48560271961247145de",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.grid_eq_of_glares_through_occupied": {
+      "type_sha256": "e0446706e520195c0ad61ba70aa8c3913696f09932d82e2824f0fb55e937a9f3",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.grid_eq_of_untouched": {
+      "type_sha256": "1a2fdfe023388a313d9ce15c69b38bafefe7ddf632a813ce653a2039f7dc83a8",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.hand_card_succ_of_capture": {
+      "type_sha256": "edef8175657ece8a5e40dd4f2d0143a418cac05044ef5db12abf241c42fdd2a8",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.hand_card_succ_of_turn_ne": {
+      "type_sha256": "516f9023ab272c6bfca01729151cf501eb9885af40306184e140bfdeb6aa7778",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.immovableAt_grid_eq": {
+      "type_sha256": "fdba7a792c89458957a96fc9714853cf7c59fba86a540184bb035dc2133ef4c4",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.immovableAt_kingPos_of_periodic": {
+      "type_sha256": "44a8c43cd0253e80b666b9495e03535fcc74f17351b7095d8fb361b7bb15beb5",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.inCheck_before_of_periodic": {
+      "type_sha256": "c3b23bd595fde84ab9179c0df5ec4e900476b6f4e1289f107d6c8b33ce0bc941",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.inCheck_iff_destination_or_unblocked": {
+      "type_sha256": "893be4cca2a7f1594977bfb14d566799d48d6c03d3e622e8745ccfb057f0cc4f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.instDecidableImmovableAt": {
+      "type_sha256": "4083c9be38d031f0f79717e34fba64c33493ebc022bcac8de48b33bbe91dd521",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.isCheckerAt_checkerSquare": {
+      "type_sha256": "792a482294e0c9d627ff14d55d3cacfdfbe39f656681c82a3ea20655852df193",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingMove_aligned_before": {
+      "type_sha256": "d7ab083d1493e699e120fe5e8fc409b611eb4bf853ede14215f4596677db1417",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingMove_not_aligned_after": {
+      "type_sha256": "84c5cdba5ff92997502419f5b144e21d1f1b1ed4b893e0b08a3818dd3f459ddf",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingMove_unblockedChecker": {
+      "type_sha256": "949e81fc9d632aa56f7cbf403967b58ad0846a56c8fa5cc00b921c72b69bbbb7",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingPos_after_boardMove_king": {
+      "type_sha256": "396787cb27dbd71cf90cf7c26689eb3da6e000fb2c98933fcfb16a9c681a6f01",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingPos_after_boardMove_of_ne": {
+      "type_sha256": "9e2bee70bc9a71568a32926916dc1c634174e65f7e505863df95fdfa7a92f3f0",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingPos_after_dropMove_of_ne": {
+      "type_sha256": "f6c2aefd3c9887a8b29819d81b7e9f31bb73d27218e96adaaee3819528b4ffb9",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingPos_eq_of_mutualPerpetualCheck": {
+      "type_sha256": "217e051537d4a26e86b57ce5a4976402cad7f5d2d8b062c82b792897f1a4c980",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingPos_eq_of_periodic": {
+      "type_sha256": "b9eeb81187cab904cee6072d72b7ce4ea0110dbe2e77e496cbf7916f94bcb820",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingPos_succ_of_boardMove": {
+      "type_sha256": "5cd2e32a052551133e07ac1668aae8db9b6f394d9f14c558de1c0761da52ea82",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingPos_succ_of_dropMove": {
+      "type_sha256": "2c3be5a8be7ead02c865905659421e512b0152f531ab00fe2251e485c3396bff",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingPos_succ_of_not_kingMove": {
+      "type_sha256": "72d165de7a758f6c10e406db4e94c0483161adcd366ab9cfa6ee8074711cdc1c",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingPositionsFrom": {
+      "type_sha256": "a609c9dc3a4a9220b92360aaaa73a036325b6b60d7386c972cb68488fd7d27dc",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingPositionsFrom.eq_1": {
+      "type_sha256": "fd5a5b8c70e78c7779de226a99e7212ca7ddf770b6ba619576929c1ce94b63ed",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingPositionsFrom_eq_of_kingsWellPlaced": {
+      "type_sha256": "25c095702ea8153da2cdf6aed241baa35e63cc9a38629a4be43d31d016aa6a67",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingPositionsFrom_succ": {
+      "type_sha256": "89e819873431c6655585f466641a53aad78707a0d76136510e795086683b5122",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingPositionsFrom_zero": {
+      "type_sha256": "c4af16a4139ff69ce416e6cf2c1bf7533fac0228df6ae7488f9e87b0fe8c7413",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingsAligned_castSucc_of_succ": {
+      "type_sha256": "f92dd8e6b8220632a3f2c3abbf183601ea7a0f613f0d65f8ba0a52e8e49ca17f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingsAligned_of_le": {
+      "type_sha256": "1facf35ad2a73833bd5fae6728e99036b12b629c7a9f661265264f38229d888d",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kingsWellPlaced_kingPositionsFrom": {
+      "type_sha256": "d9cbabb3e24ba1bbf06e468fb2d29be37dc2fcf629569b0887b99c866fd94fca",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.kings_not_adjacent": {
+      "type_sha256": "78cf8079c4bcb2b75f748fa385052b9b177406b9b31ee4ff33d1849f000222f3",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.len": {
+      "type_sha256": "ab72963d17ebe8dda705d0308c9062b6553e99f9042a64be038629ebe9cf3bf4",
+      "axioms": []
+    },
+    "MPC.MoveTrace.lineSide_kings_checkerSquare_ne_zero": {
+      "type_sha256": "06e68c66d7fe0c1f9e3b64d41deeea0d6a4fa9fc61a92882a0da60a5c08f6948",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.lineSide_ne_zero_of_checker": {
+      "type_sha256": "29259f0b6b709758c8fce0c8b39c721e3a729127b66f9a6521a66bedb5408963",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.mem_bishopHorseSquares_of": {
+      "type_sha256": "eb0c7919e8ea0c7d88003f90290dbb07b202abde9c75ec232852acc04d41262e",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.mem_checkerSquares": {
+      "type_sha256": "0ac34289adb916d7fcbc9c7ff9987889be9d223cfd57eb88012597d1f3cd57e7",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.mem_nonGlaringSquares": {
+      "type_sha256": "0b0a951cbef0c892a517e051689acd6f529047a47a47ec4c843aecd3cebd06ec",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.mem_nonGlaringSquaresOf": {
+      "type_sha256": "359da764e62f4c6e145992bed40ab2af5316534102913fa87a403da7a121cbbd",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.mem_occupiedSquares": {
+      "type_sha256": "6c5c56025328b6b13ac28468860cb690e4e85c441b76ea27fe2967488248b8d9",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.mem_openableSquares": {
+      "type_sha256": "cf99dee6321cf5c4903aa68facc2507f7d8e54a71f708d1cba91bfc0b35cd7f0",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.mem_openableSquaresOf": {
+      "type_sha256": "ae657ec63234d159ea7cbb346afccaf308e90dff140339df9730772b9ca4e557",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.mem_ownNonGlaringSquares": {
+      "type_sha256": "81b2fbc449f9095ad46603267d388f28499d9c2fc91102cb7b726374271805ca",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.mem_ownNonGlaringSquares_succ_iff_of_untouched": {
+      "type_sha256": "1de884b441609f8e3624f7d6b735c28b7994d9016e90b48413435bb94b1f68f5",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.mem_rookDragonSquares_of": {
+      "type_sha256": "51a42fd73b487158fc3f25af5bf7b64bf93a5c42af36abb6081be7748c0f8c9b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.mk": {
+      "type_sha256": "a3187de7c9505e2e58ce25a2cee794f0af0eb10e90b8bf995cf38a81390600a1",
+      "axioms": []
+    },
+    "MPC.MoveTrace.mk.inj": {
+      "type_sha256": "dfe62deb9e8945b81d23088ba453701616e389774d31050e728673314f5896d1",
+      "axioms": []
+    },
+    "MPC.MoveTrace.mk.injEq": {
+      "type_sha256": "f46163691a058d7f896920bc53627f4f42e8df4a0a051cbb41e273569b214841",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.mk.noConfusion": {
+      "type_sha256": "11372747c3990c1ca43d0be1e90e1104e57a22cb354a7c685ae07df3687534ca",
+      "axioms": []
+    },
+    "MPC.MoveTrace.mk.sizeOf_spec": {
+      "type_sha256": "c14eac9a266c4b12e30ac8ba9a2109e2c6003793d62d5f7bec8a0e687d5cf9c2",
+      "axioms": []
+    },
+    "MPC.MoveTrace.moves": {
+      "type_sha256": "0d438f969705d681313fc3d8d3b587b79eb8f63df3faf25d78b1746fe9b599be",
+      "axioms": []
+    },
+    "MPC.MoveTrace.noConfusion": {
+      "type_sha256": "cbac816dc1b81538b5fd3590ebecd0590298063f097301d323b1a1f508adfad3",
+      "axioms": []
+    },
+    "MPC.MoveTrace.noConfusionType": {
+      "type_sha256": "b8c3631708520b058c13511dc4d3125b87633b0aed5769e610b2396d8cace08c",
+      "axioms": []
+    },
+    "MPC.MoveTrace.nonGlaringSquares": {
+      "type_sha256": "62f46d769de8e40cc7a4366dbe1d984e60110aae435c7d51a579c2095bb04f74",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.nonGlaringSquares.eq_1": {
+      "type_sha256": "a6dbf46ce6df16e89f46242ae10281705ae8632cb13205cfddb27ce585df429d",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.nonGlaringSquaresOf": {
+      "type_sha256": "b466537d36eefe8696fb872e5bb0891e7f032b51c9965cb709d5805c9bed6aec",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.nonGlaringSquaresOf.eq_1": {
+      "type_sha256": "73ed81ddaab206d4925ef92d5f4c33ffab2f52cae0216d4c902d0a60ebe18f39",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.nonGlaringSquaresOf_card_eq_of_periodic": {
+      "type_sha256": "128ae508b7f940e66be00538d8fc511dc0a34f6e17ee3be4446a6838ded58b97",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.nonGlaringSquaresOf_card_succ_le": {
+      "type_sha256": "c6d1d19b1f4fc618d51426e61c55ed401124e46bb1f55d6596d71277cd5e2f36",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.nonGlaringSquaresOf_card_succ_lt": {
+      "type_sha256": "8d06309c9b03550eafeea90cc84df5dcb715a1e1b803e0e3a3f5a0321f413248",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.nonGlaringSquaresOf_succ_of_move": {
+      "type_sha256": "bc5514c0b796d19b29ac0fd434ed54c66ae85e2a7b98892e56247e377fb95498",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.nonGlaringSquaresOf_succ_of_not_move": {
+      "type_sha256": "a1c1630c36ecea40b37dd39e608092ec42f0fbd3569ccfb7a3f805f05693a69d",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.nonGlaringSquares_card_eq_of_periodic": {
+      "type_sha256": "99d67bd370b305e80f615c5f3f85a0ad64e2ca591b53a4e524ee5ce1af791abd",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.nonGlaringSquares_card_succ_le": {
+      "type_sha256": "90a522ee5190859858b2c3b17025737b690dc786e6ea03fd765254a7d3da0542",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.nonGlaringSquares_card_succ_lt_of_glares_destination": {
+      "type_sha256": "373da7d51eda5efed17443874bdb0e4658fd956d8024f070ede675ccc6b50f9e",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.nonGlaringSquares_card_succ_lt_of_occupied_destination": {
+      "type_sha256": "1c341a41991af49bb9f2570a62c4b0ff019099da2cd43addcc5e772a5277896b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.not_bishop_move_past_of_periodic": {
+      "type_sha256": "7cac3ef91b37aa40c1a760364e9b3a323f1792079eaa474a3d84fdc0deac77b5",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.not_glares_bishopHorse_of_periodic": {
+      "type_sha256": "5bedeb847f8c63515bfccf1cbcdb06fbbd42e1e1ec1fad91afb18334c9ea6910",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.not_kingMoveAt_of_periodic": {
+      "type_sha256": "53c281ad6cd63456da6f98a2bb6df1d5e2937cbf22a8659f73c6a9c15d7a3386",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.not_nonGlaring_forward_move_of_periodic": {
+      "type_sha256": "466c9ae92e6d68b0ac564e45f467b4ccc96048897c02e47be86938e5756d715b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.not_nonGlaring_goldType_move_of_periodic": {
+      "type_sha256": "8a526ff9b89482b7f9e8d931ec752eb5e3b7e485df5a4670674d06708784f2ef",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.not_openableMove_bishopHorse_of_periodic": {
+      "type_sha256": "cecd1dc64b06bd96288c645dd9fa1e63fd72a06d415b3a8d8302caf96b940dfc",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.not_openableMove_forward_of_periodic": {
+      "type_sha256": "a7bd40a141f33322a3998da68e3cde0f42c7e015b952be1f6cf02ede08c86ee6",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.not_openableMove_goldType_of_periodic": {
+      "type_sha256": "89db46bf0d3e43588ba1c56f086e4952f26b17a3b7300f9d298226b6c041cefe",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.not_openableMove_king": {
+      "type_sha256": "3f992fd93ad20133fc4d790d358f8cc24b755f6fe1e2d47abdaab8007751d84e",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.not_openableMove_rookDragon_of_periodic": {
+      "type_sha256": "fe3124eadf0ade27a52c6a9daa72553df8a2d1a32a177e10ae488a379097d823",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.not_openableMove_silver_of_periodic": {
+      "type_sha256": "417d2047974e9d81e9fc4bc04ee3718870d095f4e8978063656105f48f33b734",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.not_stepAttack_of_before": {
+      "type_sha256": "555617e0439bae6e61a599f37041e2981c2a21d2511f72f00b04ab138ffee659",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.not_unblockedChecker_of_source_glares": {
+      "type_sha256": "62d387632df492b7b4da2ae727cd02d700dd1442aec5d13cfed65067b8bf7359",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.occupiedSquares": {
+      "type_sha256": "819d8e9eb472522bb46cb3d50a1968fb71ef21ad6f4d7f013f2a09ca6a84f3a4",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.occupiedSquares.eq_1": {
+      "type_sha256": "fa0968ef8a66e180c93c484b185fa171ad56dbb95fbab4ede0fb344f62e4e52f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.occupiedSquares_card_succ_lt_of_capture": {
+      "type_sha256": "6289c1edc1ed7d6c0e26ac6cfb74c33aac0725b85b154f419fdaa9dce3e3302f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.openableMove_of_nonGlaring_move": {
+      "type_sha256": "5b285f992557ef31bd442140cedbc35f0a00f9da0c55eacdac76a29449991215",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.openableMove_of_unblockedChecker": {
+      "type_sha256": "a0fb862fa668ac682c16fd69fa30f0078f421d8f25aff73752326d1cc9a0d8be",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.openableSquares": {
+      "type_sha256": "0f23ea7dce0206f93c979370ada4682b7480f0fd6bf96d4fe6efdf54492dc032",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.openableSquares.eq_1": {
+      "type_sha256": "0c46f0a797dccd01de3c75688f730fa141d8b62252d4485a33640d1edb38df92",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.openableSquaresOf": {
+      "type_sha256": "b466537d36eefe8696fb872e5bb0891e7f032b51c9965cb709d5805c9bed6aec",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.openableSquaresOf.eq_1": {
+      "type_sha256": "60604689073043efb987463200da06816ebb2c0db020b906b28fdeebb4ec8b83",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.openableSquaresOf_card_eq_of_periodic": {
+      "type_sha256": "b495d900446f224ad41be133d2a0469f45c61dd6b8cab0a13a965f1b3693dc86",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.openable_covered_of_periodic": {
+      "type_sha256": "5b65f8b58186b3603cf60a41e82b88415c98a77d78a6d001c74fd91ba669d8a9",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.openable_destination_lines_cyclic_of_periodic": {
+      "type_sha256": "61b48a8a0139417194014113db3f7c70d09c0027fe5218ba9d3b89466fb7e4bf",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.openable_destination_lines_of_periodic": {
+      "type_sha256": "8cd9e718cc343fd2fc304ec55f3d1f451e0b4c77719cdf3f8bef7164db5b4fac",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.openable_destination_off_kingLine_of_periodic": {
+      "type_sha256": "bdaf3be1e5e10109e21936173ba9bf0c3c7e06a58065f72d06475f9eb9867cad",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.openable_glaring_line_cyclic_of_periodic": {
+      "type_sha256": "26b550c84e76de2011400cb826f27f0fe0ec9abd61aa01378b979af968bab5e1",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.openable_glaring_line_of_periodic": {
+      "type_sha256": "6b15a59400f5e35f3564ade5180b6794efb4302ca2c46f370b3cb66f37d46310",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.openable_glaring_ray_cyclic_of_periodic": {
+      "type_sha256": "b0c61a0fe7294f8a418210c19c576ff721f774ca41d34b5a9e804b191d99978a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.openable_move_rays_of_periodic": {
+      "type_sha256": "d88f8c90cfa354fb22d13b132755444d293bf264be3abcbd653554d8a614b009",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.openable_of_bishopHorse_of_periodic": {
+      "type_sha256": "ab8d1924e2e7341b42e0cb5bf174b885b3ee79d1e66b35964217b1b4f612ec1d",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.opponentKingPos_succ_eq": {
+      "type_sha256": "883a7c8def9bd073866ce4d42f3bad45d7f4c4892dafb0b57a3a2e1230a0d817",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.orth_ray_of_openable_of_periodic": {
+      "type_sha256": "4b0e1f277302916d9869067a2fc4b25056edb66b7f7a97a056d52a8be2b041c8",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.ownNonGlaringSquares": {
+      "type_sha256": "13ba5983cdaee6d486b765f0765f96aaf71deb6c383ce29bc797812368c90f45",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.ownNonGlaringSquares.eq_1": {
+      "type_sha256": "4310448ceaaae142a891d709a097dd8f61522ba12acc9bfaa0fc5182f59ff606",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.ownNonGlaringSquares_succ_of_direct": {
+      "type_sha256": "2d4122e5c4a6ee056f9e0324b105ca1ffa7cbd6b45dc4f0d776e7fdc9176ad97",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.ownNonGlaringSquares_succ_of_opponent": {
+      "type_sha256": "833a811e6aa6edc689564a9816a6cf1061df511a1bd9a2645464210a8d13492a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.ownNonGlaringSquares_succ_of_unblocked": {
+      "type_sha256": "ae8fb77d0d130d1d9a6e8e8beb6abc53f26ba6c80c84516a0cb5ffc465a3293a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.periodicMutualCheck_iff_mutualPerpetualCheck": {
+      "type_sha256": "13d65fb5ba56cb978d8eb9c775d97828ac98b5b8eabe1cd2dff52e170b1f9ff6",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.pieceCountsAtMostTwo_of_dropsFromHand": {
+      "type_sha256": "ace8b513fd98430b59baaa466e5c3e6048f72ab97267c18ce39c7a13de4be91c",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.pieceCountsAtMostTwo_of_transitions": {
+      "type_sha256": "b8de094daea6a0eaef39dc9a8c70342797b26dce8f0eb52c3f1a1c3141652550",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.potential": {
+      "type_sha256": "9efdb11cfe47e08f6f3e6952d8a80c1097b4661c7b69dd1127dd8a428acedd28",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.potential_move_eq_of_periodic": {
+      "type_sha256": "7b6592b057b74d27c60cfb973d85d5e4c4667876d288f68dbbacf9442f48f327",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.potential_succ_add_of_move": {
+      "type_sha256": "22a75e7af59e8b08029135a43f4069edf6c2d5a8470d658b615d4f49f7ca973f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.potential_succ_of_not_move": {
+      "type_sha256": "2f4ae7bcea5c3e665d808a0b05a50c61b2261bdf8596a468f9921f50006203f2",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.rec": {
+      "type_sha256": "cd1e04a05076b4651e117aee870176eef537acf2c9dff09da1014e02fd81a47a",
+      "axioms": []
+    },
+    "MPC.MoveTrace.recOn": {
+      "type_sha256": "7ae54ccf952c28c2d3acb67234ea964f80774d218184e44b4b0350d0376ec556",
+      "axioms": []
+    },
+    "MPC.MoveTrace.relTo_king_far_of_periodic": {
+      "type_sha256": "535668dc928e212b3718e4ec875e256bae2ca5de3a279a02160c660afc56bf8a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.rookDragonSquares": {
+      "type_sha256": "819d8e9eb472522bb46cb3d50a1968fb71ef21ad6f4d7f013f2a09ca6a84f3a4",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.rookDragonSquares.eq_1": {
+      "type_sha256": "0b37f85a5cda5a9caac23ca9ec2c234eb7ff6f676cae30c00a442400ea61d2c0",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.rookDragonSquares_card_eq": {
+      "type_sha256": "2943111b11b46df97d7f9c3ab9928c996979ac97f9a45607d7ca8d8bd84a553f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.silverSquares_of_nonGlaring_move_of_periodic": {
+      "type_sha256": "24733e3170262169604a4cb7d78e9a7142d96e722d0339c41b57e2d925e017da",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.silver_move_reverse_of_periodic": {
+      "type_sha256": "8974fcf4605209a5e5dc1f40f4a42a3f348f6e28d632ca9beecb30e708295974",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.single": {
+      "type_sha256": "cd0be4776a563be532178476b42600d2e40ea6fa07e2c1cac7bf9463a97fd05e",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.single.eq_1": {
+      "type_sha256": "b10a7dfcac069d5c26267566bd5019e31d0ee1728757e751d97c6fc179347708",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.single_followsTransitions": {
+      "type_sha256": "606976a5f79966ef7bace74f5f61fb9a850e56a9742ef84dffde2ddb1919a891",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.slider_behind_openable_of_periodic": {
+      "type_sha256": "57e5f70fc5ffb5e919d6053f53ca6837a16ead11f271425428e4ba8a5fdcafdc",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.sourcePresent_of_boardMoveSourcesOwned": {
+      "type_sha256": "5f5c0a888a770526988aaf81ee281ec3338c58f45c7087faffb408cd61557e2c",
+      "axioms": []
+    },
+    "MPC.MoveTrace.source_slider_far": {
+      "type_sha256": "87842b9f9f553956611ce1f4f5a65295538a533af0e250027f37720ddc38ac7b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.source_slider_of_nonGlaring_move": {
+      "type_sha256": "3675cceefd6be7f26c667f0c7fb4baa80e6f1806342fb61601cb09786d65bce7",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.states": {
+      "type_sha256": "96d450a19af24c2020dba45a78aa141b914b6c47958fad9167f0553b5762608e",
+      "axioms": []
+    },
+    "MPC.MoveTrace.strippedBoard": {
+      "type_sha256": "5a8cec0f61dd3d1719bdc41cd533688a87205663f8bf64394dcf6794df8954d2",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.strippedBoard.eq_1": {
+      "type_sha256": "aaeb6630d51a5d5a4e160e9e87ebac190b92899668f818b6bcb9f3fe0ad5df8a",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.turn_after_move": {
+      "type_sha256": "511dd402697d19d28338431837a17889dcaff93b111496cf50940f842d539c09",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.unblockedChecker_of_not_glares_source_of_periodic": {
+      "type_sha256": "935564a0dc34c3fd51f7a139c5f5307351df4680e5f8097cd7864250b48f83fb",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.MoveTrace.unblockedChecker_side_of_periodic": {
+      "type_sha256": "c1a43c0795a314659487f2e0d51fb56d2deb30cd11c915fe35931b8e3d0b7756",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.OnRay": {
+      "type_sha256": "7c0d73e87552d72737d0b72917fcf59ea36637ccbd36a90b60e7072423473741",
+      "axioms": []
+    },
+    "MPC.OnRay.cross_ne_zero": {
+      "type_sha256": "adb12afd2283d4ba9ddd407197df4b90525e9193ecba8606c8d29dac0fd30740",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.OnRay.of_relTo": {
+      "type_sha256": "9fd5a80e30436b773c62e4d39ffcdbe929f4ff69d80b2aabe9e74c232b41f826",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.OnRay.of_relTo_sub": {
+      "type_sha256": "06812e0e39c2d0175fe5429dd79886332042e55ac0161a137120d8b5398e78ae",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.OnRay.on_line": {
+      "type_sha256": "76e796f24471fc81838ac6f6e12673253d77a94836d1b44efa40b3f90ee05d4d",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.OnRay.relTo_eq": {
+      "type_sha256": "e98cabc0ce39a76a38abf1a89ae3a511f391cf25bc7fce100bbfbe68d1a268f4",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.OnRay.unique": {
+      "type_sha256": "056bbe4be65e10d2797ba1e057c91e63665d5a0e575db286221b4d9d03ad6e90",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.Piece": {
+      "type_sha256": "a08ab456aa45b7c385243d04f204fddd79fa47980eb590fe67989d5a800a4b69",
+      "axioms": []
+    },
+    "MPC.Piece.afterMove": {
+      "type_sha256": "2c8f305084b7c1aa553f0472a694f4f00e9a323b82004707dce0958849c615da",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.Piece.afterMove_eq_self": {
+      "type_sha256": "8e8f3da984483e0a80e793c9c1a73d28e312d5cf30ac9abc40e127db4982982e",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.Piece.afterMove_false": {
+      "type_sha256": "19d235e1d55956cdbcd40d4ba1755685121365efa0f1c0894dbc8e4839f30e1b",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.Piece.casesOn": {
+      "type_sha256": "79ce143855790d2727c80632a22a4004bb71df79bdadd153adf52bf374f331c3",
+      "axioms": []
+    },
+    "MPC.Piece.ctorIdx": {
+      "type_sha256": "ef170413ea75b7c9915284f8df56747ecf3e25d445dcb2cbbcb476841e174d8c",
+      "axioms": []
+    },
+    "MPC.Piece.eq_of_afterMove_eq": {
+      "type_sha256": "8d2b677a72e8613050872a6dddbf68404e08e8cd4089292f54eff6ed04f9e700",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.Piece.mk": {
+      "type_sha256": "c85d47950e88b44c232455c919d809737851039a566055ef77d0b395e0fbe02e",
+      "axioms": []
+    },
+    "MPC.Piece.mk.inj": {
+      "type_sha256": "5a62c5c851e5e6cc73d987041dc1954158039f2c3ba7854d333f8801f2094879",
+      "axioms": []
+    },
+    "MPC.Piece.mk.injEq": {
+      "type_sha256": "d119bd7b72f75b0e550a3312d4334dc43940cde1804669493fd0123c63365c5d",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.Piece.mk.noConfusion": {
+      "type_sha256": "0c3e497a9862f811e5084630d8332a66955dbe19dd3b8c2b768d9aa68dbe0b23",
+      "axioms": []
+    },
+    "MPC.Piece.mk.sizeOf_spec": {
+      "type_sha256": "22c2f7ffd3af3e2d1e7d565045b6c6f82d8c916efd7bad6103ab0992b6933e1e",
+      "axioms": []
+    },
+    "MPC.Piece.noConfusion": {
+      "type_sha256": "a28a982e0c68fbcba597cf9bc7687128147068164b1a93e24868753677e85785",
+      "axioms": []
+    },
+    "MPC.Piece.noConfusionType": {
+      "type_sha256": "3fcee075951064df59fad6b61839667c8dfc3545fb30f7c0c9618e6fcc6e5587",
+      "axioms": []
+    },
+    "MPC.Piece.owner": {
+      "type_sha256": "2c011da2656b3fd5b6096638105def74bb6554f4087be8e9e404652ef83ccef4",
+      "axioms": []
+    },
+    "MPC.Piece.pieceType": {
+      "type_sha256": "53875923711e4ca26109c4d203a74af893ea15c9fed7fe35a00ad517a028a3c6",
+      "axioms": []
+    },
+    "MPC.Piece.rec": {
+      "type_sha256": "1a559a9f372818ea7e33deabee96fae0f36b23e54f09bf3bf677a0632a598bc7",
+      "axioms": []
+    },
+    "MPC.Piece.recOn": {
+      "type_sha256": "79ce143855790d2727c80632a22a4004bb71df79bdadd153adf52bf374f331c3",
+      "axioms": []
+    },
+    "MPC.PieceType": {
+      "type_sha256": "a08ab456aa45b7c385243d04f204fddd79fa47980eb590fe67989d5a800a4b69",
+      "axioms": []
+    },
+    "MPC.PieceType.IsAny": {
+      "type_sha256": "f0685888a3004bb2876b320e1875a9d0b111e39a414e03587fd232f6df6c054e",
+      "axioms": []
+    },
+    "MPC.PieceType.IsAny.eq_1": {
+      "type_sha256": "495ed96208a323cd21c1a961498216ac5cd4229f552c050280b55d0a39b1ba23",
+      "axioms": []
+    },
+    "MPC.PieceType.IsBishopFamily": {
+      "type_sha256": "f0685888a3004bb2876b320e1875a9d0b111e39a414e03587fd232f6df6c054e",
+      "axioms": []
+    },
+    "MPC.PieceType.IsBishopFamily.eq_1": {
+      "type_sha256": "4bd7361d3585691771c5af8e407a874192392220e713628fe9752f1d915874d9",
+      "axioms": []
+    },
+    "MPC.PieceType.IsRookFamily": {
+      "type_sha256": "f0685888a3004bb2876b320e1875a9d0b111e39a414e03587fd232f6df6c054e",
+      "axioms": []
+    },
+    "MPC.PieceType.IsRookFamily.eq_1": {
+      "type_sha256": "ffe6dac8528a72e97f9ccf7f894a5e6ae81b39b9e51c4ecac3136072018470d2",
+      "axioms": []
+    },
+    "MPC.PieceType.LegacyCompatible": {
+      "type_sha256": "3ffa8b19401b35f31bb43b1ba973aa3407ddc676fda15a761b21ba5087d3e5d4",
+      "axioms": []
+    },
+    "MPC.PieceType.bishop": {
+      "type_sha256": "e90cc10f996401cd83912f78f2ca0e740da4e5d9d1d5563f9b3c90b50019b2a6",
+      "axioms": []
+    },
+    "MPC.PieceType.bishop.elim": {
+      "type_sha256": "05dec72b381147621ca50907719a546612a8ece87b3f08daa4d0780c31347ce5",
+      "axioms": []
+    },
+    "MPC.PieceType.bishop.sizeOf_spec": {
+      "type_sha256": "c922ef2cd1773a85ec8656b3dedc39b66be88ad82fcf99856be40518a56c1caa",
+      "axioms": []
+    },
+    "MPC.PieceType.casesOn": {
+      "type_sha256": "63491e777a9e32932ef7b57ce4b8068790be2d21aead0eccc499ad74d429e51e",
+      "axioms": []
+    },
+    "MPC.PieceType.ctorElim": {
+      "type_sha256": "3460827cd42c388c474ab74196f733c1df4c38484c54632f19f520037c8872b8",
+      "axioms": []
+    },
+    "MPC.PieceType.ctorElimType": {
+      "type_sha256": "3716f690dd610a25a48d2669fc635c9200b205b2fcc06b516a21e6ee36032b52",
+      "axioms": []
+    },
+    "MPC.PieceType.ctorIdx": {
+      "type_sha256": "421bdebee1c9244e18b93d712a1b10f0de7a86b0dbd5a6316aa2bb84b919b304",
+      "axioms": []
+    },
+    "MPC.PieceType.demote": {
+      "type_sha256": "65968232f68563fdf738158f25fae132917e037141bc4869b9ac755c1ebace97",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.demote.match_1": {
+      "type_sha256": "86a7a3a653b79efc8d3a24d02ef9f6103a69fb1855e3af1518ebb5c88c2e4de1",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.demote_demote": {
+      "type_sha256": "017c8de346b4ba7a1517d528ddd7c1003a940fe0f0cf83a97281084fbecf9182",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.dragon": {
+      "type_sha256": "e90cc10f996401cd83912f78f2ca0e740da4e5d9d1d5563f9b3c90b50019b2a6",
+      "axioms": []
+    },
+    "MPC.PieceType.dragon.elim": {
+      "type_sha256": "fc4f6ee98a0c681412e68fd3e09010cc993fbe960fa795f51fe4458fb792a9e6",
+      "axioms": []
+    },
+    "MPC.PieceType.dragon.sizeOf_spec": {
+      "type_sha256": "29ce974a4891d1c107736f609b89b7b5d4f267df40243ea9a4cde8f9d3e86478",
+      "axioms": []
+    },
+    "MPC.PieceType.gold": {
+      "type_sha256": "e90cc10f996401cd83912f78f2ca0e740da4e5d9d1d5563f9b3c90b50019b2a6",
+      "axioms": []
+    },
+    "MPC.PieceType.gold.elim": {
+      "type_sha256": "d39d2608d3a8f78873db4d90aa0e11e648fc80e61a6561d5abd8d22065ea1796",
+      "axioms": []
+    },
+    "MPC.PieceType.gold.sizeOf_spec": {
+      "type_sha256": "beec9fe0f5298fc8c1da9a44e6f43f9f447830eaa3d2781b7cfa326862312074",
+      "axioms": []
+    },
+    "MPC.PieceType.goldType_dirs": {
+      "type_sha256": "d8a592a02ba0851421824da93fe1abd744bf8934c3bc8a0492c5874d6d725194",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.horse": {
+      "type_sha256": "e90cc10f996401cd83912f78f2ca0e740da4e5d9d1d5563f9b3c90b50019b2a6",
+      "axioms": []
+    },
+    "MPC.PieceType.horse.elim": {
+      "type_sha256": "9a8d1e213c25b7c5b8c061ecfa94cf24f7ca23822f852aa44e7028e91922eb7d",
+      "axioms": []
+    },
+    "MPC.PieceType.horse.sizeOf_spec": {
+      "type_sha256": "9c26269d2260d9cc210e0845488bf68a8f3315ae5c702afdcebe0f0b5cdaf984",
+      "axioms": []
+    },
+    "MPC.PieceType.king": {
+      "type_sha256": "e90cc10f996401cd83912f78f2ca0e740da4e5d9d1d5563f9b3c90b50019b2a6",
+      "axioms": []
+    },
+    "MPC.PieceType.king.elim": {
+      "type_sha256": "9efb1eeb8ce8a7749ddb7eabca1aa174a0090f1fd7aeebd56dcd9f0dc39719d9",
+      "axioms": []
+    },
+    "MPC.PieceType.king.sizeOf_spec": {
+      "type_sha256": "f18185a98444ed7f13731654bea2291c4677526d9a5b4b49480f4ac918ab2616",
+      "axioms": []
+    },
+    "MPC.PieceType.knight": {
+      "type_sha256": "e90cc10f996401cd83912f78f2ca0e740da4e5d9d1d5563f9b3c90b50019b2a6",
+      "axioms": []
+    },
+    "MPC.PieceType.knight.elim": {
+      "type_sha256": "d3aa5d389af556898aad343ecbecfef51bd1edc5f8171dde496b4fe69dc5d87e",
+      "axioms": []
+    },
+    "MPC.PieceType.knight.sizeOf_spec": {
+      "type_sha256": "eab96307588a54ffb2f9cb71fa962c3d295414586bf6dc7fc17e99b1d45dcc07",
+      "axioms": []
+    },
+    "MPC.PieceType.lance": {
+      "type_sha256": "e90cc10f996401cd83912f78f2ca0e740da4e5d9d1d5563f9b3c90b50019b2a6",
+      "axioms": []
+    },
+    "MPC.PieceType.lance.elim": {
+      "type_sha256": "9124a642c9c22ec3da07b3c4f716afb00785aa8c276d4de25157c554bfe927c7",
+      "axioms": []
+    },
+    "MPC.PieceType.lance.sizeOf_spec": {
+      "type_sha256": "101d34f7b4964b3058a6761b934867d17cc4af2c5ba35bdb3ca1c30bc9877b44",
+      "axioms": []
+    },
+    "MPC.PieceType.mem_king_stepDirs_iff": {
+      "type_sha256": "44c7339948ffdcf16632b642b1fdf6f0a68939d8da7f49aff53497fffdd5f7f1",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.PieceType.movesLikeGold": {
+      "type_sha256": "496ee1d8207b58e9f546fdaa6e273aeb13300e39572086ffb019625778d799c2",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.movesLikeGold.eq_1": {
+      "type_sha256": "cf7a8f7bd41129890931a136d66efdfa280b189a1bb12f08ba99566e28ebe8f1",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.movesLikeGold.eq_2": {
+      "type_sha256": "ca19dc0d1f56f9cef1e61d40f6d48b2b2a1d16a20a26363bb7c28f5f0e09ec97",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.movesLikeGold.eq_3": {
+      "type_sha256": "6e957adb9fe19b5fa14d688c5ff9eb32bd892925800ff61c42c900d599e55bd0",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.movesLikeGold.eq_4": {
+      "type_sha256": "e8eab42f674bf51e520474dc764f2d46ee9a5671d12518733e28fdbd0a97725d",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.movesLikeGold.eq_5": {
+      "type_sha256": "1c510109db2ba765cf26a4dcdbe0e2db6596dd25a2f3be4bce9b0f5dc0bedecb",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.movesLikeGold.eq_6": {
+      "type_sha256": "2b5b730c5d5aaf998fcbad8bfc90589ec52abfa333862af4e5bea85190fbcb5c",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.movesLikeGold.match_1": {
+      "type_sha256": "495900d8f8acbd713e1a39d2c9c619e11bd39579bfcebbaea0d9223dc2ab18d2",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.noConfusion": {
+      "type_sha256": "02026a70547ab431ec26feb90aa786c9a48b101ea810a2e877734683e547a7d8",
+      "axioms": []
+    },
+    "MPC.PieceType.noConfusionType": {
+      "type_sha256": "b27bf175daa2c95800539e6a976ee555ef8cca30f158ffb0953a8736c4a35aa0",
+      "axioms": []
+    },
+    "MPC.PieceType.ofNat": {
+      "type_sha256": "4ce705d7cefe45feb6c91a36e4461c7a29893838cc95bc49cb1cd895e666b4ee",
+      "axioms": []
+    },
+    "MPC.PieceType.ofNat_ctorIdx": {
+      "type_sha256": "01729465099c7f084b1c1e4b2dadbe557ec167cda6b9af267d2ce58145000a13",
+      "axioms": []
+    },
+    "MPC.PieceType.pawn": {
+      "type_sha256": "e90cc10f996401cd83912f78f2ca0e740da4e5d9d1d5563f9b3c90b50019b2a6",
+      "axioms": []
+    },
+    "MPC.PieceType.pawn.elim": {
+      "type_sha256": "9c42c3d5f6d15fb3090ff53a735d2f1190ebbd5d32e130d342ea2faf36647da9",
+      "axioms": []
+    },
+    "MPC.PieceType.pawn.sizeOf_spec": {
+      "type_sha256": "aea12ceb44c2601d5a8247e9eb29d218c6ef0cb4c108f7c7baee3dc5a03f35d0",
+      "axioms": []
+    },
+    "MPC.PieceType.promote": {
+      "type_sha256": "65968232f68563fdf738158f25fae132917e037141bc4869b9ac755c1ebace97",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.promote.eq_1": {
+      "type_sha256": "b285fdf7745d2c3837c3c1e7f521ad70fb7f60d695736032609dedf06283effc",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.promote.eq_2": {
+      "type_sha256": "3780f167c6f71a4013fab26191808501302ffcd2d7ad80b37804b1084d60e6b1",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.promote.eq_3": {
+      "type_sha256": "88bfb907789e1a9566109be1d65dbb8fdee3ba62e0418d00f951365be7ea12d0",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.promote.eq_4": {
+      "type_sha256": "83381055849ed1beae6236c3e3ff783c41cc3070b65e5d80833d502af8014caa",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.promote.eq_5": {
+      "type_sha256": "c739cbde505d6223d922133f575f960aa0e21101926670695c08141a91150ec8",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.promote.eq_6": {
+      "type_sha256": "5bc1800253994f42f0a4a4a3aea2ee357157ec6abf65f21d8fd24a2e850b454e",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.promote.eq_7": {
+      "type_sha256": "3dc7f9188ffdab39a4466d9f656875d2df20bde314949bc2ca7d372951ecf1cc",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.promote.match_1": {
+      "type_sha256": "c1a4b895c7bfcbd85554398b0b96ebf5e754b82c0102b5c7b8c2872c06a7d58b",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.promote_demote": {
+      "type_sha256": "0c496c6a33341f18258c0f50bf86d1b2f8603242d282f13bc017bd7912a549de",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.promote_eq_king_iff": {
+      "type_sha256": "a251476287af1a5b8328f0618459a86060eafaef03c7e0f8a977ae91ae05328d",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.promote_ne_of_promote_ne": {
+      "type_sha256": "9f94c465a9fdffdf03c2db23ba1ac6eb088a1859e180bbfe1fedd09d13471f34",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.promote_promote": {
+      "type_sha256": "266516adfa93a3a60bb88d0d57f7da8058f276a0939d123cd7164b0c981c5151",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.promotedKnight": {
+      "type_sha256": "e90cc10f996401cd83912f78f2ca0e740da4e5d9d1d5563f9b3c90b50019b2a6",
+      "axioms": []
+    },
+    "MPC.PieceType.promotedKnight.elim": {
+      "type_sha256": "8eb559c0cda2fe1cfebf160c6f79c903c90002d1d334e004d6feb25548a86a6f",
+      "axioms": []
+    },
+    "MPC.PieceType.promotedKnight.sizeOf_spec": {
+      "type_sha256": "e4d994fba5accbf34207341f1c81ac4946fd3e6d2a2b61b55bdbf506e08da538",
+      "axioms": []
+    },
+    "MPC.PieceType.promotedLance": {
+      "type_sha256": "e90cc10f996401cd83912f78f2ca0e740da4e5d9d1d5563f9b3c90b50019b2a6",
+      "axioms": []
+    },
+    "MPC.PieceType.promotedLance.elim": {
+      "type_sha256": "45333abaa331c197814761876733b31c9d8a5fe518438a1847185375c2a6322f",
+      "axioms": []
+    },
+    "MPC.PieceType.promotedLance.sizeOf_spec": {
+      "type_sha256": "cd36c91c3f0b3650747f2b49c07e1aeb688dec4bcbdb6993f4d6b2ff0cb74aed",
+      "axioms": []
+    },
+    "MPC.PieceType.promotedSilver": {
+      "type_sha256": "e90cc10f996401cd83912f78f2ca0e740da4e5d9d1d5563f9b3c90b50019b2a6",
+      "axioms": []
+    },
+    "MPC.PieceType.promotedSilver.elim": {
+      "type_sha256": "3677b4ace62db4ed0e8c796ed0f0812be0c0fd3b4035307d0781e3fac4c2f800",
+      "axioms": []
+    },
+    "MPC.PieceType.promotedSilver.sizeOf_spec": {
+      "type_sha256": "5a943ce873988c59b5c3d0e0cb0a383f4820161601728af2e8c720d9b892ae58",
+      "axioms": []
+    },
+    "MPC.PieceType.rec": {
+      "type_sha256": "f20818b0e1499c50602435ff3cf2bdfffcf28f1bf9c3cb33a311278643a8deb0",
+      "axioms": []
+    },
+    "MPC.PieceType.recOn": {
+      "type_sha256": "63491e777a9e32932ef7b57ce4b8068790be2d21aead0eccc499ad74d429e51e",
+      "axioms": []
+    },
+    "MPC.PieceType.rook": {
+      "type_sha256": "e90cc10f996401cd83912f78f2ca0e740da4e5d9d1d5563f9b3c90b50019b2a6",
+      "axioms": []
+    },
+    "MPC.PieceType.rook.elim": {
+      "type_sha256": "a5eae39b9d50dca9bf461005f00e07eacc122eb4ab23dbc5b6b8beff7f3401e0",
+      "axioms": []
+    },
+    "MPC.PieceType.rook.sizeOf_spec": {
+      "type_sha256": "68a2167317608873d7d8b0d7538bdff5851656f539231ee38d0ec5502088edb2",
+      "axioms": []
+    },
+    "MPC.PieceType.silver": {
+      "type_sha256": "e90cc10f996401cd83912f78f2ca0e740da4e5d9d1d5563f9b3c90b50019b2a6",
+      "axioms": []
+    },
+    "MPC.PieceType.silver.elim": {
+      "type_sha256": "e72a823e83554bfd217307d10b62a0c46619ba63a04f60a722b42335e8bf9263",
+      "axioms": []
+    },
+    "MPC.PieceType.silver.sizeOf_spec": {
+      "type_sha256": "35dc8ab56eb149d0d2d8d881ef05077bbc6def4ecad8959d9ea81da40bd62224",
+      "axioms": []
+    },
+    "MPC.PieceType.slideDirs": {
+      "type_sha256": "81bd28de26dbe21c41b76daca1a142f028faea3bbaa098b9b820cb02e2868075",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.slideDirs.eq_1": {
+      "type_sha256": "7c9c3414749ed44541daf09a7c84a0e92323b67cc013bf4fd4a5f3d14617ca6e",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.slideDirs.eq_2": {
+      "type_sha256": "e809747c718bfcdf2b643742dea2e46041df0b60a43c1ffea056d4cd73d59550",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.slideDirs.eq_3": {
+      "type_sha256": "467f99e43993cab4efabe9284d6c32f56ca1202707214eb0966b6c9b2d558d6c",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.slideDirs.eq_4": {
+      "type_sha256": "9a007ffe225508dd269b5f9bebe0beb0d55df1cd25166758c21abe5d315ab753",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.slideDirs.eq_5": {
+      "type_sha256": "4eb728e45c5ed97209e6dec07a874bb0f98c6ebcc1a70527627628d6cda6f459",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.slideDirs.eq_6": {
+      "type_sha256": "40141597f8b0dc1746c5170fbe688f7f6089be24256eb96eea7f4614f22878b8",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.slideDirs.match_1": {
+      "type_sha256": "aee6383b3c9420daa9e830316b07a6363557dfde838e42ba76584906d038de71",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PieceType.stepDirs": {
+      "type_sha256": "81bd28de26dbe21c41b76daca1a142f028faea3bbaa098b9b820cb02e2868075",
+      "axioms": []
+    },
+    "MPC.PieceType.stepDirs.eq_1": {
+      "type_sha256": "7ebf7e9fee92a0b26029954eb354d1407f3652aa0d0f37027f91eccd39f36ee7",
+      "axioms": []
+    },
+    "MPC.PieceType.stepDirs.eq_10": {
+      "type_sha256": "458cde5b1fc743857727d792da0cc83eeaed9a93e454da44ad0b045385775ccb",
+      "axioms": []
+    },
+    "MPC.PieceType.stepDirs.eq_11": {
+      "type_sha256": "5204ed52723bad09ff05a6becb4ce7afe6b73d55bb3ca02fa09d0417635d4717",
+      "axioms": []
+    },
+    "MPC.PieceType.stepDirs.eq_12": {
+      "type_sha256": "228bdd8e2f67bc10df2b7991d39c3805dce7fe693d8d5b79bd766f05c44b7aad",
+      "axioms": []
+    },
+    "MPC.PieceType.stepDirs.eq_13": {
+      "type_sha256": "2d665e4f8e4522669915e989787d3c32d894c2f7bca07e79a563b3b7a32e987c",
+      "axioms": []
+    },
+    "MPC.PieceType.stepDirs.eq_14": {
+      "type_sha256": "b055f8bbb0b6ca2a95e48090c7000b533cc8d3e11b480b5399cc0eaf2a545d78",
+      "axioms": []
+    },
+    "MPC.PieceType.stepDirs.eq_2": {
+      "type_sha256": "a40c730ba942457260e0fcb33076872f730872d790f8845d6b89896ec47a67ca",
+      "axioms": []
+    },
+    "MPC.PieceType.stepDirs.eq_3": {
+      "type_sha256": "0307399434e7a49177a24ad1d588627392f6bd264ab6d37725ce9d30383082cc",
+      "axioms": []
+    },
+    "MPC.PieceType.stepDirs.eq_4": {
+      "type_sha256": "5852849b0baf25b623f582e13efc8b019e40ca54d5bbf399d98686311c782f2a",
+      "axioms": []
+    },
+    "MPC.PieceType.stepDirs.eq_5": {
+      "type_sha256": "ab45d34ef12753111df543e006c02c0d1687cc87b09ab424829fb38e832d12fe",
+      "axioms": []
+    },
+    "MPC.PieceType.stepDirs.eq_6": {
+      "type_sha256": "2b16da373de77e2de6d4447915687e8437e696e22c958c165e736d631bb13e83",
+      "axioms": []
+    },
+    "MPC.PieceType.stepDirs.eq_7": {
+      "type_sha256": "397b949ae6d40b5ca6ce88624953cf93e3637ff56775f4551ae3dddd9eeb1cd0",
+      "axioms": []
+    },
+    "MPC.PieceType.stepDirs.eq_8": {
+      "type_sha256": "bd0a66b208aefab404b9f64dce6d1bc03d3ced4541ecbefe1a6d474066be8cf3",
+      "axioms": []
+    },
+    "MPC.PieceType.stepDirs.eq_9": {
+      "type_sha256": "3cf2a73f2e42e65d50dce9ee543f6f0dd52320bf53d1079e80ddccfd56657fc7",
+      "axioms": []
+    },
+    "MPC.PieceType.stepDirs.match_1": {
+      "type_sha256": "a7ccfa24c490f1950e127f547a8516e6a70f3fa4314d1e39963e1c57a709ba8a",
+      "axioms": []
+    },
+    "MPC.PieceType.tokin": {
+      "type_sha256": "e90cc10f996401cd83912f78f2ca0e740da4e5d9d1d5563f9b3c90b50019b2a6",
+      "axioms": []
+    },
+    "MPC.PieceType.tokin.elim": {
+      "type_sha256": "c5c0a91b7b17472ee339829ecbf540cae2f3c27143ce588565489c8b67f31eed",
+      "axioms": []
+    },
+    "MPC.PieceType.tokin.sizeOf_spec": {
+      "type_sha256": "f685ac4b9745ffac8fa5cf5a3b3c947cb16ab818365ba5bcd131bf5d6cab88c6",
+      "axioms": []
+    },
+    "MPC.Player": {
+      "type_sha256": "a08ab456aa45b7c385243d04f204fddd79fa47980eb590fe67989d5a800a4b69",
+      "axioms": []
+    },
+    "MPC.Player.casesOn": {
+      "type_sha256": "c4c130fccdd909a1242e0cd76b915758381c82053df9f39492f48c6634b4b2af",
+      "axioms": []
+    },
+    "MPC.Player.ctorElim": {
+      "type_sha256": "2d0d926e2fdf358d090d20f019defc77275a82b70cc0291123be21c58e619e46",
+      "axioms": []
+    },
+    "MPC.Player.ctorElimType": {
+      "type_sha256": "15171a60721a9e4a8d03d378903d4428f1f0e7104b479e2c1f8bf9375a845f0d",
+      "axioms": []
+    },
+    "MPC.Player.ctorIdx": {
+      "type_sha256": "1e444e2ad215764f3d478670097675394aa2148fe6ee1c0cb3ece7658c94521f",
+      "axioms": []
+    },
+    "MPC.Player.eq_or_eq_opponent": {
+      "type_sha256": "9d2e958bafea3f37e03d3951f7ef110578ad956846aafcd549ef2f14d0e75eaa",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.Player.gote": {
+      "type_sha256": "65344d25c9a3df6181a01382cc257cd83acc1c6dbceee1b4806290053ff32ee4",
+      "axioms": []
+    },
+    "MPC.Player.gote.elim": {
+      "type_sha256": "5a417f8e0b6140c189ca55fb6cf2996b84bdc5b55534899f2d94ef20c3ebe8cd",
+      "axioms": []
+    },
+    "MPC.Player.gote.sizeOf_spec": {
+      "type_sha256": "2352f1afcfaaa4ccad92cc3b1cf7c1ac0704e372a5121bc8eb8a9ea5f1a00576",
+      "axioms": []
+    },
+    "MPC.Player.noConfusion": {
+      "type_sha256": "732b2b8eb642906090ea062b8f91b335047296bd554017e471eba687a65cbc28",
+      "axioms": []
+    },
+    "MPC.Player.noConfusionType": {
+      "type_sha256": "05d689caff6623bf880a4ce077196ece40d2936864b91f89efb55ada92b7eb53",
+      "axioms": []
+    },
+    "MPC.Player.ofNat": {
+      "type_sha256": "9ee361c0a115b351567d338f2d8a2be3602daf030cd238093f16ac4b04227c4e",
+      "axioms": []
+    },
+    "MPC.Player.ofNat_ctorIdx": {
+      "type_sha256": "02a1439ec1833a7accdb15b264aab91f3dfe5d5e095adc491e77f0c8425792a6",
+      "axioms": []
+    },
+    "MPC.Player.opponent": {
+      "type_sha256": "5249443274ca65a5830496f457c7cc3fdbe4d939248fe7ee8bd274e11456b958",
+      "axioms": []
+    },
+    "MPC.Player.opponent.eq_1": {
+      "type_sha256": "17c5d29fa85aca13bf235f4132afa8856f0606095c70a1204c96cfb6f2dd9f51",
+      "axioms": []
+    },
+    "MPC.Player.opponent.eq_2": {
+      "type_sha256": "8273b503e1f2c62ff0c1502cceaeee9acc4561c6c9f7b64679d12f14ce0bc904",
+      "axioms": []
+    },
+    "MPC.Player.opponent_ne_self": {
+      "type_sha256": "b4603edb2e775c7e3eb6dc1d20d4d9c3f1d14009e8a5518711ae8a12b0c5196a",
+      "axioms": []
+    },
+    "MPC.Player.opponent_opponent": {
+      "type_sha256": "0a2b914c3b671f42a9a1ce9a70e66ea4466141012a0a93ff1c2365833672a3e3",
+      "axioms": []
+    },
+    "MPC.Player.rec": {
+      "type_sha256": "fd08c490ec6d620804244ba1a6e92fe26a3e5152b8208b52cbd2fed068f44b09",
+      "axioms": []
+    },
+    "MPC.Player.recOn": {
+      "type_sha256": "c4c130fccdd909a1242e0cd76b915758381c82053df9f39492f48c6634b4b2af",
+      "axioms": []
+    },
+    "MPC.Player.sente": {
+      "type_sha256": "65344d25c9a3df6181a01382cc257cd83acc1c6dbceee1b4806290053ff32ee4",
+      "axioms": []
+    },
+    "MPC.Player.sente.elim": {
+      "type_sha256": "a1c888f76ca3f49bd1402fbb343514c662a9f0a4ec5fa353e8f6b869ed749fde",
+      "axioms": []
+    },
+    "MPC.Player.sente.sizeOf_spec": {
+      "type_sha256": "2ea25452eab0b8e52bafae9333ed7cc01643c0f3039c34e0e466fb9d92bc9a03",
+      "axioms": []
+    },
+    "MPC.Pos": {
+      "type_sha256": "a08ab456aa45b7c385243d04f204fddd79fa47980eb590fe67989d5a800a4b69",
+      "axioms": []
+    },
+    "MPC.Pos.addDir": {
+      "type_sha256": "654ecf3d55df5f28ce5b426b1fb81de8f61beaab5f96ac7b9d03949a0f5e6ca9",
+      "axioms": []
+    },
+    "MPC.Pos.dirTo": {
+      "type_sha256": "44fd45d718e5f7eb89593593303ff1df102188d158e96567de1c8fccb7bc558a",
+      "axioms": []
+    },
+    "MPC.Pos.dirTo.eq_1": {
+      "type_sha256": "2ad9daf44abaacb66551de4db6aa5c7b62b6066181ab444f3a3d27c3d26005fb",
+      "axioms": []
+    },
+    "MPC.Pos.isAligned": {
+      "type_sha256": "43549d1d1e5a85354c24ba11d6229aa6cdebd133328c5d085194f3d8a3863042",
+      "axioms": []
+    },
+    "MPC.Pos.isAligned.eq_1": {
+      "type_sha256": "0e06cd84c509ee6797ce7c9a9395ef1e4d61ab2f80f7c8f9b4709d480f07186a",
+      "axioms": []
+    },
+    "MPC.Pos.isAligned_comm": {
+      "type_sha256": "bb1302aa2867c17a27ad4d64b0906580f3e16a8088eb3841f31cef556e10b897",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.Pos.onBoard_toInt": {
+      "type_sha256": "3ecff65b0dc39dfbe5ed04501c9295f4bf429e867379d64c1f354d6d23a695d6",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.Pos.toInt": {
+      "type_sha256": "d1c46a5f59db77200e4546a1b8ea73b4c9297399cc0d3181a386a57390663463",
+      "axioms": []
+    },
+    "MPC.Pos.toInt.eq_1": {
+      "type_sha256": "68e16bcaf1f85923a575fa25759d1498dcbd121c9d367c57c8994f8a13c8a0b5",
+      "axioms": []
+    },
+    "MPC.Pos.toPos_toInt": {
+      "type_sha256": "8b19dfe158a4509cd7fd45ea558e95e15733b6fe1f702561f8f35e4e16cb99cd",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.PromoteStable": {
+      "type_sha256": "d04bcb7a012326581253e8c2df6644e5cefbc79ac893e7682b1164c99645cf3a",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.PromoteStable.demote_iff": {
+      "type_sha256": "9b9bf04d4e3f101377a42936f5a312ad87a5a6a8cdb976b49563a1b123b186bd",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.SilverSquares": {
+      "type_sha256": "c77589d1877917320f36555fdd0a92e13b6d2ab6f4e49871f56d4dd3533e1089",
+      "axioms": []
+    },
+    "MPC.Square": {
+      "type_sha256": "a08ab456aa45b7c385243d04f204fddd79fa47980eb590fe67989d5a800a4b69",
+      "axioms": []
+    },
+    "MPC.angleKey": {
+      "type_sha256": "5e935d8e785963071117cd481eb692a2b2f74a68e011fdc6790fc0c90cd9e098",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.angleKey_eq_of_onRay": {
+      "type_sha256": "e5b6de267ddd38b4f85b3d6d4779c76d833fdf88e22426331947e9b47ea9965a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.angleKey_eq_of_ray": {
+      "type_sha256": "cbe141b887d5812aef3b774629633351194ef8d8e7371a87189a4ba3d5685d59",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.angleKey_lt_of_between": {
+      "type_sha256": "6d8c2c1648154829b44a8c672c13ef500c4b8e1fe4222adc2df7582080328ee2",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.angleKey_lt_of_onRay": {
+      "type_sha256": "34980a42e82478fba97595882e9466061ec3eaff146d56d6c9d287d6c4152cdb",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove": {
+      "type_sha256": "9e6182721dcc78fbad4932e92068007be1b7aa8e1c9e78c9ed26e78098400c7b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove.eq_1": {
+      "type_sha256": "a124d8516a83b41dbd4821d3ac80d9ed54a104db36463efc44fa6015b1219f56",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove.eq_2": {
+      "type_sha256": "e66071565e0203e2d80540185d8c94be51a1646c16aeea3cee14575c40204f71",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove.match_1": {
+      "type_sha256": "b193b0b913945143bfc1fe078aea6821bcb4c696953e8874a9e6b56b12d8faef",
+      "axioms": []
+    },
+    "MPC.applyMove_boardMove_grid_dst": {
+      "type_sha256": "e885d3f105c130c41160bca5b98b6f59e331aedf752824c3cb71463a394d601f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_boardMove_grid_dst.match_1": {
+      "type_sha256": "b193b0b913945143bfc1fe078aea6821bcb4c696953e8874a9e6b56b12d8faef",
+      "axioms": []
+    },
+    "MPC.applyMove_boardMove_grid_other": {
+      "type_sha256": "6d57871437c6f8e963d06debc05fb0364ac494b901fe5a04b38a9ae29667d682",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_boardMove_grid_src": {
+      "type_sha256": "829000a0fb7c1fd4359e495d2ddf783307ede7f88da2436f8c427077019e2892",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_boardMove_hand": {
+      "type_sha256": "357608720952a223a03828eef03a88fbaf7d448863c5a576ac77806decfee294",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_boardMove_hand.match_1": {
+      "type_sha256": "b193b0b913945143bfc1fe078aea6821bcb4c696953e8874a9e6b56b12d8faef",
+      "axioms": []
+    },
+    "MPC.applyMove_boardMove_handFamilyCount": {
+      "type_sha256": "13b5300e2d9860584368e70997589e4e305b053283cf49b095e8abfb8c427ddc",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_boardMove_new_attack_exact_slide": {
+      "type_sha256": "5aae0b52857ebcfdf4b9a0386dff2a377e5f1f7cd5eebe5aebc0df75ad3365c0",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_boardMove_new_attack_path": {
+      "type_sha256": "36f6c67b53de241b91615ff0f9084b1378d74a8591ddcfe04974b2463d0ec1cb",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_boardMove_not_unblockedChecker_of_attacks": {
+      "type_sha256": "0fd8f1a29e83a01f93e7686a72ac6fa77240a36d5f60d8572c976bbd6683ca51",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_boardMove_otherChecker_source_unblocking": {
+      "type_sha256": "6590217732e6a2e5941fffe54c5d590234079b30247646d03243c278002160c9",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_boardMove_other_piece_before": {
+      "type_sha256": "8017b7df4a4a31a0fd19291fe15523e324c44abd217b33d9911e5816e8443aaf",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_boardMove_pathClear_source_of_unblockedChecker": {
+      "type_sha256": "74720f5b60c5912be749f56fa77308be75d85ec2e54371eecfea4eb03e12a199",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_boardMove_turn": {
+      "type_sha256": "703b73d7272a8e537e3dec6957fcf0e1859b41472ff7e546c2f62fb9081a461a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_dropMove_attacksOriented_before": {
+      "type_sha256": "8ac3f2c601fe691bdf5fb240f2a7e0a82abfcc03a652e6d0536de55031d57cd7",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_dropMove_grid_dst": {
+      "type_sha256": "205c5893a4ef1055e07ed596c581da2771d50608e30049ccb325d7ccd1c6f250",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_dropMove_grid_other": {
+      "type_sha256": "07a1900e49dbfdd1bf491ad86d08b75b11b2843a9f06b92a7a173c9232d763ba",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_dropMove_hand": {
+      "type_sha256": "a63a8668fb673a974d1f319aae1bafb7652e4751dfb23f8ce9aa0a5b56ee505e",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_dropMove_handFamilyCount": {
+      "type_sha256": "85436554340fa1ff9667770101c8c596fd79f22381afd945d73f3c5d254f9a4a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_dropMove_inCheck_iff_destinationChecker": {
+      "type_sha256": "e644609e74155d965b5d67b64cd8dd593890eb70844541da59a32446a2fae456",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_dropMove_not_otherChecker_of_not_inCheck": {
+      "type_sha256": "e53f4e2636fb5c36872164d329440292c83b5665556d62db684de9d80edc633d",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_dropMove_otherChecker_before": {
+      "type_sha256": "4593331953136aae29e1c335a9cf91868a1377808d3f0fd326a0565851df95f5",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_dropMove_pathClear_before": {
+      "type_sha256": "66c9a251c4e2b6a69ae5a727c422bb7012a7b4c755efe2af4ebec168cac4587f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_dropMove_turn": {
+      "type_sha256": "f7b0ea3ffe80e5388a9a08a7799f7a8ce5d636bddfb2208c666f24b47ca33c61",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_inCheck_iff_destination_or_unblocked": {
+      "type_sha256": "20d099a7488fa2bd3b61832d8f7ea62da659c9f0a5ae26e8bbd5a49172a91d1b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_isDirectCheck_iff_destinationChecker": {
+      "type_sha256": "b1257b36343933c619ebaa3811ef0d6005d21e4d6f7300f5d97546dbf69c371d",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_isDiscoveredCheck_iff_unblockedChecker": {
+      "type_sha256": "40d94d700c21cd794500c8939803fdd475735204ff7d753cc19110f0088fc204",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.applyMove_otherChecker_iff_unblockedChecker": {
+      "type_sha256": "4f7bbe47497e6e70a42ab3109134f342f0f2a99f98faa5405beb0454c56c5a73",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.attacks": {
+      "type_sha256": "93a2312db60f4f241b2b42b374c20026af6688faa3e06c092ce926da080d4ac0",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.attacks.eq_1": {
+      "type_sha256": "2063ffc9477ad7820c5a40c897d260e70364befe2b6c62d4fc27cf7c152934ad",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.attacksOriented": {
+      "type_sha256": "93a2312db60f4f241b2b42b374c20026af6688faa3e06c092ce926da080d4ac0",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.attacksOriented.eq_1": {
+      "type_sha256": "519cd46caaa3e9ece5bafac4ce9d03bcc0855bb566205c44f32152aef8a5b9ba",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.attacksOriented_iff_attacks_of_legacyCompatible": {
+      "type_sha256": "59e615076ce7faa37da430e165565eec6005bdad4697237a8c04063a24fafedf",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.attacksOriented_iff_attacks_of_symmetric": {
+      "type_sha256": "f0bc0cbc1a6f6599674a60e9130650169990b04715fad0399981933425755dfe",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.attacksOriented_mono_of_empty_preserved": {
+      "type_sha256": "e4d9c67e351fc1ae6844a609ba1f632a516690e1f2ed553ec24860f396467f4f",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.attacksOriented_not_self": {
+      "type_sha256": "3ae5e3cebcabfd2b4bdbcc98927210f83349f60893f8ad5ecf64470245acbaf5",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.attacksOriented_of_pathClear": {
+      "type_sha256": "72bb9aef74a590a2a31af23f090aa7b27795fbd178caebde9062bf923d263cf9",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.bishopCheckerConstraint_of_checker": {
+      "type_sha256": "57100db201b16918fdc2b663f355d7464076726f940aff89ca2498df6195b1f1",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.bishopEdge_of_diag_move": {
+      "type_sha256": "59abfc678547f2edcc499154456ba9fb075bd1b6d50baf6e9523994c87c4bc64",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.bishopHorse_of_slideDir": {
+      "type_sha256": "ba89cb28de572b6a29a6e406aeece35f3491af2b276845f7ba7cd3af714b0d0a",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.bishop_destination_facing": {
+      "type_sha256": "dab6f14dcb10e59b290d89a0715f5286e3f358bd084bfab1133d43b617c7ad8d",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.bishop_king_candidates": {
+      "type_sha256": "fbada70a3084cf2851b4b185da5574baccfc99cbbd07204ed6fe84cb2f258801",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.bishop_table_cases": {
+      "type_sha256": "a95ef4570ae531d2361ddcdfe8b7389391b12809a82b7ddc93003378f95d984d",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.canMoveTo": {
+      "type_sha256": "93a2312db60f4f241b2b42b374c20026af6688faa3e06c092ce926da080d4ac0",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.canMoveTo.eq_1": {
+      "type_sha256": "ab2686ae1b4cb8366fecd2d0d5467d0f39cfd55f725b76258513aaee7cc85a14",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.canMoveToOriented": {
+      "type_sha256": "93a2312db60f4f241b2b42b374c20026af6688faa3e06c092ce926da080d4ac0",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.canMoveToOriented.eq_1": {
+      "type_sha256": "7483ad627668b81e67db9b7ea1206f4a034c4c5085bfe6f99e7fb85ce498a79a",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.canMoveToOriented_iff_canMoveTo_of_symmetric": {
+      "type_sha256": "b804686d0c6b6ffe0ea6c9b499333bf598113c8c49d40f90ed87c3c31b61bfb9",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.canMoveToOriented_not_self": {
+      "type_sha256": "6dea136fd7e2c45842fa0c0014bae05c2af07ad29dd66b8dc40db5b8c0b3d701",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.canMoveToOriented_pawn_iff": {
+      "type_sha256": "b42684fe4af73045c24ad334fa62f85e7ba4790c148fd9f7c16b1623e4fe1390",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.canMoveTo_owner_irrelevant_of_ne_lance": {
+      "type_sha256": "83ea0e20e2aedabd8d7632be60447b2b464e909266e7b25bf0bcca5ba67f674f",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.checkerConstraint_of_checker": {
+      "type_sha256": "dff6f09fd33aedafcec11d5334748ec4e9992976644b2eb7aac9921f938642d3",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.checker_cases": {
+      "type_sha256": "13c6b3b0f2a01a52f923fe6dc08d4745cf3f5000f74fd0cb12522f16fd15c60c",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.collinear_kings_iff": {
+      "type_sha256": "46618061679b4748bfd159f8e95b3583864f9c4a3d031ef65f9d228b42201602",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.collinear_of_line_params": {
+      "type_sha256": "d0e7043a8aa85b5fc6e110ad9d7d15a466c24eefe3c0e3a928c5c71e3d092cc0",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.cyclicBetween": {
+      "type_sha256": "ec42fc92379b0d3de74bbdfe5156cc0fc7e8742d096e1a34e00a440c537ed020",
+      "axioms": []
+    },
+    "MPC.cyclicBetween_iff_of_le": {
+      "type_sha256": "dbef19993590da73c31b18ce033e3148cd8d0bb666b381e053cf3e042258eb48",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.cyclicBetween_self_left": {
+      "type_sha256": "804f13f0d6f77ec17879a762d859e036580edafb07b3b3ec7553e3cd157cb1fd",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.cyclicBetween_self_right": {
+      "type_sha256": "7c8398078dca8733511caa1ae101fa2c7472085a78009bbe9476fddbe0647631",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.diag_of_bishopHorse_slideDir": {
+      "type_sha256": "ee9ccc6dde7a5979db5695d85f86338ed74e0590ed10c1f566385bc0af591ba2",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.disc_H_state_total_invariant": {
+      "type_sha256": "94bc0fd222c05ae0dfb152acd79b35126f7113929a4c80d3eceb85b7f56f3963",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.eq_of_step_le_of_last_eq": {
+      "type_sha256": "438246bcc48b40f6526cb39897c749e834932c0b56f6be927c140c5737798df3",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.exists_line_param_of_collinear": {
+      "type_sha256": "57504f1d94a433220a743e115cf1e4ca3f6db490f1ab19799918ded8df3b357c",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.facing_edge_mem_iff": {
+      "type_sha256": "3b0f06238a575e864180c9f3bcc7ce61e11aef7225f79d339e499dc709de95d6",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.facing_edge_signs": {
+      "type_sha256": "256d030243ca3c9becc2d770f061dd4adabd00b7d4bfcd5e554040007590c06d",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.facing_edge_unique": {
+      "type_sha256": "6a7052e3c45744fde8f76614845450f6f03d6d7a0a07a8ef4e62c84d8bf05694",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.familyInd": {
+      "type_sha256": "79552c4c89a48ff13dbfd3997042505a3c8cc883e8197dcfd7c7fe4a690ee1ba",
+      "axioms": []
+    },
+    "MPC.familyInd.congr_simp": {
+      "type_sha256": "74198185b56f0e8b47fd6e81a000ee3eb60736ecf99757106c68b9b23ce959a1",
+      "axioms": [
+        "Quot.sound"
+      ]
+    },
+    "MPC.familyInd.eq_1": {
+      "type_sha256": "88172d161f23c87d50abd3c641e07b21a809f8d54ad406c723ee0fbfcde422f9",
+      "axioms": []
+    },
+    "MPC.familyInd.eq_2": {
+      "type_sha256": "8bd52853f9e4a979165d5ac5152915753e6b4cf9358fa5effd907c247ba3fdd7",
+      "axioms": []
+    },
+    "MPC.familyInd.match_1": {
+      "type_sha256": "580d1fba765bd0deb03d40d90e3241ebcd08004a27ea8ac1af87df487353b8d4",
+      "axioms": []
+    },
+    "MPC.familyInd_any_eq_zero_iff": {
+      "type_sha256": "f4ee8c613c9b76a5bee418fc27f3c7acde14812364619a0bbc038cc2c16d69cf",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.familyInd_demote": {
+      "type_sha256": "7a3d8fffabc291926b9370a599b6ad583f267f030d096a90f0afd459ecee3100",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.forwardRank": {
+      "type_sha256": "0f4bb6b3bc6659e15d4724cdbf4514078c80aa7e8084ec04f24e72aa9360b232",
+      "axioms": []
+    },
+    "MPC.forwardRank.eq_1": {
+      "type_sha256": "72f3453378e750abbb4d34135b36ea11232b15bb8195b8deec0c162408c21ca2",
+      "axioms": []
+    },
+    "MPC.forwardRank.eq_2": {
+      "type_sha256": "e75eaca615c394c878d9deb6bb3e427d5441113d4bb4f97e5f894658fdd4d4bb",
+      "axioms": []
+    },
+    "MPC.forwardRank.match_1": {
+      "type_sha256": "0318525a20bc23fe2b381ddd7b42a64e8c20164f95c55374a6876757de246592",
+      "axioms": []
+    },
+    "MPC.forwardRank_lt_of_canMoveToOriented": {
+      "type_sha256": "57ed3f605c2d94e7ae818ab24e586f9d55b1b5bcb4d4555eb1b8d1ba348ee3df",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.forwardRank_lt_of_gold_step_between_rays": {
+      "type_sha256": "94a1d183bc6ffae3b9bd405862687198c10e29f0dd2dd310aea14e47cc0016a7",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.forwardSign": {
+      "type_sha256": "c5e26193d9a5894fd3677f77a089548c2d1837be553a076896511b8b8ec59e19",
+      "axioms": []
+    },
+    "MPC.forwardSign.eq_1": {
+      "type_sha256": "a4b4ce42549761fa43bc726e9c44267ef5826b68214faf6d2ce954fdd5706c0c",
+      "axioms": []
+    },
+    "MPC.forwardSign.eq_2": {
+      "type_sha256": "c9dbb60ed2ad031d53d6083dd8a2e4121070eefa02640c8db5d627433b81b857",
+      "axioms": []
+    },
+    "MPC.forwardSign.match_1": {
+      "type_sha256": "0318525a20bc23fe2b381ddd7b42a64e8c20164f95c55374a6876757de246592",
+      "axioms": []
+    },
+    "MPC.forwardSign_cases": {
+      "type_sha256": "1ede9f6de3937f99f7d9a59939cd24bd1e3a2ee51c471319bd98b7cceb5ca3e2",
+      "axioms": []
+    },
+    "MPC.forwardSign_opponent": {
+      "type_sha256": "e37671cd465592c78a27ccbe2acdc619a1ad023f5c6f4d8047fbb16249ed5fe7",
+      "axioms": []
+    },
+    "MPC.gold_step_forward": {
+      "type_sha256": "91a3603169b5a13de3f386569d1ca98aae427c8bfad66b25e49d7450690d5aa2",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.hasDestinationCheckerOriented": {
+      "type_sha256": "23aa0e1da47cb0b0577869fb04a4bc6c7aaaf9338bf05994fb9ed6007d4748ce",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.hasOtherCheckerOriented": {
+      "type_sha256": "23aa0e1da47cb0b0577869fb04a4bc6c7aaaf9338bf05994fb9ed6007d4748ce",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.hasOtherCheckerOriented_of_inCheck_of_not_destination": {
+      "type_sha256": "6e51ff99da193622379d52592848f979a8f17a8a5de4a3524603ed515cdab581",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.hasOtherCheckerOriented_of_unblockedChecker": {
+      "type_sha256": "ee2f17b8b55c11c026a526818997b0c5b1d254628a3b7a6b11f9a1bb7bbfd3d3",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.hasUnblockedCheckerOriented": {
+      "type_sha256": "220897a7651a42a617d2b91f1301b0ca96f73b6936e0dcb17f1ba8687b6a0095",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.inCheck": {
+      "type_sha256": "ff7dc86026aaf251a0098a359f4d3820086910d92180797c96217c6bca5808b0",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.inCheckOriented": {
+      "type_sha256": "ff7dc86026aaf251a0098a359f4d3820086910d92180797c96217c6bca5808b0",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.inCheckOriented_iff_destination_or_other": {
+      "type_sha256": "74159ea2647f08977c57e0879a2cc1a3d8a651e0596602ab687e37ad505d76fe",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.inCheckOriented_iff_inCheck_of_symmetric": {
+      "type_sha256": "1c0cc893df0461ba0ff84d5d677a15a7e93b2d18ce79e20049aa6928b167d2f8",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.inCheckOriented_mono_of_checkers_preserved": {
+      "type_sha256": "a4740891bf47d8e02c0eefc2f04f2bf42c8ec9b7334d82c86e147f47c592532b",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.inCheckOriented_of_destinationChecker": {
+      "type_sha256": "67c6c87f27c8e3b92df6967fddafeddf240f52ddac9231eb9abff69a36c3d9bf",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.inCheckOriented_of_otherChecker": {
+      "type_sha256": "975cc44fa65b1d0b730419399ad4909f46cef3c0c8d60559239982426a48d663",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.instDecidableCyclicBetween": {
+      "type_sha256": "38c9e31698a77a282f6467e0cf25e71b0efa66aae5ae47e6f21d89127f75415b",
+      "axioms": []
+    },
+    "MPC.instDecidableEqMove": {
+      "type_sha256": "a7ee6198470db25e073ab3dfed7ae4bf455bb46dba21cbe534e449649506ff4c",
+      "axioms": []
+    },
+    "MPC.instDecidableEqMove.decEq": {
+      "type_sha256": "41fa435887566257b5037db48fca68f1db28e62b6a1fa8b7624465f4912e2438",
+      "axioms": []
+    },
+    "MPC.instDecidableEqMove.decEq.match_1": {
+      "type_sha256": "d0852f2ff6a59402f997b54fe4331985466d6158d916bd48c0e55ea962f4d340",
+      "axioms": []
+    },
+    "MPC.instDecidableEqPiece": {
+      "type_sha256": "61ed49a5050bf7853d227479389792ec9463c8a1a08d8393c83d7259a394f89b",
+      "axioms": []
+    },
+    "MPC.instDecidableEqPiece.decEq": {
+      "type_sha256": "a8617cc1b17655c96beec9d55f4e4aff273b467edcf1d05aa783f261b4ccc38c",
+      "axioms": []
+    },
+    "MPC.instDecidableEqPiece.decEq.match_1": {
+      "type_sha256": "1da684be8efc30cbc408002838de76e244a1ef5a728633fba1cd7b92f2667904",
+      "axioms": []
+    },
+    "MPC.instDecidableEqPieceType": {
+      "type_sha256": "976aa3d6f9e09f7e7847972a17918578f5e365e4efd3b2ed900399ec2236200c",
+      "axioms": []
+    },
+    "MPC.instDecidableEqPlayer": {
+      "type_sha256": "bb9cfda324cf0b7074db362ce63216df19714bc00693b356ed0527b6627e8d62",
+      "axioms": []
+    },
+    "MPC.instDecidableFacing": {
+      "type_sha256": "9d0bdd4d34e382cf1389e7125d4d7240af7caab116eaa3779323ebe572a3e02b",
+      "axioms": []
+    },
+    "MPC.instDecidablePredPieceTypeIsAny": {
+      "type_sha256": "2e1c1d304b03055919c1ab50b3a5076a1e46a5baffd6a65359ce02d29a4bd47d",
+      "axioms": []
+    },
+    "MPC.instDecidablePredPieceTypeIsBishopFamily": {
+      "type_sha256": "f196a089f6a05518c0b4c4f6380015bee8e19224889c861b859e9b5381f932fe",
+      "axioms": []
+    },
+    "MPC.instDecidablePredPieceTypeIsRookFamily": {
+      "type_sha256": "47b1c8f955d9948a5afef690368f1cc5192986830bfbfc2ae153ff7bfb7ca4d2",
+      "axioms": []
+    },
+    "MPC.instDecidableTouches": {
+      "type_sha256": "5fdef31614129b36eb9da3f2226b4266dd1548183d9daaac38cd906573899a8a",
+      "axioms": []
+    },
+    "MPC.instDecidableTouches.match_3": {
+      "type_sha256": "1ef8b392a3da425b8e7ce5386b1bbafe82c9895c3d9fee580a885851f323499f",
+      "axioms": []
+    },
+    "MPC.instReprMove": {
+      "type_sha256": "8ce9763bdf4701c90d8100193ca477731302f1b757ba18f9f3251ce0fe47545c",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.instReprMove.repr": {
+      "type_sha256": "b2709dcdc9d0272d9c659c4dcdd5a878cce1731434305b831242899c61d0bc22",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.instReprMove.repr.match_1": {
+      "type_sha256": "1ef8b392a3da425b8e7ce5386b1bbafe82c9895c3d9fee580a885851f323499f",
+      "axioms": []
+    },
+    "MPC.instReprPiece": {
+      "type_sha256": "ef8ee610254ea18bd9d85dabfe57725c67024026bfeab1240a0ee0666751ccf7",
+      "axioms": []
+    },
+    "MPC.instReprPiece.repr": {
+      "type_sha256": "c114b7f4024db5aea9c28bff41468025d307bc176e1747648b90e40d3eab1e0b",
+      "axioms": []
+    },
+    "MPC.instReprPieceType": {
+      "type_sha256": "ee35b9122e53e368992d41c2cf0e9f44d2b58cf51498c78dddfede04589b7899",
+      "axioms": []
+    },
+    "MPC.instReprPieceType.repr": {
+      "type_sha256": "12015bea7626292ef34c9ca979ea33301e1c6ddb28b6fc076336c17267d1a110",
+      "axioms": []
+    },
+    "MPC.instReprPieceType.repr.match_1": {
+      "type_sha256": "913f91ec52c9a4b65319d20f55bfda495ab7c6b1cccc4d045941882b093721e3",
+      "axioms": []
+    },
+    "MPC.instReprPlayer": {
+      "type_sha256": "fda16efb32b9dc6749d22f1d6853155444c09b8ac30486561c9d60b9150e5c9f",
+      "axioms": []
+    },
+    "MPC.instReprPlayer.repr": {
+      "type_sha256": "f002a5a348e8ffe35723532f0052382e88835e5ec177823aeda8cdc666dec5cb",
+      "axioms": []
+    },
+    "MPC.instReprPlayer.repr.match_1": {
+      "type_sha256": "0318525a20bc23fe2b381ddd7b42a64e8c20164f95c55374a6876757de246592",
+      "axioms": []
+    },
+    "MPC.isDirectCheck": {
+      "type_sha256": "f9e7c2715719cc9a649af4b6719db69635a14de3958d42bba03fef4f573f286c",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.isDirectCheck.match_1": {
+      "type_sha256": "1ef8b392a3da425b8e7ce5386b1bbafe82c9895c3d9fee580a885851f323499f",
+      "axioms": []
+    },
+    "MPC.isDiscoveredCheck": {
+      "type_sha256": "23aa0e1da47cb0b0577869fb04a4bc6c7aaaf9338bf05994fb9ed6007d4748ce",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.kingPosAfterBoardMove": {
+      "type_sha256": "e8e4970aa378529c5d6aaabee98bf1d38e7f77d15f3a3f5272dd874890e1de28",
+      "axioms": []
+    },
+    "MPC.kingPosAfterBoardMove.eq_1": {
+      "type_sha256": "67acda76abbabe0fd04246ff3b65219f5d45f8655c90ee14979ef8b32c876be4",
+      "axioms": []
+    },
+    "MPC.king_off_axes_of_edge": {
+      "type_sha256": "b8bce817863c0eb99eaac913d823a6777373e0634a365038acf6eee1576182d8",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.king_position_of_silver": {
+      "type_sha256": "c28d20ed1139ffcf3454286a9fe91c075aa76ef4ddb8436d6b4c62e3176de46f",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.lineSide": {
+      "type_sha256": "72df2966748a62eea4b44730a43b768359c1878bd37540a09a2962e68bccd540",
+      "axioms": []
+    },
+    "MPC.lineSide.eq_1": {
+      "type_sha256": "4dfd9cc2f34481093d68af8b00b434dc00fb5df1f6191c4aebf8bd1e7ae2bc7f",
+      "axioms": []
+    },
+    "MPC.lineSide_affine": {
+      "type_sha256": "a21841e94395e4ef753f7d418253b1b2c819d5ca65d3403c1cc54367235b47b9",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.lineSide_eq_cross": {
+      "type_sha256": "08b20dfa8f1ed8b24b93d8a086f29bb6de7d8cd4bc60b82a2e92eb11564ec3ac",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.lineSide_eq_zero_iff_collinear": {
+      "type_sha256": "a307958d4334f34e33a41d8b133868c64e3eb8a592d0bb5705cb676d458ff785",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.lineSide_left": {
+      "type_sha256": "cf5717edc363b2d6c326b9c75995b98476ca60010e32dbedee5b68921b8af6c9",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.lineSide_pos_iff_of_between": {
+      "type_sha256": "e94c0f80e001a37d85b078745978ee989b10d9067e32b4c04e27329022e12b37",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.lineSide_right": {
+      "type_sha256": "2342691b0e0811abc5d40ae66842cce32ce64f767cb3585616d9857fb34d09fe",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.mem_slidePath_iff_of_exact_steps": {
+      "type_sha256": "74dcbc6d077d29301c2fe39a35ad7b44a932c29ea2c7da1929184490402ec17a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.mem_slidePath_of_between": {
+      "type_sha256": "f3495c3f439b517377d2a73edbdfdcebd145525e31baec8cf412cbbe947a2240",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.mem_slidePath_of_mem_tail": {
+      "type_sha256": "c03c4fe9035e30d1258d7e38cf42104117a94194e2d324906c79ae0e2b12ff5a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.mutual_perpetual_check_impossible": {
+      "type_sha256": "e915697fc25aa890c8a65a8b6c0a71dec819e508843a2ee85c091f7534e4238a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.mutual_perpetual_check_impossible_of_mutualPerpetualCheck": {
+      "type_sha256": "9b88f770ac109910860967a5c2937d59f8565917a0d145fb78df12a776cca117",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.mutual_perpetual_check_impossible_of_pieceCounts": {
+      "type_sha256": "3bcb15851e72f7edffc1436f70040e06939764009b07abce4288de1fe760c6a6",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.neg_mem_king_stepDirs": {
+      "type_sha256": "936cd797b1aa2cdf533aab84172a32d52105f15be08d05a23e86675e695f700c",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.normalize_mul_of_king_step": {
+      "type_sha256": "9ee5f3995e7e8d907600c05bcae1d79a5421e356c2bfa19375aefbc206305b5c",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.not_canMoveToOriented_of_blocked": {
+      "type_sha256": "d0eadf1bdb304590d36dcc60961faf4ef48b03bc5702111ecddfcadb76f4fefa",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.not_isAligned_of_step_off_line": {
+      "type_sha256": "7ac5f22b2a012c5d8bf31403f12079253af284f5d36e828f973b14e8ddc065b3",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.not_orth_step_between_rays": {
+      "type_sha256": "16c41f1105f06e8554e9989a303dd6ea74fdb16971efb0d47e793a715eec693b",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.not_step_of_multiple": {
+      "type_sha256": "10a6038e656f24e96d2bc887be4bb5cba1630a48ec3552b210c80412661a4c91",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.onBoard": {
+      "type_sha256": "db6a186919733389d3e163f3442e3412c33b0f760d946eb33f55ff9a37f09bb8",
+      "axioms": []
+    },
+    "MPC.onBoard.eq_1": {
+      "type_sha256": "f04e6d881848117cbb88e5ef0cb788f08ba6644ad3974906e1fae0a8e43bc4d5",
+      "axioms": []
+    },
+    "MPC.orth_mem_rookDragon_slideDirs": {
+      "type_sha256": "02d8fa3ebb3b70d1e30aa96b56c78736876cdff0cbea87d6cd16a85ab5346389",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.orth_of_bishopHorse_stepDir": {
+      "type_sha256": "921a4ae8e07f0b8402fbcc25cfedb4a4130d05329ffb71e1217bcc377e94a4a2",
+      "axioms": []
+    },
+    "MPC.orth_unit_cases": {
+      "type_sha256": "590a5c611132ac794a20a45397f6136b32399a1c389253a10b51a0b4111bcaec",
+      "axioms": []
+    },
+    "MPC.pathClear": {
+      "type_sha256": "588fb1dcc31f9fc8b58fbea762235bda4f55117c43e7a352b01aabdd117ce964",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.pathClear.eq_1": {
+      "type_sha256": "cf33d11740d8703826922302c1714cae9a2782d433e0de99957d8311b49484c2",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.pathClear_iff_of_exact_steps": {
+      "type_sha256": "4c596da252466cbb8ab9ed178364be1d2fe14da385ff6b0bff47e0a4e537d968",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.pathClear_mono_of_empty_preserved": {
+      "type_sha256": "0e822ce7f41e31584b0baaf7c4936db84088dbfbbd1c88c627cc6db50a20282c",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.promoteStable_any": {
+      "type_sha256": "88f23a3cb5a67e38a28ea60f0c018669e3f1e4e485594d3c3d84b80730832efb",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.promoteStable_bishopFamily": {
+      "type_sha256": "cbddc15d49bc785cf60a99a08fc044bed7077e6959b04543cc8b54f228bd53ed",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.promoteStable_rookFamily": {
+      "type_sha256": "3a2e6d9ba65efab330ccd9dfdd67825813d1dcdf7c31a010df94a3dce46028a2",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.ray_of_attack_not_step": {
+      "type_sha256": "928a6f1f2f6777ac8e1b8f9e8e69b6a5b801e483141d3e13cdd23eb034a7f507",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.relTo": {
+      "type_sha256": "8fb9831fd0e900382baf778c872ebabc7a97e713c531b6246aea949bd3aa89ca",
+      "axioms": []
+    },
+    "MPC.relTo.eq_1": {
+      "type_sha256": "57745933da25e16c6ebc219c28da6b3aa4c1aefd29b720797e2e985dcb86c5c7",
+      "axioms": []
+    },
+    "MPC.relTo_inj": {
+      "type_sha256": "26e9dbb2b1c8f63215e1c6288fe11b97a1e71e4e1d757a382ecff9994e87a645",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.rookDragon_of_slideDir": {
+      "type_sha256": "f99150fdf7848c14565fc2bad642284d5effde9bf0cee991d5ed9afabb78f75b",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "MPC.same_ray": {
+      "type_sha256": "22c37246e70ffc946acd3c31e512c4905357e45ff9e5959236819754854de85d",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.silverSquares_of_step_between_rays": {
+      "type_sha256": "aeedd0c36f121d3f0fffeea1451ad6a84b833203a409705223e0987a8e7fbefd",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.silver_step_between_lines": {
+      "type_sha256": "b4c4c2ed83ed0578afaac2cfd91f06a3720d6916d46530209dd70c9c971ec450",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.slideDir_of_attack_not_step": {
+      "type_sha256": "44b528fced2c77b4f9aae27e9574cf92f49bd681086f21f4dcece332df1cb6ae",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.slidePath": {
+      "type_sha256": "ed14fabaa410a47a88add96dc2544373b2c2cf88bc64661e6a764b1bafd6d46c",
+      "axioms": []
+    },
+    "MPC.slidePath.eq_1": {
+      "type_sha256": "62061a5a2575a2acbdc4ad71b874502f88bd2cbeaed7fcd9ac46bda23656ce70",
+      "axioms": []
+    },
+    "MPC.slidePathAux": {
+      "type_sha256": "251768e78b13c8707cb62b53ea79cb6db08567451051ffdce3681b0ff52a7c86",
+      "axioms": []
+    },
+    "MPC.slidePathAux.eq_1": {
+      "type_sha256": "f018de17c32b59bc759af1053d4b26295918715e76aff837aac7422da2a004af",
+      "axioms": []
+    },
+    "MPC.slidePathAux.eq_2": {
+      "type_sha256": "272ee950b2c920e4a54de4c14de0f25fd9cbba97f8d1837e227d6e1b1e5cd532",
+      "axioms": []
+    },
+    "MPC.slidePathAux.match_1": {
+      "type_sha256": "1bf115da8249be48ff4b7f75362947c51c975698b0d6e0b048bac3ae469ef74f",
+      "axioms": []
+    },
+    "MPC.slidePoint_onBoard_of_exact_steps": {
+      "type_sha256": "eff56686385beacbcadaa75662975ee39d1a4dc895c83c04dd7bc1e66b25cc43",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.slideSteps_le_eight_of_endpoints": {
+      "type_sha256": "3dfa5e43677594542f5829d593c834cac66355fb7e1fea431aa346a39b2c1738",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.stepAttack_of_attacks_of_blocked": {
+      "type_sha256": "c8d40ea573511d69e3342b5d9133b0be00a591650f0edc5b7590fbb4590b6b43",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.stepDir_unit_or_forward_knight": {
+      "type_sha256": "79113ad9d195e7df19a1d3b589d308d283a8b225d4c9c2ce93b7eb3995c48aec",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.stepDir_unit_or_knight": {
+      "type_sha256": "cd8dc5ae84f98f4ce2cfd98865bf1b4997dfda9bc48020f425ddafcf8c3005b8",
+      "axioms": []
+    },
+    "MPC.sum_add_one_eq": {
+      "type_sha256": "da8dc4ccf7db7f0fd1e84a18f7a208be79828fbde1d9a28fbe6fd194d279270b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.sum_add_two_eq": {
+      "type_sha256": "9131d9bd5f18ea398413ec19cf1bbc380d26219ed0a57a9de0be679ac1021b60",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.toPos": {
+      "type_sha256": "4db092cc0d605a6812f6b522b44973179c8b683201962b925e7a7c33ab32decb",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.toPos.congr_simp": {
+      "type_sha256": "7b57904bd98ff1812064a02c715a14ee633d387172dea2b4d7188ce12ef3bb02",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.toPos.eq_1": {
+      "type_sha256": "5764668b4b8c06f51c355d67758dcf3065a242a5e0ff851c012d8520ce7e518c",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.vecKey": {
+      "type_sha256": "2517ca1307e5575a63abf5e96c2f4920a52f6f396b2bf5550d671d7e1dc10ffd",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.vecKey_lt_of_comb": {
+      "type_sha256": "9d547eb3685287036ec078bb3357f3403274b5f4362e2689f5976b2267bbdbd1",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "MPC.vecKey_of_mul": {
+      "type_sha256": "0534d940b197e539c331403f5fdf3d17ac2692ee70c8cd0fb0caacabbcb47f49",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    }
+  }
+}

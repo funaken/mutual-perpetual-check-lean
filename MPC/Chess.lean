@@ -1,0 +1,12 @@
+import MPC.Chess.CheckingCrossingOrder
+import MPC.Chess.CheckingCrossingWitness
+import MPC.Chess.CheckerCrossingOrder
+import MPC.Chess.SecondCrossingMoves
+import MPC.Chess.CheckingRayHalfPlane
+import MPC.Chess.CheckingRayRank
+import MPC.Chess.LatticeFrame
+import MPC.Chess.Figure3Geometry
+import MPC.Chess.Figure3Candidates
+import MPC.Chess.Figure3Moves
+import MPC.Chess.Impossibility
+import MPC.Chess.FIDERepetition

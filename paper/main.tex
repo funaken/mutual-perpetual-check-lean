@@ -1,0 +1,513 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{fontspec,xeCJK}
+\IfFontExistsTF{Noto Serif CJK JP}{\setCJKmainfont{Noto Serif CJK JP}}{\setCJKmainfont{Hiragino Mincho ProN}}
+\IfFontExistsTF{Noto Sans CJK JP}{\setCJKsansfont{Noto Sans CJK JP}}{\setCJKsansfont{Hiragino Sans}}
+\IfFontExistsTF{Noto Sans CJK JP}{\setCJKmonofont{Noto Sans CJK JP}}{\setCJKmonofont{Hiragino Sans}}
+\setmainfont{texgyretermes-regular.otf}[BoldFont=texgyretermes-bold.otf,ItalicFont=texgyretermes-italic.otf]
+\setmonofont{lmmono10-regular.otf}[Scale=0.86]
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array,graphicx,tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[unicode,colorlinks=true,urlcolor=blue!50!black,linkcolor=black,citecolor=black]{hyperref}
+\hypersetup{pdfauthor={funaken},pdftitle={Lean 4による将棋とチェスの双方連続王手の不可能性の形式化}}
+\usepackage{xurl}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\newcommand{\decl}[1]{\par\noindent{\footnotesize Lean: \nolinkurl{#1}}\par}
+\theoremstyle{definition}
+\newtheorem{theorem}{定理}
+\newtheorem{lemma}{補題}
+\renewcommand{\abstractname}{概要}
+\renewcommand{\refname}{参考文献}
+\renewcommand{\tablename}{表}
+\renewcommand{\figurename}{図}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0.25em}
+\setlength{\emergencystretch}{3em}
+\title{Lean 4による将棋とチェスの\\双方連続王手の不可能性の形式化}
+\author{funaken}
+\date{2026年11月27日}
+\begin{document}
+\maketitle
+\begin{abstract}
+双方が毎手王手をかけながら同一局面へ戻る手順は、本将棋にもチェスにも存在しない。
+なんかによる2024年の証明の将棋部分とチェス部分を、互いに独立したLean 4のモデルで形式化した。
+将棋では、有限手順のデータと遷移・移動・王手の条件を分離し、玉の固定性、睨みの分類、
+半平面上の個数不変量、双方に開き王手が必要であることを証明したうえで、
+移動駒の種類ごとに矛盾を導く。
+形式化では、角度比較を有理数のキーに置き換え、駒の個体識別を用いずに
+局面ポテンシャルを構成した。
+チェスでは、FIDE規則の局所的な合法手の上で、周期性から捕獲・昇格・pawnの移動・castlingを除き、
+王手発生ラインと交差点の幾何を有理座標・角度の順位・格子の対称性で再構成して、
+原論文の図3の4候補を排除する。
+両主定理に独自公理はなく、依存はLean標準の命題外延性・選択・商の健全性に限られる。
+本稿はその設計と原証明からの再構成を説明する。
+また、カーネルで検証されたモデル内の結論と、実際の競技規則に対する仕様解釈を区別する。
+数学的定理の発見や将棋・チェスの全規則の形式化を主張するものではない。
+\end{abstract}
+
+\section{問題と貢献}
+双方連続王手の手順とは、一方が王手を回避して相手に王手を返すことを、両者が
+交互に続ける手順である。本稿が対象とするのは、その途中で盤上・持駒・手番を含む
+同一局面に戻ることが可能かという数学的問題である。連続王手の千日手を反則とする
+競技規定を使って不可能と結論することとは異なる。
+
+なんかは、将棋とチェスにおける不可能性の証明を2024年に発表した\cite{nanka}。
+本形式化は、その第2--5節の将棋の定理1.1と、第6節のチェスの定理の両方を対象とする。
+本稿の第2--4節が将棋、第\ref{sec:chess}節がチェスの形式化を説明する。
+本稿の数学的結果は原論文に帰属し、既知の結果を証明支援系で再構成した成果として述べる。
+
+本稿で説明する貢献は次の四点である。
+第一に、初期の駒数と手の条件を明示した有限手順モデル上で、将棋の最終定理までをカーネルで検証した。
+第二に、原証明の角度と手順上の総和を、有理数キーおよび局面ごとのポテンシャルへ置き換えた。
+第三に、将棋から独立したチェスのモデルの上で第6節の議論を形式化し、
+原論文が省略した補題6.2の証明と、図3の候補の網羅性を定理として与えた。
+第四に、仕様の監査と証明の依存検査を分け、再現可能な証明資料として整理した。
+有理数による幾何やポテンシャル法それ自体の新規性は主張しない。
+
+先行研究として、HOL4によるチェス終盤データベース\cite{hurd}、
+Isabelle/HOLによるKRK終盤戦略\cite{krk}、Leanによる将棋の合法手生成器\cite{yam}がある。
+したがって、ゲームや将棋を形式化したことだけでは差分にならない。
+本研究の対象は、任意長の周期的な双方連続王手の排除と、そのための幾何・不変量の証明である。
+調査範囲内で、将棋とチェスのいずれについても同じ定理の他の形式化は確認できなかった。
+ただしチェスについての調査はウェブ検索に限られる。未発見をもって不存在とはせず、
+「世界初」という優先性の主張を置かない。
+
+\section{将棋のモデルと主定理}
+\subsection{データと外付けの条件}
+位置は9\(\times\)9盤の範囲を型で表し、駒は所有者と14種類の駒種からなる。
+盤面は各位置の駒の有無と、各所有者の持駒の多重集合を持つ。
+局面\code{BoardState}は盤面と手番の組である。
+\code{Move}は、移動元・移動先・成りフラグを持つ盤上移動と、駒種・打ち先を持つ駒打ちからなる。
+
+長さ\(n\)の\code{MoveTrace}は、\(n+1\)個の局面と\(n\)個の手だけを保持する。
+遷移、安全性、周期性は構造体のフィールドに埋め込まず、外付けの命題とする。
+長さ0もデータとして構成できる。手\(i\)の前後の状態は、それぞれ
+\code{Fin.castSucc}と\code{Fin.succ}で参照する。
+玉位置列\(k:\operatorname{Fin}(n+1)\to\operatorname{Player}\to\operatorname{Pos}\)も別データであり、
+定義の段階では玉の移動を許す。
+
+\code{KingsWellPlaced}は、各所有者\(o\)の玉が位置\(q\)に存在することと
+\(q=k(o)\)が同値であると要求する。これにより、対象玉の存在・一意性を
+利きの定義から独立させる。
+
+\subsection{移動と王手}
+\code{canMoveToOriented}は、移動差分を所有者に応じて変換した駒の方向表と比較する。
+先手の前方を\(y\)正方向、後手の前方を\(y\)負方向とする。
+slide分岐では、正規化方向の一致に加え、ある正の自然数\(m\)に対する
+\(\mathrm{dst}=\mathrm{src}+m d\)という厳密整列と経路の空きを要求する。
+正規化だけでは、例えば差分\((3,6)\)の斜め方向への誤分類を防げない。
+
+経路については、位置を整数座標で表し、厳密整列した両端の間で
+\[
+ q\in\operatorname{slidePath}(a,b)
+ \quad\Longleftrightarrow\quad
+ \exists j\in\mathbb N,\quad 1\leq j<m\ \land\ q=a+jd
+\]
+を証明する。9\(\times\)9盤の両端から\(m\leq8\)が従い、途中点の盤面内性も得る。
+この仕様は非整列入力に適用しない。
+\decl{MPC.mem_slidePath_iff_of_exact_steps}
+
+\code{attacksOriented}は駒情報を引数に取る幾何的な利きであり、攻撃元の存在を要求しない。
+\code{inCheckOriented}は、対象所有者の相手側の駒が実際に存在し、その駒が対象位置を
+攻撃するという存在命題である。対象位置に玉があることは\code{KingsWellPlaced}が保証する。
+この分離により、遮蔽除去による利きの保存と、攻撃駒の除去による王手の消滅を混同しない。
+
+\subsection{定理の前提}
+\code{PeriodicMutualCheck}は表\ref{tab:premises}の九条件をまとめる。
+さらに\code{DropsFromHand}は打つ駒が移動前の持駒にあること、
+\code{InitialPieceCountsAtMostTwo}は初期の盤上と双方の持駒を合わせ、角・馬と飛車・竜が
+それぞれ高々2枚であることを要求する。
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{p{0.31\linewidth}p{0.59\linewidth}}
+\toprule
+条件 & 内容\\\midrule
+\code{transitions} & 前後局面が\code{applyMove}に従う\\
+\code{sourcesOwned} & 盤上移動の元に手番側の駒が存在する\\
+\code{kingsWellPlaced} & 全状態の盤面と玉位置が整合する\\
+\code{ownKingSafe} & 各手の後で、移動した側の玉が安全である\\
+\code{initialOpponentSafe} & 初期状態で非手番側の玉が安全である\\
+\code{checks} & 各手が相手玉に王手する\\
+\code{movementRules} & 成る前の駒種が所有者に応じた移動条件を満たす\\
+\code{periodic} & 最終局面が初期局面と等しい\\
+\code{nonempty} & \(0<n\)\\\bottomrule
+\end{tabular}
+\caption{周期的な双方連続王手を指定する条件。}\label{tab:premises}
+\end{table}
+
+\begin{theorem}[原論文の定理1.1の形式化]
+\code{PeriodicMutualCheck}、\code{DropsFromHand}、
+\code{InitialPieceCountsAtMostTwo}を同時に満たす有限手順と玉位置列は存在しない。
+\end{theorem}
+\decl{MPC.mutual_perpetual_check_impossible}
+
+この型には、玉の固定性、双方に開き王手があること、半平面の個数不変性を仮定として含めない。
+打ち先の空きは持駒の条件と周期性から、全状態の大駒数上限は初期上限と系統ごとの収支から導く。
+捕獲した成駒を元の駒種に戻す処理\code{PieceType.demote}は遷移に含まれている。
+
+\subsection{実将棋との対応と限界}
+本モデルは成り場所・強制成り、二歩・打ち歩詰め・行き所のない駒の打ち、自駒の捕獲を
+局所的には制限しない。これらは許す手順を増やす向きの差として監査した。
+また初期局面は平手の初期配置に固定せず、到達可能性を要求しない。
+局面の同一性には盤上・持駒・手番を含めるが、競技規則の4回出現ではなく一度の回帰を用いる。
+競技規則の参照は日本将棋連盟の規則による\cite{rules}。
+
+したがって、通常の局所的な手順規則を満たす周期的双方連続王手があれば、このモデルにも
+入ると解釈する。ただし、この包含を別の完全な将棋形式モデルからLeanで証明したわけではない。
+4回出現する履歴からの区間抽出も、本成果では文章による対応である。
+これらの仕様解釈と、定理の証明項のカーネル検証を明確に区別する。
+
+\section{将棋の証明構造と原論文との対応}
+図\ref{fig:proof}に将棋の主な証明の流れを示す。
+最初に、玉が移動すると両玉の整列が壊れ、その後の逆王手では元の整列を回復できないという
+幾何を周期性に接続する。これにより、状態別に与えた玉位置列が一定であることを導く。
+\decl{MPC.MoveTrace.kingPos_eq_of_periodic}
+
+次に、不動な位置の駒を残した盤面での利きによって「睨み」を定義し、
+睨まない駒の集合の個数が各手で増えないことを示す。
+周期性の下では始終が等しいため、各手の不等式は等号となる。
+この議論を駒種にも適用し、原論文の第2節の分類を得る。
+不動性は任意の利きを持つ駒に無条件で与える仮定ではなく、手順に対する定義と定理で扱う。
+
+第3節の幾何では、開き王手の移動元だけでなく移動先を拘束するため、周期をまたいだ次の
+移動までの保持を扱う。これは一手の盤面更新が保証する非端点の位置保持より強い議論である。
+その後、王手駒が両玉を通る直線上にないこと、および各半平面の個数不変性を証明する。
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth, every node/.style={draw,rounded corners,align=center,font=\small,text width=46mm,minimum height=10mm},node distance=8mm and 6mm]
+\node (model) {手順・遷移・王手・周期性};
+\node (glare) [below=of model] {玉の固定・睨みの分類};
+\node (geom) [below=of glare] {開き王手と半平面の幾何};
+\node (angle) [below left=of geom] {角度キー・ポテンシャル\\命題4.1};
+\node (count) [below right=of geom] {半平面の個数不変量\\命題3.8};
+\node (cases) [below=22mm of geom] {駒種別の排除};
+\node (main) [below=of cases] {不可能性定理};
+\draw[->] (model)--(glare);\draw[->] (glare)--(geom);
+\draw[->] (geom)--(angle);\draw[->] (geom)--(count);
+\draw[->] (angle)--(cases);\draw[->] (count)--node[draw=none,text width=17mm,font=\scriptsize,right]{角・馬}(cases);
+\draw[->] (cases)--(main);
+\end{tikzpicture}
+\caption{将棋の概念上の証明依存。駒数条件からの経路は省略。全import図は再現資料に含める。}\label{fig:proof}
+\end{figure}
+
+原論文の命題4.1によって、先手が開き王手をする手が存在する。
+その手の移動駒は玉ではなく、睨まない駒である。
+桂・香・歩には前進ポテンシャル、金型には移動方向、銀と飛車・竜には幾何と大駒数を用いる。
+角・馬の残る配置では表1の場合分けと命題3.8が矛盾する。
+半平面不変量を用いる駒種別の除外が角・馬だけであることは、証明項の依存経路でも検査する。
+
+\section{将棋の証明の再構成}
+\subsection{有理数の角度キー}
+原論文の角\(\angle AKL\)を直接実数の逆三角関数として扱う代わりに、
+\(u=A-K\)、\(v=L-K\)に対して
+\[
+ f_v(u)=-\frac{(u\cdot v)|u\cdot v|}{u\cdot u}\in\mathbb Q
+\]
+を用いる。非零ベクトルでは、これは数学的には
+\(-\|v\|^2\cos\theta|\cos\theta|\)に等しい。
+実装は三角関数との全面的な同値を証明するのではなく、後続の議論が必要とする次の二性質を証明する。
+\begin{enumerate}
+\item 正の整数による\(u\)の伸縮で値が変わらない。
+\item \(u,v\)が平行でなく、\(a,b>0\)なら、\(au+bv\)のキーは\(u\)のキーより小さい。
+\end{enumerate}
+零ベクトルの値も定義されるが、幾何を使う箇所では必要な非零・非平行条件を証明する。
+\decl{MPC.vecKey_of_mul}
+\decl{MPC.vecKey_lt_of_comb}
+
+二番目の性質の証明では、\(s=u\cdot v\)、\(t=(au+bv)\cdot v\)と置く。
+\(Q=u\cdot u\)、\(C=(au+bv)\cdot(au+bv)\)、\(V=v\cdot v\)、
+\(X=\det(u,v)\)に対する恒等式
+\[
+ t^2Q-s^2C=X^2(2ab\,s+b^2V)
+\]
+を使い、\(s,t\)の符号を分けて有理数の比較へ帰着する。
+これにより、合駒がキーを厳密に下げるという原論文の幾何的議論を、整数・有理数の演算で利用できる。
+
+\subsection{局面ごとのポテンシャル}
+固定した側\(o\)の玉を\(K\)、相手玉を\(L\)とする。
+状態\(k\)の王手駒の位置を\(c_k\)、相手側の睨まない駒の位置集合を\(N_k\)とし、
+\[
+ \Phi_o(k)=f_{L-K}(c_k-K)+\sum_{q\in N_k}f_{L-K}(q-K)
+\]
+を定義する。王手駒の選択と一意性に必要な性質は前段で証明する。
+駒の個体を周期の前後で同定する写像を作らず、各状態の実際の位置集合を数える。
+\decl{MPC.MoveTrace.anglePotential}
+
+側\(o\)に開き王手が一度もないと仮定する。
+その側の直接王手では\(\Phi_o\)が変わらず、相手側の手では増加しない。
+開き王手の場合は移動元の項と新しい王手駒の項が相殺される。
+周期性から始終の値が一致するため、全ての一手の変化が0となる。
+相手側の手で等号が成り立つ条件を使うと、相手は毎手王手駒を取ることになる。
+相手の持駒はそのたびに増え、自分の手では減らないので、周期性と矛盾する。
+これは双方の側について成立し、命題4.1を与える。
+\decl{MPC.MoveTrace.discoveredCheckByEachSide_of_mutualPerpetualCheck}
+
+この構成は、原論文の補題4.7の総和を局面量で表現したものである。
+任意の単調変換が原論文の全ての角度恒等式を保つと仮定しているわけではない。
+キーを使って一手の変化と相殺を改めて証明する点が重要である。
+
+\subsection{半平面の個数と自然数の収支}
+両玉を結ぶ直線に対する符号付き位置\(\ell(q)\)を使い、整数\(s\)に対して
+\(s\ell(q)>0\)の領域を指定する。\(s=1,-1\)が両半平面、\(s=0\)は空領域に対応する。
+境界上の位置は含めない。
+\(O_s(k)\)を、この領域内で駒が存在し、相手玉を睨まず、手順で触れられる位置の集合、
+\(C_s(k)\)を王手駒の位置集合とする。
+\[
+ D_s(k)=|O_s(k)|+|C_s(k)|
+\]
+が\code{discHCount}である。具体的な集合の所属を一手ごとに調べ、
+移動元と移動先による変化を有限集合のcard等式へ持ち上げる。
+減算の切り捨てを避けるため、収支は加法的な等式として扱う。
+盤上移動と駒打ちを分けて証明した一手不変性を、有限indexの帰納により全状態へ拡張する。
+\decl{MPC.MoveTrace.discHCount_succ_eq}
+\decl{MPC.MoveTrace.discHCount_eq_of_periodic}
+
+\section{チェスの形式化}\label{sec:chess}
+\subsection{モデルと主定理}
+原論文第6節は、第4節までの事実がチェスでも成り立つとしたうえで、
+王手発生ラインと交差点の幾何によってチェスの場合を示す。
+本形式化では、名前空間\code{MPC.Chess}に8\(\times\)8盤のモデルを置き、将棋側の宣言を一切importしない。
+第6節が用いる前節までの事実は、このモデル上で証明し直した。
+
+局面\code{Position}は盤上配置、手番、4個のcastling権利、en passantの対象マスからなり、持駒はない。
+\code{Move}は通常移動（捕獲・昇格を含み得る）、en passant、castlingのいずれかで、
+\code{applyMove}が合法性と独立に盤面・手番・権利・対象マスを更新する。
+\code{LegalMove}は、移動前の玉配置の整合、FIDE規則第3条の局所的な条件をまとめた
+\code{PseudoLegal}、移動後の自玉の安全からなる\cite{fide}。
+\code{PseudoLegal}は自駒と玉の捕獲の禁止、pawnの前進・捕獲・2マス前進・en passant、
+最終rankでの昇格の強制、castlingの権利・経路・通過マスへの利きを扱う。
+\code{FollowsLegalMoves}は、各手が、ある玉配置でのこの合法手と\code{applyMove}による更新に従うことを要求する。
+利き\code{attacks}と王手\code{inCheck}は将棋と同様に分離し、ピンされた駒も利きを持つ。
+
+\begin{theorem}[原論文第6節の定理の形式化]
+正の長さの有限手順と玉位置列であって、全ての手が合法で（\code{FollowsLegalMoves}）、
+全状態で玉配置が整合し（\code{KingsWellPlaced}）、各手が相手玉に王手し
+（\code{EveryMoveChecksOpponent}）、最終局面の盤上配置と手番が初期局面と一致する
+（\code{BoardTurnPeriodic}）ものは存在しない。
+\end{theorem}
+\decl{MPC.Chess.mutual_perpetual_check_impossible}
+
+主定理の反復条件は盤上配置と手番の一致だけである。
+FIDE規則第9.2.3条に対応する\code{FIDESamePosition}は、
+両者が保持するcastlingの権利と手番側の合法手集合の一致も要求する。
+経路が塞がっていても権利の喪失は局面を区別する（第9.2.3.2条）。
+盤上配置・手番・権利が同じなら、残る違いはどのen passant捕獲が合法かに尽きる（第9.2.3.1条）。
+この意味で初期局面へ戻る手順も、主定理の反復条件を満たすので存在しない。
+\decl{MPC.Chess.mutual_perpetual_check_impossible_of_fideSamePosition}
+初期局面からの到達可能性、反復による引き分けの申し立て、3回・5回の反復、
+50手・75手規則、時計は前提に含めない。
+長さ0の手順は他の条件をすべて満たし得るので、長さ正の条件は外せない。
+将棋の大駒の枚数条件は引き継がず、昇格先の駒の枚数も制限しない。
+
+\subsection{周期性による還元と第2・3節の事実}
+原論文は、取った駒を打てないことから手順中に捕獲がないとする。
+形式化では、盤上の駒数、pawnの数、pawnの前進量の総和を盤面の加重和として定義する。
+駒数は捕獲で、pawnの数は昇格で厳密に減り、それらを除いた手ではpawnが動けば前進量が厳密に増える。
+盤面の周期性からこれらは全状態で等しく、捕獲・en passant・昇格・pawnの移動が順に排除される。
+\decl{MPC.Chess.MoveTrace.pieceCount_eq_of_periodic}
+正の長さの周期的連続王手では各状態の手番側が王手されているため、
+開始時の非王手を要求するcastlingも現れない。
+\decl{MPC.Chess.MoveTrace.not_castle_of_periodic_checks}
+
+玉の不動性（命題2.2）は、玉が動くと両玉の整列が失われ、玉以外の手では回復しないことから導く。
+王手駒は相手の応手で動かず捕獲もされないので、途中の占有に依存しないpawnとknightの王手は
+応手後も残り、自玉の安全に反する。したがって王手駒はqueen・rook・bishopに限られる。
+\decl{MPC.Chess.MoveTrace.kingPositions_eq_of_periodic_checks}
+\decl{MPC.Chess.MoveTrace.checking_piece_is_slider_of_periodic_checks}
+睨みの分類（補題2.4--2.6・2.8）、開き王手のラインの保持（命題3.3・系3.4）、
+両玉の直線上の着地と王手の排除（命題3.5・3.6）も、駒の個体識別を用いずにこのモデル上で証明した。
+捕獲がないため、系3.4の着地点は両ラインの厳密な内部にある。
+
+\subsection{王手発生ラインと交差点}
+玉を始点とするqueenの8方向の半直線のうち、その上にある相手の駒がこの玉へ実際に王手する状態が
+あるものを、王手発生ライン\code{CheckingRay}とする（定義6.1）。
+原論文が証明を省略した補題6.2、すなわち全ての手が、両玉それぞれについて異なる王手発生ラインの
+間の移動であることを、着地点による王手、遮蔽除去による王手、次の離脱に分けて証明した。
+\decl{MPC.Chess.MoveTrace.every_move_between_distinct_checkingRays}
+
+交差点（定義6.3）は盤内のマスに限らないので、半直線を有理座標\(\mathbb Q^2\)へ拡張し、
+行列式による交点の計算を両半直線への所属と同値にした。
+平行な場合は別の分類定理で扱い、命題3.5から王手発生ラインの平行な重なりを排除する。
+両玉の方向の組から交差点の有限集合（高々64点）を作り、各半直線上で媒介変数の昇順に並べる。
+A1・A2は、その半直線上に1点以上・2点以上あるという証明を引数に取る定義とし、既定値で補わない。
+補題6.4(1)の「王手駒はA2にあるか、それより遠い」と、(2)の「A2にある王手駒は手順中に移動する」を、
+必要な個数の条件も含めて手順の条件から導いた。
+\decl{MPC.Chess.MoveTrace.checker_eq_or_beyond_second_of_periodic_checks}
+\decl{MPC.Chess.MoveTrace.checker_at_second_departs_of_periodic_checks}
+
+\subsection{角度の順位と図3の候補}
+定義6.5のなす角は実数の角度として計算せず、相手玉への変位との内積と外積によって、
+\((0^\circ,45^\circ]\)、\((45^\circ,90^\circ]\)、\((90^\circ,135^\circ]\)、\((135^\circ,180^\circ)\)の
+順位1--4に分類する。
+両玉からの非平行な半直線が交わるなら順位の和は4以下であるという三角形の議論を証明し、
+補題6.4(1)と合わせて、全ての王手発生ラインの順位が2以下であることを導く。
+\decl{MPC.Chess.kingRayRank_add_le_four}
+\decl{MPC.Chess.MoveTrace.checkingRay_rank_le_two_of_periodic_checks}
+
+原論文の「平行移動や回転、反転により一致するもの」は、一方の玉を原点に置くことと、
+座標の交換と符号の反転からなる格子の8つの対称性\code{LatticeFrame}で表す。
+玉\(K\)を原点、もう一方の玉\(L\)を標準座標\((a,b)\)（\(0\le b\le a\)、\(0<a\)）に置くと、
+\(b=0\)と\(b=a\)では順位2の2本が平行になり交わらない。
+\(0<b<a\)では、1つの半平面の王手発生ラインは\(K\)からの北東・北と\(L\)からの西・北西に定まる。
+4交点\((b,b)\)、\(((a+b)/2,(a+b)/2)\)、\((0,b)\)、\((0,a+b)\)が盤内のマスであることから、
+\((a,b)\)は\((3,1)\)、\((5,1)\)、\((4,2)\)に限られる。
+反対側の半平面にも王手発生ラインがあれば\((3,1)\)だけが残る（図\ref{fig:figure3}）。
+\decl{MPC.Chess.MoveTrace.figure3_candidates_of_periodic_checks}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[x=4.4mm,y=4.4mm,
+  grd/.style={gray!40,step=1},
+  ray/.style={densely dashed,semithick},
+  pt/.style={circle,draw,fill=white,inner sep=1.2pt},
+  kg/.style={font=\footnotesize\bfseries,fill=white,inner sep=0.8pt},
+  lab/.style={font=\footnotesize,inner sep=1pt}]
+\begin{scope}
+\draw[grd,shift={(-0.5,-0.5)}] (0,0) grid (4,5);
+\draw[ray] (0,0)--(3.4,3.4); \draw[ray] (0,0)--(0,4.4);
+\draw[ray] (3,1)--(-0.4,1); \draw[ray] (3,1)--(-0.4,4.4);
+\foreach \p in {(1,1),(2,2),(0,1),(0,4)} \node[pt] at \p {};
+\node[kg] at (0,0) {K}; \node[kg] at (3,1) {L};
+\node[lab] at (-1,1) {\(A\)}; \node[lab] at (2,2.75) {\(B\)};
+\node[font=\footnotesize] at (1.5,-1.4) {\((3,1)\)};
+\end{scope}
+\begin{scope}[xshift=28mm]
+\draw[grd,shift={(-0.5,-0.5)}] (0,0) grid (6,7);
+\draw[ray] (0,0)--(5.4,5.4); \draw[ray] (0,0)--(0,6.4);
+\draw[ray] (5,1)--(-0.4,1); \draw[ray] (5,1)--(-0.4,6.4);
+\foreach \p in {(1,1),(3,3),(0,1),(0,6)} \node[pt] at \p {};
+\node[kg] at (0,0) {K}; \node[kg] at (5,1) {L};
+\node[font=\footnotesize] at (2.5,-1.4) {\((5,1)\)};
+\end{scope}
+\begin{scope}[xshift=64mm]
+\draw[grd,shift={(-0.5,-0.5)}] (0,0) grid (5,7);
+\draw[ray] (0,0)--(4.4,4.4); \draw[ray] (0,0)--(0,6.4);
+\draw[ray] (4,2)--(-0.4,2); \draw[ray] (4,2)--(-0.4,6.4);
+\foreach \p in {(2,2),(3,3),(0,2),(0,6)} \node[pt] at \p {};
+\node[kg] at (0,0) {K}; \node[kg] at (4,2) {L};
+\node[font=\footnotesize] at (2,-1.4) {\((4,2)\)};
+\end{scope}
+\begin{scope}[xshift=34mm,yshift=-32mm]
+\draw[grd,shift={(-0.5,-3.5)}] (0,0) grid (4,8);
+\draw[ray] (0,0)--(3.4,3.4); \draw[ray] (0,0)--(0,4.4);
+\draw[ray] (3,1)--(-0.4,1); \draw[ray] (3,1)--(-0.4,4.4);
+\draw[ray] (0,0)--(3.4,0); \draw[ray] (0,0)--(3.4,-3.4);
+\draw[ray] (3,1)--(3,-3.4); \draw[ray] (3,1)--(-0.4,-2.4);
+\foreach \p in {(1,1),(2,2),(0,1),(0,4),(3,0),(2,0),(3,-3),(1,-1)} \node[pt] at \p {};
+\node[kg] at (0,0) {K}; \node[kg] at (3,1) {L};
+\node[lab] at (4,-3) {\(C\)};
+\node[font=\footnotesize] at (1.5,-4.5) {\((3,1)\)、両側};
+\end{scope}
+\end{tikzpicture}
+\caption{原論文の図3の4候補を、本形式化の標準座標で描いた図（筆者作成）。
+\(K\)を原点、\(L\)を\((a,b)\)に置き、北を上とする。破線は王手発生ライン、白丸は交差点で、
+盤の範囲は省略した。上段は片側の半平面だけに、下段は両側に王手発生ラインがある場合。}\label{fig:figure3}
+\end{figure}
+
+上段の3候補では、各手の変位が直線またはknightの形であることと補題6.2から、
+可能な移動は\((3,1)\)の\(A\)と\(B\)の間だけである。
+全ての手が2マスの間の移動なら、最初の手で動いた駒の色と次の手番が食い違う。
+下段の候補では、\(L\)から南への半直線上の交差点は\((3,0)\)と\(C\)の2点で、A2は\(C\)である。
+盤内の距離から、この半直線上の王手駒は\(C\)にあり、補題6.4(2)により\(C\)から出発するが、
+補題6.2の条件を満たす移動先はない。
+\decl{MPC.Chess.MoveTrace.false_of_upper_candidate}
+\decl{MPC.Chess.MoveTrace.false_of_lower_candidate}
+
+\subsection{原論文との差分}
+第6節は第4節までの事実を「同様に成り立つ」として参照し、補題6.2の証明と図3の候補の列挙を省略している。
+形式化では、これらをすべて定理として与えた。
+捕獲の排除は駒数の単調性と周期性から導き、昇格・en passant・castlingの排除も明示した。
+交差点は有理座標で扱い、平行な半直線を非平行の計算と分けた。
+なす角は順位で、回転・反転は格子の対称性で置き換え、実数の三角関数は用いない。
+これらはチェスのモデルに対する独立な証明であり、将棋の証明と補題を共有しない。
+
+\section{検証資料と証明工学}
+\subsection{検証方法}
+Lean 4.36.0と固定したMathlibリビジョンを使用する。
+将棋とチェスの両主定理に対する\texttt{\#print axioms}の結果は
+\code{propext}、\code{Classical.choice}、\code{Quot.sound}のみである。
+これらはLean標準の論理的基盤であり、独自の将棋やチェスの公理ではない。
+\code{sorryAx}やネイティブ計算の結果を信頼する追加公理には依存しない。
+ただし、この結果から仕様と実際の将棋・チェスの規則との同一性まで自動的に従うわけではない。
+
+将棋の主定理の型を具体的に照合し、命題4.1、全状態の駒数上限、打ち先の空きが
+追加前提になっていないことを検査する。
+中間定理の公理依存は\texttt{\#guard\_msgs}で固定する。
+具体例には両所有者の方向、遮蔽、玉の移動、成り、成駒の捕獲、駒打ち、長さ0が含まれる。
+これらは定理の代替ではなく、意図した仕様を確認する回帰検証である。
+
+チェスの検証入口\code{MPC.Chess.Verification}は、将棋の宣言が環境に入らないことを確認し、
+公開された289個のチェスの定理の依存公理を\texttt{\#guard\_msgs}で固定する。
+主定理と系の正確な型も照合する。
+回帰例は両色のpawn、knightとqueenの全方向、捕獲・2マス前進・昇格・en passant・castling、
+自玉を王手にさらす手の拒否、王手を続けない合法な周期手順でのknightの移動などを含む。
+
+両主定理とチェスの系は、それぞれが依存するLean本体・Mathlibを含むすべての宣言とともに書き出し、
+Leanに付属する型検査器nanoda 0.4.17で、空の環境から型検査する。
+nanodaはLeanのカーネルとは別に実装されている。
+許す公理は上の3つに限り、ほかの公理が現れれば失敗とする。
+負の対照として、カーネルの型検査を切って加えた偽の証明と、追加の公理から矛盾を導く定理を
+nanodaが拒否することも毎回確かめる。
+さらに、Leanに付属するleancheckerで、本プロジェクトの全モジュールの宣言を、
+各モジュールのimportだけを読み込んだ環境へカーネルで再生し直し、すべて通ることを確かめた。
+これはカーネルの型検査を経ずに環境へ入った宣言を検出するための検査であり、Leanのカーネルから独立してはいない。
+nanodaの検査は全検証に含め、7分ほどかかるleancheckerの再生は別に実行する。
+
+\IfFileExists{metrics.tex}{\input{metrics.tex}}{検証統計は付属の再現資料を参照。}
+
+\subsection{コード構成と互換性}
+将棋の証明本体は基礎、手順、睨み、幾何、不変量、駒種別議論に分ける。
+主定理を読むために開発順のPart番号を追う必要はない。
+旧方向述語と互換定理はLegacy層に隔離し、主証明のimport閉包から除外する。
+検証モジュールは本体の集約importから切り離し、別の検証対象としてビルドする。
+チェスの形式化は\code{MPC.Chess}以下の別のビルド対象とし、将棋のモジュールは\code{MPC.Chess}をimportしない。
+
+公開宣言名は原則維持し、モジュール移動表を提供する。
+複数のファイルで重複したプレイヤー反転などの補題は基礎層に集約する。
+コメント整理では、コードを除去するのではなく、歴史的な公理台帳を文書へ移す。
+数学的な意味・仮定・証明意図と、検証に使う期待出力コメントは維持する。
+
+\subsection{AI支援と監査の区別}
+開発履歴にはAI支援による証明・実装作業が記録されており、本稿の整理・初稿作成にも
+AI支援を用いた。人間が選択した研究対象・整理範囲と、AIが生成した証明候補・文章を区別する。
+カーネルが確認するのは証明項であり、著者の独創性、引用、仕様の妥当性ではない。
+過去の人手による作業時間やAI成功率を再現可能に測定していないため、そのような数値的主張は行わない。
+本稿は研究用初稿であり、著者による最終的な内容確認を経てGitHubでのみ公開する。
+
+\subsection{公開資料}
+本稿のTeXソースとPDF、Leanのソースコード、検証記録、再現手順は
+\url{https://github.com/funaken/mutual-perpetual-check-lean}で公開する。
+本文と図表はCC0 1.0、ソースコードはMIT-0で提供する。原論文のPDFは含めない。
+
+\section{関連研究、限界、今後の課題}
+Hurdの研究はHOL4とBDDを用いて終盤表を検証し\cite{hurd}、
+MarićらはKRK終盤戦略をIsabelle/HOLとZ3で証明している\cite{krk}。
+本成果は特定の終盤戦略や計算済みの局面表を対象とせず、
+幾何と不変量を用いて周期的手順の存在を排除する。
+山岡による\code{lean-shogi}は局面単位の合法手生成と仕様の一致を示すが、
+履歴依存の千日手を対象外としている\cite{yam}。
+両者は補完的な対象であり、座標や遷移の表現が異なるため自動的な相互利用はできない。
+
+本成果の限界は三つある。
+第一に、通常の将棋の完全な合法手関係と本モデルを結ぶ形式的な包含定理はない。
+第二に、チェスの局所的な合法手はFIDE規則に沿って定義したが、標準初期局面からの到達可能性や、
+別のチェスの形式化との一致は証明していない。
+第三に、形式化上の工夫が他の大規模証明で有効であることを実験的に評価していない。
+今後は、別のルールモデルとの接続、将棋とチェスで重複する睨み・幾何・周期性の補題の共通化と再利用、
+第三者による仕様レビューを進める。
+
+本稿が提示するのは、既知の不可能性定理に対する、仮定を明示したカーネル検証可能な証明と、
+その形式化で必要になった再構成である。
+新規性の調査ログ、命題と宣言の対応表、型・公理依存の比較、再現コマンドをコードとともに提供する。
+
+\begin{thebibliography}{9}
+\bibitem{nanka}なんか．将棋およびチェスにおいて双方連続王手の千日手が成立しないことの証明．第3版，2024年3月9日．本形式化が参照したPDFを基準とする．公開の経緯：\url{https://yaneuraou.yaneu.com/2024/03/03/proof-of-the-impossibility-of-perpetual-check-in-shogi/}．
+\bibitem{hurd}Joe Hurd. Formal Verification of Chess Endgame Databases. 2005. \url{https://gilith.com/papers/chess.pdf}.
+\bibitem{krk}Filip Marić, Predrag Janičić, Marko Maliković. Proving Correctness of a KRK Chess Endgame Strategy by using Isabelle/HOL and Z3. CADE, 2015. \url{https://poincare.matf.bg.ac.rs/~janicic/papers/2015-cade-krk.pdf}.
+\bibitem{yam}Tadao Yamaoka. lean-shogi. 2026. 閲覧コミット：\nolinkurl{2610d0f8af31cf94d612b71c27f4696ba3691d51}．\url{https://github.com/TadaoYamaoka/lean-shogi}．
+\bibitem{rules}日本将棋連盟．対局規則，第4・5・8・10条．\url{https://www.shogi.or.jp/match/taikyoku_rules/}．2026年11月8日閲覧．
+\bibitem{fide}FIDE. FIDE Laws of Chess, taking effect from 1 January 2023. 第3条・第9.2.3条．\url{https://handbook.fide.com/chapter/e012023}．2026年11月23日閲覧．
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,1316 @@
+{
+  "source_sha256": "ffa41d396af95d2602f44da0e76e876302af37649822f52d466a0c75da558457",
+  "groups": {
+    "production": {
+      "files": 58,
+      "total": 11900,
+      "code": 9382,
+      "comment_only": 1693,
+      "blank": 825
+    },
+    "verification": {
+      "files": 54,
+      "total": 9225,
+      "code": 6818,
+      "comment_only": 1455,
+      "blank": 952
+    },
+    "legacy": {
+      "files": 8,
+      "total": 350,
+      "code": 247,
+      "comment_only": 66,
+      "blank": 37
+    },
+    "chess": {
+      "files": 40,
+      "total": 6565,
+      "code": 5478,
+      "comment_only": 449,
+      "blank": 638
+    },
+    "chess_verification": {
+      "files": 22,
+      "total": 4146,
+      "code": 2803,
+      "comment_only": 636,
+      "blank": 707
+    }
+  },
+  "files": {
+    "MPC/Audit/Dependencies.lean": {
+      "category": "verification",
+      "total": 1185,
+      "code": 739,
+      "comment_only": 440,
+      "blank": 6
+    },
+    "MPC/Axioms.lean": {
+      "category": "verification",
+      "total": 15,
+      "code": 1,
+      "comment_only": 11,
+      "blank": 3
+    },
+    "MPC/Basic/Defs.lean": {
+      "category": "production",
+      "total": 123,
+      "code": 81,
+      "comment_only": 22,
+      "blank": 20
+    },
+    "MPC/Basic/Demote.lean": {
+      "category": "production",
+      "total": 34,
+      "code": 13,
+      "comment_only": 12,
+      "blank": 9
+    },
+    "MPC/Basic/DemoteFamily.lean": {
+      "category": "production",
+      "total": 42,
+      "code": 15,
+      "comment_only": 17,
+      "blank": 10
+    },
+    "MPC/Basic/Grid.lean": {
+      "category": "production",
+      "total": 36,
+      "code": 16,
+      "comment_only": 11,
+      "blank": 9
+    },
+    "MPC/Basic/Lemmas.lean": {
+      "category": "production",
+      "total": 41,
+      "code": 27,
+      "comment_only": 7,
+      "blank": 7
+    },
+    "MPC/Basic/Move.lean": {
+      "category": "production",
+      "total": 80,
+      "code": 53,
+      "comment_only": 15,
+      "blank": 12
+    },
+    "MPC/Basic/MoveLemmas.lean": {
+      "category": "production",
+      "total": 63,
+      "code": 37,
+      "comment_only": 14,
+      "blank": 12
+    },
+    "MPC/Basic/OrientedCheck.lean": {
+      "category": "production",
+      "total": 59,
+      "code": 38,
+      "comment_only": 12,
+      "blank": 9
+    },
+    "MPC/Basic/OrientedMove.lean": {
+      "category": "production",
+      "total": 40,
+      "code": 25,
+      "comment_only": 9,
+      "blank": 6
+    },
+    "MPC/Basic/SlidePath.lean": {
+      "category": "production",
+      "total": 156,
+      "code": 130,
+      "comment_only": 15,
+      "blank": 11
+    },
+    "MPC/Chess/Attack.lean": {
+      "category": "chess",
+      "total": 124,
+      "code": 96,
+      "comment_only": 5,
+      "blank": 23
+    },
+    "MPC/Chess/Basic.lean": {
+      "category": "chess",
+      "total": 99,
+      "code": 68,
+      "comment_only": 5,
+      "blank": 26
+    },
+    "MPC/Chess/CheckerCrossingOrder.lean": {
+      "category": "chess",
+      "total": 116,
+      "code": 94,
+      "comment_only": 12,
+      "blank": 10
+    },
+    "MPC/Chess/CheckerReduction.lean": {
+      "category": "chess",
+      "total": 107,
+      "code": 92,
+      "comment_only": 7,
+      "blank": 8
+    },
+    "MPC/Chess/CheckingCrossing.lean": {
+      "category": "chess",
+      "total": 87,
+      "code": 67,
+      "comment_only": 10,
+      "blank": 10
+    },
+    "MPC/Chess/CheckingCrossingOrder.lean": {
+      "category": "chess",
+      "total": 164,
+      "code": 129,
+      "comment_only": 15,
+      "blank": 20
+    },
+    "MPC/Chess/CheckingCrossingSet.lean": {
+      "category": "chess",
+      "total": 92,
+      "code": 74,
+      "comment_only": 8,
+      "blank": 10
+    },
+    "MPC/Chess/CheckingCrossingWitness.lean": {
+      "category": "chess",
+      "total": 171,
+      "code": 148,
+      "comment_only": 13,
+      "blank": 10
+    },
+    "MPC/Chess/CheckingRay.lean": {
+      "category": "chess",
+      "total": 141,
+      "code": 124,
+      "comment_only": 7,
+      "blank": 10
+    },
+    "MPC/Chess/CheckingRayGeometry.lean": {
+      "category": "chess",
+      "total": 216,
+      "code": 178,
+      "comment_only": 14,
+      "blank": 24
+    },
+    "MPC/Chess/CheckingRayHalfPlane.lean": {
+      "category": "chess",
+      "total": 51,
+      "code": 41,
+      "comment_only": 5,
+      "blank": 5
+    },
+    "MPC/Chess/CheckingRayMoves.lean": {
+      "category": "chess",
+      "total": 102,
+      "code": 87,
+      "comment_only": 9,
+      "blank": 6
+    },
+    "MPC/Chess/CheckingRayRank.lean": {
+      "category": "chess",
+      "total": 238,
+      "code": 210,
+      "comment_only": 19,
+      "blank": 9
+    },
+    "MPC/Chess/CheckingRaySeparation.lean": {
+      "category": "chess",
+      "total": 103,
+      "code": 81,
+      "comment_only": 12,
+      "blank": 10
+    },
+    "MPC/Chess/FIDERepetition.lean": {
+      "category": "chess",
+      "total": 62,
+      "code": 40,
+      "comment_only": 14,
+      "blank": 8
+    },
+    "MPC/Chess/Figure3Candidates.lean": {
+      "category": "chess",
+      "total": 205,
+      "code": 178,
+      "comment_only": 19,
+      "blank": 8
+    },
+    "MPC/Chess/Figure3Geometry.lean": {
+      "category": "chess",
+      "total": 253,
+      "code": 224,
+      "comment_only": 17,
+      "blank": 12
+    },
+    "MPC/Chess/Figure3Moves.lean": {
+      "category": "chess",
+      "total": 263,
+      "code": 219,
+      "comment_only": 21,
+      "blank": 23
+    },
+    "MPC/Chess/GlaringMove.lean": {
+      "category": "chess",
+      "total": 262,
+      "code": 223,
+      "comment_only": 17,
+      "blank": 22
+    },
+    "MPC/Chess/Impossibility.lean": {
+      "category": "chess",
+      "total": 257,
+      "code": 212,
+      "comment_only": 25,
+      "blank": 20
+    },
+    "MPC/Chess/KingGeometry.lean": {
+      "category": "chess",
+      "total": 155,
+      "code": 135,
+      "comment_only": 6,
+      "blank": 14
+    },
+    "MPC/Chess/KingHalfPlane.lean": {
+      "category": "chess",
+      "total": 134,
+      "code": 107,
+      "comment_only": 9,
+      "blank": 18
+    },
+    "MPC/Chess/KingImmobility.lean": {
+      "category": "chess",
+      "total": 255,
+      "code": 232,
+      "comment_only": 5,
+      "blank": 18
+    },
+    "MPC/Chess/KingLineExclusion.lean": {
+      "category": "chess",
+      "total": 180,
+      "code": 164,
+      "comment_only": 8,
+      "blank": 8
+    },
+    "MPC/Chess/KingLineGeometry.lean": {
+      "category": "chess",
+      "total": 105,
+      "code": 85,
+      "comment_only": 9,
+      "blank": 11
+    },
+    "MPC/Chess/LatticeFrame.lean": {
+      "category": "chess",
+      "total": 200,
+      "code": 147,
+      "comment_only": 15,
+      "blank": 38
+    },
+    "MPC/Chess/LegalMove.lean": {
+      "category": "chess",
+      "total": 143,
+      "code": 119,
+      "comment_only": 5,
+      "blank": 19
+    },
+    "MPC/Chess/Material.lean": {
+      "category": "chess",
+      "total": 275,
+      "code": 245,
+      "comment_only": 3,
+      "blank": 27
+    },
+    "MPC/Chess/Move.lean": {
+      "category": "chess",
+      "total": 231,
+      "code": 176,
+      "comment_only": 11,
+      "blank": 44
+    },
+    "MPC/Chess/OpenableLine.lean": {
+      "category": "chess",
+      "total": 206,
+      "code": 177,
+      "comment_only": 16,
+      "blank": 13
+    },
+    "MPC/Chess/OpenableLineCyclic.lean": {
+      "category": "chess",
+      "total": 267,
+      "code": 229,
+      "comment_only": 22,
+      "blank": 16
+    },
+    "MPC/Chess/PeriodicGlare.lean": {
+      "category": "chess",
+      "total": 234,
+      "code": 195,
+      "comment_only": 22,
+      "blank": 17
+    },
+    "MPC/Chess/PeriodicReduction.lean": {
+      "category": "chess",
+      "total": 230,
+      "code": 207,
+      "comment_only": 7,
+      "blank": 16
+    },
+    "MPC/Chess/RationalRay.lean": {
+      "category": "chess",
+      "total": 146,
+      "code": 110,
+      "comment_only": 10,
+      "blank": 26
+    },
+    "MPC/Chess/RayAngleRank.lean": {
+      "category": "chess",
+      "total": 202,
+      "code": 163,
+      "comment_only": 17,
+      "blank": 22
+    },
+    "MPC/Chess/RayIntersection.lean": {
+      "category": "chess",
+      "total": 143,
+      "code": 117,
+      "comment_only": 9,
+      "blank": 17
+    },
+    "MPC/Chess/SecondCrossingMoves.lean": {
+      "category": "chess",
+      "total": 176,
+      "code": 157,
+      "comment_only": 10,
+      "blank": 9
+    },
+    "MPC/Chess/Tests/CheckingCrossingOrder.lean": {
+      "category": "chess_verification",
+      "total": 307,
+      "code": 247,
+      "comment_only": 27,
+      "blank": 33
+    },
+    "MPC/Chess/Tests/CheckingCrossingWitness.lean": {
+      "category": "chess_verification",
+      "total": 151,
+      "code": 126,
+      "comment_only": 9,
+      "blank": 16
+    },
+    "MPC/Chess/Tests/CheckingRay.lean": {
+      "category": "chess_verification",
+      "total": 187,
+      "code": 152,
+      "comment_only": 10,
+      "blank": 25
+    },
+    "MPC/Chess/Tests/CheckingRayRank.lean": {
+      "category": "chess_verification",
+      "total": 22,
+      "code": 18,
+      "comment_only": 1,
+      "blank": 3
+    },
+    "MPC/Chess/Tests/FIDERepetition.lean": {
+      "category": "chess_verification",
+      "total": 105,
+      "code": 81,
+      "comment_only": 8,
+      "blank": 16
+    },
+    "MPC/Chess/Tests/Figure3Candidates.lean": {
+      "category": "chess_verification",
+      "total": 42,
+      "code": 28,
+      "comment_only": 8,
+      "blank": 6
+    },
+    "MPC/Chess/Tests/Figure3Geometry.lean": {
+      "category": "chess_verification",
+      "total": 53,
+      "code": 29,
+      "comment_only": 11,
+      "blank": 13
+    },
+    "MPC/Chess/Tests/Figure3Moves.lean": {
+      "category": "chess_verification",
+      "total": 48,
+      "code": 30,
+      "comment_only": 9,
+      "blank": 9
+    },
+    "MPC/Chess/Tests/Foundation.lean": {
+      "category": "chess_verification",
+      "total": 142,
+      "code": 109,
+      "comment_only": 11,
+      "blank": 22
+    },
+    "MPC/Chess/Tests/Glare.lean": {
+      "category": "chess_verification",
+      "total": 203,
+      "code": 157,
+      "comment_only": 19,
+      "blank": 27
+    },
+    "MPC/Chess/Tests/Impossibility.lean": {
+      "category": "chess_verification",
+      "total": 52,
+      "code": 32,
+      "comment_only": 11,
+      "blank": 9
+    },
+    "MPC/Chess/Tests/KingHalfPlane.lean": {
+      "category": "chess_verification",
+      "total": 82,
+      "code": 61,
+      "comment_only": 9,
+      "blank": 12
+    },
+    "MPC/Chess/Tests/KingImmobility.lean": {
+      "category": "chess_verification",
+      "total": 175,
+      "code": 136,
+      "comment_only": 9,
+      "blank": 30
+    },
+    "MPC/Chess/Tests/KingLineExclusion.lean": {
+      "category": "chess_verification",
+      "total": 168,
+      "code": 143,
+      "comment_only": 10,
+      "blank": 15
+    },
+    "MPC/Chess/Tests/LatticeFrame.lean": {
+      "category": "chess_verification",
+      "total": 57,
+      "code": 34,
+      "comment_only": 11,
+      "blank": 12
+    },
+    "MPC/Chess/Tests/Moves.lean": {
+      "category": "chess_verification",
+      "total": 235,
+      "code": 189,
+      "comment_only": 9,
+      "blank": 37
+    },
+    "MPC/Chess/Tests/OpenableLine.lean": {
+      "category": "chess_verification",
+      "total": 249,
+      "code": 197,
+      "comment_only": 16,
+      "blank": 36
+    },
+    "MPC/Chess/Tests/PeriodicGlare.lean": {
+      "category": "chess_verification",
+      "total": 139,
+      "code": 103,
+      "comment_only": 14,
+      "blank": 22
+    },
+    "MPC/Chess/Tests/PeriodicReduction.lean": {
+      "category": "chess_verification",
+      "total": 214,
+      "code": 172,
+      "comment_only": 7,
+      "blank": 35
+    },
+    "MPC/Chess/Tests/RayAngleRank.lean": {
+      "category": "chess_verification",
+      "total": 64,
+      "code": 43,
+      "comment_only": 11,
+      "blank": 10
+    },
+    "MPC/Chess/Tests/RayIntersection.lean": {
+      "category": "chess_verification",
+      "total": 137,
+      "code": 96,
+      "comment_only": 15,
+      "blank": 26
+    },
+    "MPC/Chess/Trace.lean": {
+      "category": "chess",
+      "total": 63,
+      "code": 43,
+      "comment_only": 4,
+      "blank": 16
+    },
+    "MPC/Chess/TraceGlare.lean": {
+      "category": "chess",
+      "total": 95,
+      "code": 73,
+      "comment_only": 7,
+      "blank": 15
+    },
+    "MPC/Chess/Verification.lean": {
+      "category": "chess_verification",
+      "total": 1314,
+      "code": 620,
+      "comment_only": 401,
+      "blank": 293
+    },
+    "MPC/Chess.lean": {
+      "category": "chess",
+      "total": 12,
+      "code": 12,
+      "comment_only": 0,
+      "blank": 0
+    },
+    "MPC/Geometry/AngleKey.lean": {
+      "category": "production",
+      "total": 197,
+      "code": 144,
+      "comment_only": 40,
+      "blank": 13
+    },
+    "MPC/Geometry/HalfPlaneChecker.lean": {
+      "category": "production",
+      "total": 363,
+      "code": 303,
+      "comment_only": 36,
+      "blank": 24
+    },
+    "MPC/Geometry/KingImmobility.lean": {
+      "category": "production",
+      "total": 225,
+      "code": 176,
+      "comment_only": 30,
+      "blank": 19
+    },
+    "MPC/Geometry/KingLineChecker.lean": {
+      "category": "production",
+      "total": 403,
+      "code": 337,
+      "comment_only": 47,
+      "blank": 19
+    },
+    "MPC/Geometry/KingLineOpenable.lean": {
+      "category": "production",
+      "total": 391,
+      "code": 326,
+      "comment_only": 45,
+      "blank": 20
+    },
+    "MPC/Geometry/KingMoveGeometry.lean": {
+      "category": "production",
+      "total": 364,
+      "code": 308,
+      "comment_only": 36,
+      "blank": 20
+    },
+    "MPC/Geometry/Lattice.lean": {
+      "category": "production",
+      "total": 15,
+      "code": 5,
+      "comment_only": 6,
+      "blank": 4
+    },
+    "MPC/Geometry/Line.lean": {
+      "category": "production",
+      "total": 25,
+      "code": 11,
+      "comment_only": 8,
+      "blank": 6
+    },
+    "MPC/Geometry/OpenableGeometry.lean": {
+      "category": "production",
+      "total": 451,
+      "code": 378,
+      "comment_only": 56,
+      "blank": 17
+    },
+    "MPC/Geometry/OpenableLine.lean": {
+      "category": "production",
+      "total": 338,
+      "code": 269,
+      "comment_only": 54,
+      "blank": 15
+    },
+    "MPC/Geometry/OpenableLineCyclic.lean": {
+      "category": "production",
+      "total": 334,
+      "code": 274,
+      "comment_only": 43,
+      "blank": 17
+    },
+    "MPC/Glare/GlaringMove.lean": {
+      "category": "production",
+      "total": 182,
+      "code": 142,
+      "comment_only": 28,
+      "blank": 12
+    },
+    "MPC/Glare/NonGlaringCount.lean": {
+      "category": "production",
+      "total": 290,
+      "code": 238,
+      "comment_only": 36,
+      "blank": 16
+    },
+    "MPC/Glare/NonGlaringKind.lean": {
+      "category": "production",
+      "total": 395,
+      "code": 307,
+      "comment_only": 57,
+      "blank": 31
+    },
+    "MPC/Glare/TraceGlare.lean": {
+      "category": "production",
+      "total": 129,
+      "code": 86,
+      "comment_only": 28,
+      "blank": 15
+    },
+    "MPC/Invariants/AnglePotential.lean": {
+      "category": "production",
+      "total": 376,
+      "code": 307,
+      "comment_only": 49,
+      "blank": 20
+    },
+    "MPC/Invariants/CheckerAngle.lean": {
+      "category": "production",
+      "total": 276,
+      "code": 202,
+      "comment_only": 54,
+      "blank": 20
+    },
+    "MPC/Invariants/DiscHInvariant.lean": {
+      "category": "production",
+      "total": 32,
+      "code": 11,
+      "comment_only": 16,
+      "blank": 5
+    },
+    "MPC/Invariants/DiscHTrace.lean": {
+      "category": "production",
+      "total": 353,
+      "code": 298,
+      "comment_only": 35,
+      "blank": 20
+    },
+    "MPC/Invariants/DiscoveredCheckNecessity.lean": {
+      "category": "production",
+      "total": 200,
+      "code": 156,
+      "comment_only": 31,
+      "blank": 13
+    },
+    "MPC/Invariants/DropDestinations.lean": {
+      "category": "production",
+      "total": 93,
+      "code": 52,
+      "comment_only": 27,
+      "blank": 14
+    },
+    "MPC/Invariants/ForwardPotential.lean": {
+      "category": "production",
+      "total": 368,
+      "code": 297,
+      "comment_only": 47,
+      "blank": 24
+    },
+    "MPC/Invariants/PieceFamilyCount.lean": {
+      "category": "production",
+      "total": 117,
+      "code": 56,
+      "comment_only": 36,
+      "blank": 25
+    },
+    "MPC/Invariants/PieceFamilyStep.lean": {
+      "category": "production",
+      "total": 226,
+      "code": 168,
+      "comment_only": 36,
+      "blank": 22
+    },
+    "MPC/Legacy/Angle.lean": {
+      "category": "legacy",
+      "total": 32,
+      "code": 11,
+      "comment_only": 13,
+      "blank": 8
+    },
+    "MPC/Legacy/Check.lean": {
+      "category": "legacy",
+      "total": 43,
+      "code": 26,
+      "comment_only": 10,
+      "blank": 7
+    },
+    "MPC/Legacy/CheckCompatibility.lean": {
+      "category": "legacy",
+      "total": 31,
+      "code": 24,
+      "comment_only": 4,
+      "blank": 3
+    },
+    "MPC/Legacy/CheckOrigin.lean": {
+      "category": "legacy",
+      "total": 168,
+      "code": 131,
+      "comment_only": 25,
+      "blank": 12
+    },
+    "MPC/Legacy/Move.lean": {
+      "category": "legacy",
+      "total": 19,
+      "code": 11,
+      "comment_only": 6,
+      "blank": 2
+    },
+    "MPC/Legacy/MoveCompatibility.lean": {
+      "category": "legacy",
+      "total": 35,
+      "code": 28,
+      "comment_only": 4,
+      "blank": 3
+    },
+    "MPC/Legacy/MoveTrace.lean": {
+      "category": "legacy",
+      "total": 15,
+      "code": 9,
+      "comment_only": 4,
+      "blank": 2
+    },
+    "MPC/Legacy.lean": {
+      "category": "legacy",
+      "total": 7,
+      "code": 7,
+      "comment_only": 0,
+      "blank": 0
+    },
+    "MPC/Main.lean": {
+      "category": "production",
+      "total": 66,
+      "code": 42,
+      "comment_only": 15,
+      "blank": 9
+    },
+    "MPC/PaperVerification.lean": {
+      "category": "verification",
+      "total": 39,
+      "code": 31,
+      "comment_only": 3,
+      "blank": 5
+    },
+    "MPC/Pieces/BishopBasics.lean": {
+      "category": "production",
+      "total": 379,
+      "code": 304,
+      "comment_only": 54,
+      "blank": 21
+    },
+    "MPC/Pieces/BishopDiscH.lean": {
+      "category": "production",
+      "total": 521,
+      "code": 448,
+      "comment_only": 56,
+      "blank": 17
+    },
+    "MPC/Pieces/BishopEdge.lean": {
+      "category": "production",
+      "total": 635,
+      "code": 535,
+      "comment_only": 73,
+      "blank": 27
+    },
+    "MPC/Pieces/BishopFrontEdge.lean": {
+      "category": "production",
+      "total": 371,
+      "code": 329,
+      "comment_only": 34,
+      "blank": 8
+    },
+    "MPC/Pieces/BishopTable.lean": {
+      "category": "production",
+      "total": 250,
+      "code": 205,
+      "comment_only": 34,
+      "blank": 11
+    },
+    "MPC/Pieces/GoldTypeMove.lean": {
+      "category": "production",
+      "total": 249,
+      "code": 189,
+      "comment_only": 43,
+      "blank": 17
+    },
+    "MPC/Pieces/RookDragonLemma.lean": {
+      "category": "production",
+      "total": 389,
+      "code": 326,
+      "comment_only": 49,
+      "blank": 14
+    },
+    "MPC/Pieces/SilverGeometry.lean": {
+      "category": "production",
+      "total": 200,
+      "code": 163,
+      "comment_only": 23,
+      "blank": 14
+    },
+    "MPC/Pieces/SilverLemma.lean": {
+      "category": "production",
+      "total": 450,
+      "code": 390,
+      "comment_only": 46,
+      "blank": 14
+    },
+    "MPC/Pieces/SilverMove.lean": {
+      "category": "production",
+      "total": 290,
+      "code": 238,
+      "comment_only": 36,
+      "blank": 16
+    },
+    "MPC/Tests/AngleKey.lean": {
+      "category": "verification",
+      "total": 70,
+      "code": 33,
+      "comment_only": 20,
+      "blank": 17
+    },
+    "MPC/Tests/AnglePotential.lean": {
+      "category": "verification",
+      "total": 89,
+      "code": 50,
+      "comment_only": 22,
+      "blank": 17
+    },
+    "MPC/Tests/BishopBasics.lean": {
+      "category": "verification",
+      "total": 70,
+      "code": 35,
+      "comment_only": 21,
+      "blank": 14
+    },
+    "MPC/Tests/BishopDiscH.lean": {
+      "category": "verification",
+      "total": 60,
+      "code": 31,
+      "comment_only": 16,
+      "blank": 13
+    },
+    "MPC/Tests/BishopEdge.lean": {
+      "category": "verification",
+      "total": 92,
+      "code": 46,
+      "comment_only": 26,
+      "blank": 20
+    },
+    "MPC/Tests/BishopFrontEdge.lean": {
+      "category": "verification",
+      "total": 43,
+      "code": 19,
+      "comment_only": 15,
+      "blank": 9
+    },
+    "MPC/Tests/BishopTable.lean": {
+      "category": "verification",
+      "total": 45,
+      "code": 21,
+      "comment_only": 15,
+      "blank": 9
+    },
+    "MPC/Tests/CaptureDemote.lean": {
+      "category": "verification",
+      "total": 132,
+      "code": 82,
+      "comment_only": 28,
+      "blank": 22
+    },
+    "MPC/Tests/CheckOrigin.lean": {
+      "category": "verification",
+      "total": 328,
+      "code": 285,
+      "comment_only": 20,
+      "blank": 23
+    },
+    "MPC/Tests/CheckOriginTrace.lean": {
+      "category": "verification",
+      "total": 415,
+      "code": 355,
+      "comment_only": 22,
+      "blank": 38
+    },
+    "MPC/Tests/CheckerAngle.lean": {
+      "category": "verification",
+      "total": 62,
+      "code": 28,
+      "comment_only": 19,
+      "blank": 15
+    },
+    "MPC/Tests/CheckerLocation.lean": {
+      "category": "verification",
+      "total": 171,
+      "code": 138,
+      "comment_only": 15,
+      "blank": 18
+    },
+    "MPC/Tests/Demote.lean": {
+      "category": "verification",
+      "total": 66,
+      "code": 34,
+      "comment_only": 15,
+      "blank": 17
+    },
+    "MPC/Tests/DiscHTrace.lean": {
+      "category": "verification",
+      "total": 57,
+      "code": 37,
+      "comment_only": 12,
+      "blank": 8
+    },
+    "MPC/Tests/DiscoveredCheckNecessity.lean": {
+      "category": "verification",
+      "total": 78,
+      "code": 36,
+      "comment_only": 22,
+      "blank": 20
+    },
+    "MPC/Tests/DropCheck.lean": {
+      "category": "verification",
+      "total": 161,
+      "code": 136,
+      "comment_only": 11,
+      "blank": 14
+    },
+    "MPC/Tests/DropDestinations.lean": {
+      "category": "verification",
+      "total": 75,
+      "code": 39,
+      "comment_only": 19,
+      "blank": 17
+    },
+    "MPC/Tests/ForwardPotential.lean": {
+      "category": "verification",
+      "total": 307,
+      "code": 249,
+      "comment_only": 29,
+      "blank": 29
+    },
+    "MPC/Tests/GlaringMove.lean": {
+      "category": "verification",
+      "total": 373,
+      "code": 306,
+      "comment_only": 32,
+      "blank": 35
+    },
+    "MPC/Tests/GoldTypeMove.lean": {
+      "category": "verification",
+      "total": 92,
+      "code": 50,
+      "comment_only": 26,
+      "blank": 16
+    },
+    "MPC/Tests/HalfPlaneChecker.lean": {
+      "category": "verification",
+      "total": 47,
+      "code": 22,
+      "comment_only": 15,
+      "blank": 10
+    },
+    "MPC/Tests/KingImmobility.lean": {
+      "category": "verification",
+      "total": 523,
+      "code": 451,
+      "comment_only": 36,
+      "blank": 36
+    },
+    "MPC/Tests/KingLineChecker.lean": {
+      "category": "verification",
+      "total": 210,
+      "code": 166,
+      "comment_only": 24,
+      "blank": 20
+    },
+    "MPC/Tests/KingLineOpenable.lean": {
+      "category": "verification",
+      "total": 61,
+      "code": 28,
+      "comment_only": 20,
+      "blank": 13
+    },
+    "MPC/Tests/KingMoveGeometry.lean": {
+      "category": "verification",
+      "total": 266,
+      "code": 217,
+      "comment_only": 28,
+      "blank": 21
+    },
+    "MPC/Tests/KingPlacement.lean": {
+      "category": "verification",
+      "total": 163,
+      "code": 131,
+      "comment_only": 12,
+      "blank": 20
+    },
+    "MPC/Tests/KingPlacementPreservation.lean": {
+      "category": "verification",
+      "total": 146,
+      "code": 116,
+      "comment_only": 13,
+      "blank": 17
+    },
+    "MPC/Tests/KingPlacementTrace.lean": {
+      "category": "verification",
+      "total": 163,
+      "code": 127,
+      "comment_only": 14,
+      "blank": 22
+    },
+    "MPC/Tests/LegacyCheckOrigin.lean": {
+      "category": "verification",
+      "total": 247,
+      "code": 203,
+      "comment_only": 21,
+      "blank": 23
+    },
+    "MPC/Tests/Lemmas.lean": {
+      "category": "verification",
+      "total": 27,
+      "code": 13,
+      "comment_only": 7,
+      "blank": 7
+    },
+    "MPC/Tests/MainImport.lean": {
+      "category": "verification",
+      "total": 18,
+      "code": 10,
+      "comment_only": 6,
+      "blank": 2
+    },
+    "MPC/Tests/MainTrace.lean": {
+      "category": "verification",
+      "total": 248,
+      "code": 208,
+      "comment_only": 20,
+      "blank": 20
+    },
+    "MPC/Tests/MoveTrace.lean": {
+      "category": "verification",
+      "total": 100,
+      "code": 78,
+      "comment_only": 13,
+      "blank": 9
+    },
+    "MPC/Tests/MoveTraceCheck.lean": {
+      "category": "verification",
+      "total": 203,
+      "code": 167,
+      "comment_only": 12,
+      "blank": 24
+    },
+    "MPC/Tests/NonGlaringCount.lean": {
+      "category": "verification",
+      "total": 282,
+      "code": 234,
+      "comment_only": 25,
+      "blank": 23
+    },
+    "MPC/Tests/NonGlaringKind.lean": {
+      "category": "verification",
+      "total": 353,
+      "code": 286,
+      "comment_only": 38,
+      "blank": 29
+    },
+    "MPC/Tests/OpenableGeometry.lean": {
+      "category": "verification",
+      "total": 110,
+      "code": 63,
+      "comment_only": 25,
+      "blank": 22
+    },
+    "MPC/Tests/OpenableLine.lean": {
+      "category": "verification",
+      "total": 302,
+      "code": 241,
+      "comment_only": 35,
+      "blank": 26
+    },
+    "MPC/Tests/OpenableLineCyclic.lean": {
+      "category": "verification",
+      "total": 158,
+      "code": 113,
+      "comment_only": 28,
+      "blank": 17
+    },
+    "MPC/Tests/OrientedCheck.lean": {
+      "category": "verification",
+      "total": 192,
+      "code": 156,
+      "comment_only": 12,
+      "blank": 24
+    },
+    "MPC/Tests/OrientedMove.lean": {
+      "category": "verification",
+      "total": 201,
+      "code": 161,
+      "comment_only": 15,
+      "blank": 25
+    },
+    "MPC/Tests/PeriodicMutualCheck.lean": {
+      "category": "verification",
+      "total": 43,
+      "code": 24,
+      "comment_only": 10,
+      "blank": 9
+    },
+    "MPC/Tests/PieceFamilyCount.lean": {
+      "category": "verification",
+      "total": 100,
+      "code": 53,
+      "comment_only": 25,
+      "blank": 22
+    },
+    "MPC/Tests/PieceFamilyStep.lean": {
+      "category": "verification",
+      "total": 66,
+      "code": 33,
+      "comment_only": 19,
+      "blank": 14
+    },
+    "MPC/Tests/RookDragonLemma.lean": {
+      "category": "verification",
+      "total": 146,
+      "code": 99,
+      "comment_only": 25,
+      "blank": 22
+    },
+    "MPC/Tests/SilverLemma.lean": {
+      "category": "verification",
+      "total": 104,
+      "code": 58,
+      "comment_only": 28,
+      "blank": 18
+    },
+    "MPC/Tests/SilverMove.lean": {
+      "category": "verification",
+      "total": 96,
+      "code": 55,
+      "comment_only": 24,
+      "blank": 17
+    },
+    "MPC/Tests/SlidePath.lean": {
+      "category": "verification",
+      "total": 90,
+      "code": 67,
+      "comment_only": 11,
+      "blank": 12
+    },
+    "MPC/Tests/SourceUnblocking.lean": {
+      "category": "verification",
+      "total": 211,
+      "code": 179,
+      "comment_only": 15,
+      "blank": 17
+    },
+    "MPC/Tests/TraceGlare.lean": {
+      "category": "verification",
+      "total": 271,
+      "code": 225,
+      "comment_only": 20,
+      "blank": 26
+    },
+    "MPC/Trace/CheckOrigin.lean": {
+      "category": "production",
+      "total": 119,
+      "code": 84,
+      "comment_only": 24,
+      "blank": 11
+    },
+    "MPC/Trace/CheckOriginTrace.lean": {
+      "category": "production",
+      "total": 117,
+      "code": 87,
+      "comment_only": 21,
+      "blank": 9
+    },
+    "MPC/Trace/CheckerLocation.lean": {
+      "category": "production",
+      "total": 82,
+      "code": 55,
+      "comment_only": 16,
+      "blank": 11
+    },
+    "MPC/Trace/DropCheck.lean": {
+      "category": "production",
+      "total": 76,
+      "code": 49,
+      "comment_only": 17,
+      "blank": 10
+    },
+    "MPC/Trace/KingPlacement.lean": {
+      "category": "production",
+      "total": 100,
+      "code": 74,
+      "comment_only": 12,
+      "blank": 14
+    },
+    "MPC/Trace/KingPlacementPreservation.lean": {
+      "category": "production",
+      "total": 71,
+      "code": 50,
+      "comment_only": 13,
+      "blank": 8
+    },
+    "MPC/Trace/KingPlacementTrace.lean": {
+      "category": "production",
+      "total": 93,
+      "code": 68,
+      "comment_only": 15,
+      "blank": 10
+    },
+    "MPC/Trace/MoveTrace.lean": {
+      "category": "production",
+      "total": 117,
+      "code": 85,
+      "comment_only": 12,
+      "blank": 20
+    },
+    "MPC/Trace/MoveTraceCheck.lean": {
+      "category": "production",
+      "total": 82,
+      "code": 58,
+      "comment_only": 13,
+      "blank": 11
+    },
+    "MPC/Trace/MutualCheck.lean": {
+      "category": "production",
+      "total": 133,
+      "code": 87,
+      "comment_only": 31,
+      "blank": 15
+    },
+    "MPC/Trace/PeriodicMutualCheck.lean": {
+      "category": "production",
+      "total": 79,
+      "code": 46,
+      "comment_only": 22,
+      "blank": 11
+    },
+    "MPC/Trace/SourceUnblocking.lean": {
+      "category": "production",
+      "total": 157,
+      "code": 127,
+      "comment_only": 19,
+      "blank": 11
+    },
+    "MPC/Verification.lean": {
+      "category": "verification",
+      "total": 53,
+      "code": 53,
+      "comment_only": 0,
+      "blank": 0
+    },
+    "MPC.lean": {
+      "category": "production",
+      "total": 57,
+      "code": 57,
+      "comment_only": 0,
+      "blank": 0
+    }
+  }
+}

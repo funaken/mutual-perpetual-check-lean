@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Please cite this formalization using the metadata below and identify the revision you used."
+type: software
+title: "Formalizing the Impossibility of Mutual Perpetual Check in Shogi and Chess in Lean 4"
+authors:
+  - name: funaken
+repository-code: "https://github.com/funaken/mutual-perpetual-check-lean"
+license: MIT-0
+preferred-citation:
+  type: unpublished
+  title: "Formalizing the Impossibility of Mutual Perpetual Check in Shogi and Chess in Lean 4"
+  authors:
+    - name: funaken
+  year: 2026
+  license: CC0-1.0

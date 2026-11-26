@@ -1,0 +1,27 @@
+{
+  "source_sha256": "ffa41d396af95d2602f44da0e76e876302af37649822f52d466a0c75da558457",
+  "started_utc": "2026-11-26T02:35:23.687408+00:00",
+  "platform": "macOS-27.2.1-arm64-arm-64bit-Mach-O",
+  "architecture": "arm64",
+  "logical_cpu_count": 12,
+  "lean": "Lean (version 4.36.0, arm64-apple-darwin24.6.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)",
+  "python": "3.14.10",
+  "command": "./scripts/verify.sh",
+  "conditions": "Fresh temporary project without MPC build outputs; pinned third-party caches reused; one elapsed-time measurement; no network fetch during measurement",
+  "dependencies": {
+    "mathlib": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842",
+    "plausible": "054b228ce0ac61d767c6e71ba73a24728f191b72",
+    "LeanSearchClient": "4fb58e749ef3fc0395fe274f6cab70c2ea85f1c9",
+    "importGraph": "8370c640afcd1cc3fb1cb9bf1560cc66eafee5e0",
+    "proofwidgets": "2f0f3520daeac2d9310ff25b7a877a0e5cdaa203",
+    "aesop": "66ff77cf0c4c898799e4b94d14db55f7a02d0c5a",
+    "Qq": "ff055a2fcc835935e0ae607339b455a5f5896b4b",
+    "batteries": "b4b25a3886a16daacaf6615c2eea7170a6e8f458",
+    "Cli": "50810f72af7618bee62fe9800dc26e806c188703"
+  },
+  "cpu": "Apple M2 Max",
+  "memory_bytes": 34359738368,
+  "elapsed_seconds": 202.013,
+  "exit_code": 0,
+  "finished_utc": "2026-11-26T02:38:46.685150+00:00"
+}
