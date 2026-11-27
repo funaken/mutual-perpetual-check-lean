@@ -50,7 +50,9 @@ In this paper, ``the original paper'' refers to that third edition.
 Masanari Shimura presented the result and its proof at the 31st Game Programming Workshop (GPW 2026), stating that they had already been published in March 2024 in a memo by the same author under the name Nanka~\cite{gpw}.
 We call this the GPW version.
 Sections 2--4 of this paper describe the shogi formalization, and Section~\ref{sec:chess} the chess formalization.
-The mathematical result belongs to the original paper, and we present this work as a reconstruction of a known result in a proof assistant.
+The proof this formalization directly follows is Nanka's proof of 2024.
+For chess, Fernando had earlier published a natural-language argument for the impossibility~\cite{fernando} (Section~\ref{sec:related}).
+We do not claim the discovery of the mathematical result, and we present this work as a reconstruction of a known result in a proof assistant.
 
 This paper describes four contributions.
 First, we verified the shogi proof up to the final theorem in the kernel, on a finite-sequence model that states the initial piece counts and the conditions on moves explicitly.
@@ -438,7 +440,16 @@ This paper is a first research draft, and it will be published only on GitHub af
 The TeX sources and PDFs of this paper, the Lean source code, the verification records and the instructions for reproduction are published at \url{https://github.com/funaken/mutual-perpetual-check-lean}.
 The text and figures are provided under CC0 1.0 and the source code under MIT-0. The PDF of the original paper is not included.
 
-\section{Related work, limitations and future work}
+\section{Related work, limitations and future work}\label{sec:related}
+As a natural-language argument for the same theorem, Fernando published on Chess Stack Exchange on January 14, 2022 an argument that, with ordinary pieces, there is no cycle in which both players give check on every move~\cite{fernando}.
+The argument rules out captures, pawn moves and castling in a cycle, and shows that the kings do not move.
+Next, since the number of pieces lined up with the enemy king in their direction of attack, ignoring the pieces in between, does not decrease, it restricts the source and destination of every move to squares in line with each of the two kings.
+It then lists the possible moves for the relative positions of the kings, separated into orthogonal, diagonal and unaligned cases, and excludes a cycle with a lemma that the half-line from a king through a square must carry at least two moving pieces.
+It claims to hold even on an infinite board, and only the results of the case analysis for knight moves are given.
+Our formalization of chess follows Nanka's proof and does not formalize Fernando's argument, but it contains stages comparable to it: Proposition 2.2 of the original paper (the immobility of the kings), Lemma 6.2, and the enumeration of the candidates of Figure 3.
+For shogi, the GPW version reports that partial arguments, such as the immobility of the kings, were published in 2008, and that they do not complete a proof on their own~\cite{gpw}.
+As for formalizations of the same theorem in a proof assistant, we found none within the scope of our survey, as stated in Section 1.
+
 Hurd verified endgame tables using HOL4 and BDDs~\cite{hurd}, and Marić et al.\ proved a KRK endgame strategy with Isabelle/HOL and Z3~\cite{krk}.
 This work does not target a specific endgame strategy or a precomputed table of positions; it excludes the existence of periodic sequences using geometry and invariants.
 Yamaoka's \code{lean-shogi} shows agreement between position-wise legal-move generation and a specification, but leaves history-dependent repetition out of scope~\cite{yam}.
@@ -456,6 +467,7 @@ The survey log on novelty, the table mapping propositions to declarations, the c
 \begin{thebibliography}{9}
 \bibitem{nanka}Nanka (なんか). 将棋およびチェスにおいて双方連続王手の千日手が成立しないことの証明 [A proof that mutual perpetual check cannot occur in shogi and chess; in Japanese]. 3rd edition, March 9, 2024. This formalization is based on that PDF. Background of the publication: \url{https://yaneuraou.yaneu.com/2024/03/03/proof-of-the-impossibility-of-perpetual-check-in-shogi/}.
 \bibitem{gpw}Masanari Shimura (志村将也). 双方連続王手による同一局面反復の不可能性について [Impossibility of Repetition by Mutual Perpetual Check; in Japanese]. In: The 31st Game Programming Workshop (GPW 2026), pp.~85--92. Information Processing Society of Japan, November 2026. Presentation 5-2: \url{https://www.gi-ipsj.org/gpw/2026/program.html}.
+\bibitem{fernando}Ravi Fernando. Answer to ``Infinite sequence of consecutive checks allowing more pieces (say 9+ queens)''. Chess Stack Exchange, January 14, 2022 (edited the same day). \url{https://chess.stackexchange.com/a/38960}. Accessed November 28, 2026.
 \bibitem{hurd}Joe Hurd. Formal Verification of Chess Endgame Databases. 2005. \url{https://gilith.com/papers/chess.pdf}.
 \bibitem{krk}Filip Marić, Predrag Janičić, Marko Maliković. Proving Correctness of a KRK Chess Endgame Strategy by using Isabelle/HOL and Z3. CADE, 2015. \url{https://poincare.matf.bg.ac.rs/~janicic/papers/2015-cade-krk.pdf}.
 \bibitem{yam}Tadao Yamaoka. lean-shogi. 2026. Commit consulted: \nolinkurl{2610d0f8af31cf94d612b71c27f4696ba3691d51}. \url{https://github.com/TadaoYamaoka/lean-shogi}.
