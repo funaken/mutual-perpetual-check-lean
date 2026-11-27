@@ -30,7 +30,9 @@ We formalize in Lean 4 both the shogi part and the chess part of the 2024 proof 
 For shogi, we separate the data of a finite move sequence from the conditions on its transitions, moves and checks.
 We prove that the kings stay fixed, the classification of pieces by glare, an invariant counting pieces on half-planes, and that each side must give a discovered check, and we then derive a contradiction for each kind of moved piece.
 In this part, angle comparisons are replaced by rational-valued keys, and a potential defined on each position is built without identifying individual pieces.
-For chess, on top of the local legal moves of the FIDE Laws, periodicity rules out captures, promotions, pawn moves and castling; we then reconstruct the geometry of checking rays and crossings with rational coordinates, angle ranks and the symmetries of the lattice, and eliminate the four candidates of Figure 3 of the original paper.
+For chess, on top of the local legal moves of the FIDE Laws, periodicity rules out captures, promotions and pawn moves.
+Moreover, in a periodic sequence in which every move gives check, the king of the side to move is in check, so castling is ruled out as well.
+We then reconstruct the geometry of checking rays and crossings with rational coordinates, angle ranks and the symmetries of the lattice, and eliminate the four candidates of Figure 3 of the original paper.
 Neither main theorem uses project-specific axioms; both depend only on Lean's standard axioms of propositional extensionality, choice and quotient soundness.
 This paper explains that design and the reconstruction of the original proof.
 It also distinguishes the kernel-checked conclusions inside the models from the interpretation of the specifications against the actual rules of play.
@@ -230,7 +232,7 @@ The important point is that the change on each move and the cancellation are pro
 Using the signed position \(\ell(q)\) relative to the line through the two kings, we specify for an integer \(s\) the region \(s\ell(q)>0\).
 The values \(s=1,-1\) correspond to the two half-planes, and \(s=0\) to the empty region.
 Squares on the boundary are not included.
-Let \(O_s(k)\) be the set of squares in this region that hold a piece, do not glare at the opponent's king, and are touched by the sequence, and let \(C_s(k)\) be the set of squares of checking pieces.
+Let \(O_s(k)\) be the set of squares in this region that hold a piece, do not glare at the opponent's king, and are touched by the sequence, and let \(C_s(k)\) be the set of squares of checking pieces in the same region.
 Then
 \[
  D_s(k)=|O_s(k)|+|C_s(k)|
@@ -366,7 +368,7 @@ If the opposite half-plane also has checking rays, only \((3,1)\) remains (Figur
 For the three upper candidates, since the displacement of every move is a straight line or a knight's move, Lemma 6.2 leaves only moves between \(A\) and \(B\) in \((3,1)\).
 If every move goes between two squares, the colour of the piece moved first disagrees with the side to move next.
 For the lower candidate, the crossings on the half-line south from \(L\) are the two points \((3,0)\) and \(C\), so A2 is \(C\).
-By the distances on the board, the checking piece on this half-line is at \(C\), and by Lemma 6.4(2) it departs from \(C\), but no destination satisfies the condition of Lemma 6.2.
+By the distances on the board, the checking piece on this half-line is at \(C\), and by Lemma 6.4(2) it departs from \(C\), but no destination satisfies both the condition of Lemma 6.2 and the movement condition of the piece.
 \decl{MPC.Chess.MoveTrace.false_of_upper_candidate}
 \decl{MPC.Chess.MoveTrace.false_of_lower_candidate}
 
