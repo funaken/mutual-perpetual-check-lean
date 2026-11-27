@@ -59,7 +59,9 @@
 それらが2024年3月に「なんか」名義で公開したメモで既に公表したものであると述べている\cite{gpw}。
 以下、これをGPW版と呼ぶ。
 本稿の第2--4節が将棋、第\ref{sec:chess}節がチェスの形式化を説明する。
-本稿の数学的結果は原論文に帰属し、既知の結果を証明支援系で再構成した成果として述べる。
+本形式化が直接の底本としたのは、なんかの2024年の証明である。
+チェスについては、それ以前にFernandoが自然言語による証明の議論を公開している\cite{fernando}（第\ref{sec:related}節）。
+本稿は数学的結果の発見を主張せず、既知の結果を証明支援系で再構成した成果として述べる。
 
 本稿で説明する貢献は次の四点である。
 第一に、初期の駒数と手の条件を明示した有限手順モデル上で、将棋の最終定理までをカーネルで検証した。
@@ -492,7 +494,21 @@ AI支援を用いた。人間が選択した研究対象・整理範囲と、AI�
 \url{https://github.com/funaken/mutual-perpetual-check-lean}で公開する。
 本文と図表はCC0 1.0、ソースコードはMIT-0で提供する。原論文のPDFは含めない。
 
-\section{関連研究、限界、今後の課題}
+\section{関連研究、限界、今後の課題}\label{sec:related}
+同じ定理の自然言語による証明の議論として、チェスについてはFernandoが2022年1月14日に、
+通常の駒で双方が毎手王手をかける閉路は存在しないとする議論をChess Stack Exchangeに公開している\cite{fernando}。
+この議論は、閉路から捕獲・pawnの移動・castlingを除き、玉が動かないことを示す。
+次に、間の駒を無視して相手玉と利きの方向に並ぶ駒の数が減らないことから、
+全ての手の移動元と移動先を、両玉のそれぞれと同一直線上にあるマスに制限する。
+さらに、両玉の相対配置を縦横・斜め・非整列に分けて可能な手を列挙し、
+玉からあるマスを通る半直線上には動く駒が2つ以上必要であるという補題で閉路を排除する。
+無限盤でも成り立つと主張しており、knightの手の場合分けは結果だけが示されている。
+本稿のチェスの形式化はなんかの証明を底本とし、Fernandoの議論を形式化したものではないが、
+原論文の命題2.2（玉の不動性）、補題6.2、図3の候補の列挙と比較できる段階を含む。
+将棋については、玉の不動性などの部分的な議論が2008年に公開されたが、
+それだけでは証明が完結していないことがGPW版で紹介されている\cite{gpw}。
+一方、証明支援系による同じ定理の形式化は、第1節で述べたとおり調査範囲内で確認できなかった。
+
 Hurdの研究はHOL4とBDDを用いて終盤表を検証し\cite{hurd}、
 MarićらはKRK終盤戦略をIsabelle/HOLとZ3で証明している\cite{krk}。
 本成果は特定の終盤戦略や計算済みの局面表を対象とせず、
@@ -516,6 +532,7 @@ MarićらはKRK終盤戦略をIsabelle/HOLとZ3で証明している\cite{krk}�
 \begin{thebibliography}{9}
 \bibitem{nanka}なんか．将棋およびチェスにおいて双方連続王手の千日手が成立しないことの証明．第3版，2024年3月9日．本形式化が参照したPDFを基準とする．公開の経緯：\url{https://yaneuraou.yaneu.com/2024/03/03/proof-of-the-impossibility-of-perpetual-check-in-shogi/}．
 \bibitem{gpw}志村将也．双方連続王手による同一局面反復の不可能性について．第31回ゲームプログラミングワークショップ（GPW 2026），pp.85--92，情報処理学会，2026年11月．発表5-2：\url{https://www.gi-ipsj.org/gpw/2026/program.html}．
+\bibitem{fernando}Ravi Fernando. Answer to ``Infinite sequence of consecutive checks allowing more pieces (say 9+ queens)''. Chess Stack Exchange, 2022年1月14日（同日改訂）．\url{https://chess.stackexchange.com/a/38960}．2026年11月28日閲覧．
 \bibitem{hurd}Joe Hurd. Formal Verification of Chess Endgame Databases. 2005. \url{https://gilith.com/papers/chess.pdf}.
 \bibitem{krk}Filip Marić, Predrag Janičić, Marko Maliković. Proving Correctness of a KRK Chess Endgame Strategy by using Isabelle/HOL and Z3. CADE, 2015. \url{https://poincare.matf.bg.ac.rs/~janicic/papers/2015-cade-krk.pdf}.
 \bibitem{yam}Tadao Yamaoka. lean-shogi. 2026. 閲覧コミット：\nolinkurl{2610d0f8af31cf94d612b71c27f4696ba3691d51}．\url{https://github.com/TadaoYamaoka/lean-shogi}．
