@@ -43,14 +43,19 @@ We study the mathematical question of whether such a sequence can return to the 
 This differs from concluding impossibility by appealing to the competition rule that makes perpetual check under repetition a foul.
 
 Nanka published a proof of the impossibility for shogi and chess in 2024~\cite{nanka}.
-This formalization covers both Theorem 1.1 for shogi in Sections 2--5 of that paper and the theorem for chess in its Section 6.
+This formalization is based on its third edition of March 9, 2024, and covers both Theorem 1.1 for shogi in Sections 2--5 of that paper and the theorem for chess in its Section 6.
+In this paper, ``the original paper'' refers to that third edition.
+Masanari Shimura presented the result and its proof at the 31st Game Programming Workshop (GPW 2026), stating that they had already been published in March 2024 in a memo by the same author under the name Nanka~\cite{gpw}.
+We call this the GPW version.
 Sections 2--4 of this paper describe the shogi formalization, and Section~\ref{sec:chess} the chess formalization.
 The mathematical result belongs to the original paper, and we present this work as a reconstruction of a known result in a proof assistant.
 
 This paper describes four contributions.
 First, we verified the shogi proof up to the final theorem in the kernel, on a finite-sequence model that states the initial piece counts and the conditions on moves explicitly.
-Second, we replaced the angles of the original proof and its sums along the sequence by rational keys and a potential defined on each position.
-Third, we formalized the argument of Section 6 on a chess model independent of shogi, and gave as theorems the proof of Lemma 6.2, which the original paper omits, and the exhaustiveness of the candidates of Figure 3.
+Second, we replaced the angles of the original proof by rational keys, and built its sums along the sequence as a potential defined on each position that includes a term for the checking piece.
+Taking the sum on each position is shared with the proof in the GPW version (Section~\ref{sec:potential}).
+Third, we formalized the argument of Section 6 on a chess model independent of shogi, and gave as theorems Lemma 6.2 and the exhaustiveness of the candidates of Figure 3.
+The original paper omits the proof of Lemma 6.2; the GPW version gives one.
 Fourth, we separated the audit of the specification from the dependency checks of the proof, and organized them as reproducible proof materials.
 We do not claim novelty for rational geometry or for potential methods as such.
 
@@ -203,7 +208,7 @@ With \(Q=u\cdot u\), \(C=(au+bv)\cdot(au+bv)\), \(V=v\cdot v\) and \(X=\det(u,v)
 and reduce to a comparison of rationals by splitting on the signs of \(s\) and \(t\).
 This makes the geometric argument of the original paper, that an interposition strictly lowers the key, available through integer and rational arithmetic.
 
-\subsection{A potential defined on each position}
+\subsection{A potential defined on each position}\label{sec:potential}
 Fix a side \(o\), let \(K\) be its king and \(L\) the opponent's king.
 Let \(c_k\) be the square of the checking piece in state \(k\) and \(N_k\) the set of squares of the opponent's non-glaring pieces, and define
 \[
@@ -223,8 +228,10 @@ This holds for both sides and gives Proposition 4.1.
 \decl{MPC.MoveTrace.discoveredCheckByEachSide_of_mutualPerpetualCheck}
 
 This construction expresses the sum of Lemma 4.7 of the original paper as a quantity on positions.
+The proof of Lemma 4.6 in the GPW version also takes, on each position, the sum of the angles that a player's pieces on the board not glaring at the opponent's king make at that king, and expresses the change on one move as a difference of these sums~\cite{gpw}; expressing the sum as a quantity on positions is shared with this paper.
+Our potential replaces the angles by rational keys and adds a term for the checking piece.
 We do not assume that an arbitrary monotone transformation preserves all the angle identities of the original paper.
-The important point is that the change on each move and the cancellation are proved anew using the keys.
+The important point is that the change on each move and the cancellation are proved anew in Lean using the keys.
 
 \subsection{Half-plane counts and balance in natural numbers}
 Using the signed position \(\ell(q)\) relative to the line through the two kings, we specify for an integer \(s\) the region \(s\ell(q)>0\).
@@ -289,7 +296,7 @@ Since there are no captures, the destination in Corollary 3.4 lies strictly insi
 
 \subsection{Checking rays and crossings}
 A half-line from a king in one of the eight queen directions is a checking ray \code{CheckingRay} (Definition 6.1) if, in some state, an opponent's piece on it actually checks this king.
-We prove Lemma 6.2, whose proof the original paper omits: every move goes between two different checking rays, for each of the two kings.
+We prove Lemma 6.2, whose proof the original paper omits and the GPW version gives~\cite{gpw}: every move goes between two different checking rays, for each of the two kings.
 The proof splits into checks from the destination, checks by unblocking, and the next departure.
 \decl{MPC.Chess.MoveTrace.every_move_between_distinct_checkingRays}
 
@@ -371,7 +378,8 @@ By the distances on the board, the checking piece on this half-line is at \(C\),
 \decl{MPC.Chess.MoveTrace.false_of_lower_candidate}
 
 \subsection{Differences from the original paper}
-Section 6 refers to the facts up to Section 4 as holding ``in the same way'', and omits the proof of Lemma 6.2 and the enumeration of the candidates of Figure 3.
+Section 6 of the original paper (third edition) refers to the facts up to Section 4 as holding ``in the same way'', and omits the proof of Lemma 6.2 and the enumeration of the candidates of Figure 3.
+The GPW version gives a proof of Lemma 6.2~\cite{gpw}.
 The formalization gives all of these as theorems.
 The exclusion of captures is derived from the monotonicity of the piece count and periodicity, and the exclusion of promotion, en passant and castling is made explicit.
 Crossings are handled in rational coordinates, and parallel half-lines are separated from the non-parallel computation.
@@ -445,6 +453,7 @@ The survey log on novelty, the table mapping propositions to declarations, the c
 
 \begin{thebibliography}{9}
 \bibitem{nanka}Nanka (なんか). 将棋およびチェスにおいて双方連続王手の千日手が成立しないことの証明 [A proof that mutual perpetual check cannot occur in shogi and chess; in Japanese]. 3rd edition, March 9, 2024. This formalization is based on that PDF. Background of the publication: \url{https://yaneuraou.yaneu.com/2024/03/03/proof-of-the-impossibility-of-perpetual-check-in-shogi/}.
+\bibitem{gpw}Masanari Shimura (志村将也). 双方連続王手による同一局面反復の不可能性について [Impossibility of Repetition by Mutual Perpetual Check; in Japanese]. In: The 31st Game Programming Workshop (GPW 2026), pp.~85--92. Information Processing Society of Japan, November 2026. Presentation 5-2: \url{https://www.gi-ipsj.org/gpw/2026/program.html}.
 \bibitem{hurd}Joe Hurd. Formal Verification of Chess Endgame Databases. 2005. \url{https://gilith.com/papers/chess.pdf}.
 \bibitem{krk}Filip Marić, Predrag Janičić, Marko Maliković. Proving Correctness of a KRK Chess Endgame Strategy by using Isabelle/HOL and Z3. CADE, 2015. \url{https://poincare.matf.bg.ac.rs/~janicic/papers/2015-cade-krk.pdf}.
 \bibitem{yam}Tadao Yamaoka. lean-shogi. 2026. Commit consulted: \nolinkurl{2610d0f8af31cf94d612b71c27f4696ba3691d51}. \url{https://github.com/TadaoYamaoka/lean-shogi}.

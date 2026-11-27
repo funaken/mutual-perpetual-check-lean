@@ -26,6 +26,6 @@ To regenerate the PDFs, install Tectonic or XeLaTeX and Japanese fonts, then run
 
 ## Attribution and reuse
 
-The mathematical result is due to Nanka (なんか), third edition, March 9, 2024. [Original publication announcement](https://yaneuraou.yaneu.com/2024/03/03/proof-of-the-impossibility-of-perpetual-check-in-shogi/). For this formalization and its accompanying paper, cite funaken and identify the revision you used. [Citation metadata](CITATION.cff)
+The mathematical result is due to Nanka (なんか), third edition, March 9, 2024. [Original publication announcement](https://yaneuraou.yaneu.com/2024/03/03/proof-of-the-impossibility-of-perpetual-check-in-shogi/). Masanari Shimura (志村将也) also presented the result and its proof at GPW 2026 and states that they were first published under the name Nanka. [GPW 2026 program, presentation 5-2](https://www.gi-ipsj.org/gpw/2026/program.html). For this formalization and its accompanying paper, cite funaken and identify the revision you used. [Citation metadata](CITATION.cff)
 
 The code is licensed under MIT-0. The manuscripts, original figures and PDFs are dedicated under CC0 1.0. See the [license terms and scope](LICENSE).
